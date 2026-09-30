@@ -42,7 +42,8 @@
             </xsl:when>
             <xsl:when test="$p = 'work'">
                 <xsl:variable name="author" select="$e/tei:author[1]"/>
-                <xsl:variable name="person" select="if ($author/@key) then ($gs:indices/key('gs:person-by-wikidata', string($author/@key)))[1] else ()"/>
+                <!-- only a person of the perimeter has a page -->
+                <xsl:variable name="person" select="if ($author/@key) then ($gs:indices/key('gs:person-by-wikidata', string($author/@key))[gs:in-perimeter(.)])[1] else ()"/>
                 <row key="Auteur">
                     <xsl:choose>
                         <xsl:when test="$person"><a href="{$person/@xml:id}.html"><xsl:value-of select="normalize-space($author)"/></a></xsl:when>
@@ -79,7 +80,7 @@
         <xsl:variable name="demo" select="gs:demo-mentions($e)"/>
         <xsl:variable name="corpus" select="gs:corpus-mentions($e)"/>
         <xsl:variable name="cited" select="gs:cited-in($e)"/>
-        <xsl:variable name="index" select="replace($type/@file, '\.xml$', '.html')"/>
+        <xsl:variable name="index" select="string($type/@page)"/>
         <xsl:variable name="forms" select="distinct-values(($names[@type = 'standard'][1], $names[@type = 'variant'])/normalize-space())[. != '' and . != $label]"/>
         <xsl:variable name="subhead" select="
             if (gs:prefix($e) = 'person' and exists((gs:birth($e), gs:death($e)))) then gs:year-range(gs:birth($e), gs:death($e), ' – ')
@@ -90,7 +91,7 @@
         </xsl:variable>
         <xsl:variable name="idnos" select="$e/tei:idno[@type = $gs:auth/@type][normalize-space()]"/>
         <xsl:variable name="candidates" select="tokenize(normalize-space($e/tei:note[@type = 'wikidata-candidates'][1]), '\s*\|\s*')[. != '']"/>
-        <xsl:variable name="cooccur" select="$e/tei:linkGrp[@type = 'cooccurrence']/tei:ptr"/>
+        <xsl:variable name="cooccur" select="gs:cooccurrences($e)"/>
 
         <xsl:call-template name="gs:page">
             <xsl:with-param name="title" select="$label"/>
@@ -173,7 +174,7 @@
                             <p>Relevée dans le registre de
                                 <xsl:for-each select="$cited">
                                     <xsl:if test="position() gt 1"> et de </xsl:if>
-                                    <a href="{gs:doc-id(.)}.html"><xsl:value-of select="tei:title"/></a>
+                                    <a href="{@doc}.html"><xsl:value-of select="@title"/></a>
                                 </xsl:for-each>, sans occurrence localisable dans la transcription.</p>
                         </xsl:if>
                         <xsl:if test="exists($candidates)">
@@ -195,8 +196,8 @@
                             <h2 class="gs-cooccur-title" id="cooccur-{$id}">Cité dans les mêmes documents</h2>
                             <ul class="gs-cooccur-list">
                                 <xsl:for-each select="$cooccur">
-                                    <xsl:variable name="o" select="gs:entry(substring-after(@target, '#'))"/>
-                                    <xsl:variable name="nd" select="xs:integer(@n)"/>
+                                    <xsl:variable name="o" select="gs:entry(@id)"/>
+                                    <xsl:variable name="nd" select="xs:integer(@nd)"/>
                                     <li>
                                         <a class="gs-cooccur-item gs-cooccur-{gs:type($o)/@key}" href="{$o/@xml:id}.html">
                                             <xsl:value-of select="gs:label($o)"/>
@@ -221,15 +222,15 @@
                         </h2>
                         <ul class="gs-backlinks-list">
                             <xsl:for-each select="$cited">
-                                <xsl:variable name="doc" select="gs:doc-id(.)"/>
-                                <xsl:variable name="n" select="xs:integer((@n, 0)[1])"/>
-                                <xsl:variable name="first" select="tei:ptr[@type = 'page']/@target"/>
-                                <xsl:variable name="kwic" select="tei:cit[@type = 'kwic']"/>
+                                <xsl:variable name="doc" select="string(@doc)"/>
+                                <xsl:variable name="n" select="xs:integer(@n)"/>
+                                <xsl:variable name="first" select="concat($doc, '-page-', @first, '.html')"/>
+                                <xsl:variable name="kwic" select="kwic"/>
                                 <li class="gs-backlinks-item">
                                     <div class="gs-backlinks-row">
-                                        <a class="gs-backlinks-doc" href="{$first}"><xsl:value-of select="tei:title"/></a>
+                                        <a class="gs-backlinks-doc" href="{$first}"><xsl:value-of select="@title"/></a>
                                         <xsl:text> </xsl:text>
-                                        <a class="gs-backlinks-id" href="{$doc}.html" title="Fiche du document : {tei:title}"><xsl:value-of select="$doc"/></a>
+                                        <a class="gs-backlinks-id" href="{$doc}.html" title="Fiche du document : {@title}"><xsl:value-of select="$doc"/></a>
                                         <xsl:if test="$n gt 0">
                                             <xsl:text> </xsl:text>
                                             <span class="gs-backlinks-n"><xsl:value-of select="gs:plural($n, 'mention')"/></span>
@@ -238,24 +239,24 @@
                                     <xsl:if test="$kwic">
                                         <details class="gs-kwic-details">
                                             <summary>
-                                                <xsl:value-of select="if (@subtype = 'truncated') then concat('Extraits (', count($kwic), ' premiers)') else concat('Extraits (', count($kwic), ')')"/>
+                                                <xsl:value-of select="if (@truncated = 'true') then concat('Extraits (', count($kwic), ' premiers)') else concat('Extraits (', count($kwic), ')')"/>
                                             </summary>
                                             <ul class="gs-kwic-panel">
                                                 <xsl:for-each select="$kwic">
                                                     <li class="gs-kwic-line">
-                                                        <a href="{tei:ptr/@target}">
-                                                            <xsl:if test="tei:quote/@xml:lang"><xsl:attribute name="lang" select="tei:quote/@xml:lang"/></xsl:if>
-                                                            <xsl:value-of select="tei:quote/tei:seg[@type = 'left']"/>
+                                                        <a href="{$doc}-page-{@page}.html">
+                                                            <xsl:if test="@lang"><xsl:attribute name="lang" select="@lang"/></xsl:if>
+                                                            <xsl:value-of select="left"/>
                                                             <xsl:text> </xsl:text>
-                                                            <mark><xsl:value-of select="tei:quote/tei:seg[@type = 'kw']"/></mark>
+                                                            <mark><xsl:value-of select="kw"/></mark>
                                                             <xsl:text> </xsl:text>
-                                                            <xsl:value-of select="tei:quote/tei:seg[@type = 'right']"/>
+                                                            <xsl:value-of select="right"/>
                                                             <xsl:text> </xsl:text>
-                                                            <span class="gs-kwic-page" lang="fr">p. <xsl:value-of select="@n"/></span>
+                                                            <span class="gs-kwic-page" lang="fr">p. <xsl:value-of select="@page"/></span>
                                                         </a>
                                                     </li>
                                                 </xsl:for-each>
-                                                <xsl:if test="@subtype = 'truncated'">
+                                                <xsl:if test="@truncated = 'true'">
                                                     <li class="gs-kwic-line"><a href="{$first}">Toutes les occurrences dans le document <span aria-hidden="true">→</span></a></li>
                                                 </xsl:if>
                                             </ul>
@@ -270,13 +271,9 @@
         </xsl:call-template>
     </xsl:template>
 
-    <!-- TEI export: the register entry as imported, without the data added for the pages -->
+    <!-- TEI export: the register entry, copied as it is in the source register -->
     <xsl:template name="entity_tei">
         <xsl:param name="e" as="element()" select="."/>
-        <xsl:apply-templates select="$e" mode="gs:export"/>
-    </xsl:template>
-    <xsl:template match="tei:noteGrp[@type = 'mentions'] | tei:linkGrp[@type = 'cooccurrence']" mode="gs:export"/>
-    <xsl:template match="@* | node()" mode="gs:export">
-        <xsl:copy><xsl:apply-templates select="@* | node()" mode="gs:export"/></xsl:copy>
+        <xsl:copy-of select="$e"/>
     </xsl:template>
 </xsl:stylesheet>

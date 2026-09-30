@@ -9,6 +9,7 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:gs="urn:grand-siecle"
     version="2.0"
     exclude-result-prefixes="#all">
 
@@ -42,9 +43,10 @@
                         <!-- heading block as on the MaX search page -->
                         <p class="gs-section-kicker">Recherche</p>
                         <h1 class="gs-section-title">Rechercher dans l’édition</h1>
-                        <p class="gs-section-intro">Recherche plein texte (Typesense) dans le texte modernisé, le texte
-                            original et les lemmes des 888 pages. Les accents et les petites fautes de frappe sont
-                            tolérés ; chaque résultat mène à la page de lecture.</p>
+                        <!-- one text node (the page count comes from the derived file), so that the
+                             serializer keeps the line breaks of the literal text -->
+                        <p class="gs-section-intro"><xsl:value-of select="concat('Recherche plein texte (Typesense) dans le texte modernisé, le texte&#10;                            original et les lemmes des ',
+                            sum($gs:corpus-docs/@pages), ' pages. Les accents et les petites fautes de frappe sont&#10;                            tolérés ; chaque résultat mène à la page de lecture.')"/></p>
                         <div id="search-error" class="alert alert-warning" role="alert" hidden="hidden"/>
                         <div class="gs-searchbar">
                             <label for="gs-search-input" class="visually-hidden">Rechercher dans les textes</label>

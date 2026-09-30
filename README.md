@@ -6,25 +6,37 @@
 
 ## initial (one time) setup
 
-The source data (raw TEI + registers of the Grand Siècle project) are not in this repo.
-`data/editions/*.xml` (16 MB, prepared TEI) is gitignored and regenerated from them:
+The source data (TEI editions + registers of the Grand Siècle project) are not in this repo.
+They are used **as they are**: `data/editions/*_reconciled.tei.xml` (~50 MB) and
+`data/indices/*.xml` (the nine complete registers) are byte-for-byte copies of the sources
+(gitignored; `data/SHA256SUMS` identifies them: `cd data && sha256sum -c SHA256SUMS`).
 
-* `uv sync --locked`, then `uv run --locked pyscripts/import_data.py --src /path/to/grand-siecle-max-statique/data`
-  (default: `$GS_SOURCE_DATA`, then `../grand-siecle-max-statique/data`) — writes
-  `data/editions/` (5 TEI, one `pb` per printed page, `sourceDoc` removed) and
-  `data/indices/` (persons, places, orgs, works cited by the 5 texts)
-* run `ant` — one HTML page per printed page (`html/{ID}-page-{n}.html`), 888 in total
+* `uv sync --locked`, then `uv run --locked pyscripts/fetch_data.py --src /path/to/grand-siecle-max-statique/data`
+  (default: `$GS_SOURCE_DATA`, then `../grand-siecle-max-statique/data`): copies the files, checks them
+* `uv run pyscripts/derive_mentions.py` — reads the TEI (never writes them) and writes
+  `build/derived/mentions.xml` (gitignored, regenerated at each build): mentions, first page and
+  passages in context of every entity cited by the texts
+* run `ant` — one HTML page per printed page (`html/{ID}-page-{n}.html`, 888 in total), the
+  document id coming from the file name (`LIV0019_reconciled.tei.xml` -> `LIV0019`); the XSLT
+  number the pages (rank of the `pb`), resolve their image (`pb/@corresp` ->
+  `sourceDoc/surface/graphic/@url`), keep only the register entries cited by the documents
+  present (665) and compute the co-occurrences; departures from the expected encoding are
+  build warnings
 * search (optional): `TYPESENSE_API_KEY=<admin key> uv run pyscripts/make_ts_index.py` — one
   Typesense document per printed page, plus a search-only key written to
   `html/js/search-config.js` (gitignored); settings `TYPESENSE_HOST/PORT/PROTOCOL/COLLECTION`,
   and `TYPESENSE_PUBLIC_HOST/PORT/PROTOCOL` for the address seen by the browser
-* or all at once: `TYPESENSE_API_KEY=... ./build.sh [--src ...]` (import, ant, index, link check);
-  without `TYPESENSE_API_KEY` the index step is skipped and `search.html` says so
+* or all at once: `TYPESENSE_API_KEY=... ./build.sh [--fetch] [--src ...]` (data copy if
+  `data/editions` is empty or with `--fetch`, derive, ant, index, link check); without
+  `TYPESENSE_API_KEY` the index step is skipped and `search.html` says so. The site is built
+  from the TEI present in `data/editions`: remove or add one and run `./build.sh` again.
 * tests: `node tools/test-search.mjs http://localhost:8000` (index size, a known query,
   search page without JavaScript error, message when the server is down);
   `node tools/compare-search.mjs <dseBase> <maxBase>` plays the same queries on this site and on
   the MaX/Pagefind site
 * `uv run pyscripts/check_links.py html` — checks internal links
+* `uv run pyscripts/compare_sites.py OLD_HTML NEW_HTML [--mask-page-numbers]` — regression
+  check between two builds (reading pages, entity pages, TEI exports)
 
 Differences from the template: no ACDH imprint download (`data/imprint.xml` is local),
 no NoSketchEngine page; the search page uses a Typesense server of our own (local in the demo).

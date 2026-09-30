@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    Grand Siecle (J4): one register index file -> its A-Z index page ({file}.html, e.g.
-    listperson.html), one page per entry ({xml:id}.html) and one TEI export per entry
-    ({xml:id}.xml). Same layout as the MaX index pages (ui/xsl/index/index_*.xsl): letters,
+    Grand Siecle (J4): one source register (data/indices/persons.xml...) -> its A-Z index page
+    (listperson.html...), one page per entry of the perimeter ({xml:id}.html) and one TEI export
+    per entry ({xml:id}.xml, the entry as it is in the register). Only the entries cited by the
+    documents present are published (perimeter computed in partials/registres.xsl). Same layout as the MaX index pages (ui/xsl/index/index_*.xsl): letters,
     one line per entity with dates / country / author, corpus count, citing documents.
     The template's Tabulator table is replaced by this list; js/gs-registres.js adds the
     instant filter and the facets (read from the data-* attributes written here).
-    Used for the 9 index files (listperson/listplace/listorg/listbibl.xsl only import it).
+    Used for the 9 registers (listperson/listplace/listorg/listbibl.xsl only import it); the
+    register type comes from the file name (type table of partials/registres.xsl).
 -->
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -20,8 +22,6 @@
     <xsl:output encoding="UTF-8" media-type="text/html" method="html" version="5.0" indent="no" omit-xml-declaration="yes"/>
     <xsl:output name="tei" method="xml" encoding="UTF-8" indent="no"/>
 
-    <xsl:variable name="entries" select="//*[matches(@xml:id, '^[a-z]+-[0-9]{6}$')]"/>
-    <xsl:variable name="type" select="gs:type($entries[1])"/>
 
     <!-- facets of the index filter, by type: data attribute, label, values -->
     <xsl:function name="gs:facets" as="element()*">
@@ -71,12 +71,15 @@
     </xsl:function>
 
     <xsl:template match="/">
+        <!-- register type from the file name (persons.xml -> person), entries of the perimeter -->
+        <xsl:variable name="type" select="$gs:types[@source = tokenize(document-uri(current()), '/')[last()]]"/>
+        <xsl:variable name="entries" select="gs:entries($type)"/>
         <xsl:variable name="sorted" as="element()*">
             <xsl:perform-sort select="$entries">
                 <xsl:sort select="gs:sort-key(.)" lang="fr"/>
             </xsl:perform-sort>
         </xsl:variable>
-        <xsl:variable name="facet_names" select="distinct-values(gs:facets($entries[1])/@name)"/>
+        <xsl:variable name="facet_names" select="distinct-values($entries[1]/gs:facets(.)/@name)"/>
         <xsl:call-template name="gs:page">
             <xsl:with-param name="title" select="string($type/@label)"/>
             <xsl:with-param name="body_class" select="'gs-index-body'"/>
@@ -85,7 +88,7 @@
                     <p class="gs-section-kicker">Index</p>
                     <h1 class="gs-section-title"><xsl:value-of select="$type/@label"/></h1>
                     <p class="gs-index-count"><strong><xsl:value-of select="count($entries)"/></strong> entités citées dans les
-                        5 documents de la démonstration.</p>
+                        <xsl:value-of select="count($gs:doc-ids)"/> documents de la démonstration.</p>
                     <nav class="gs-az" aria-label="Accès alphabétique">
                         <xsl:for-each-group select="$sorted" group-by="gs:initial(.)">
                             <xsl:sort select="current-grouping-key()"/>
@@ -95,7 +98,7 @@
                     <p class="gs-index-legend">Pastille dorée : mentions dans l’ensemble du corpus Grand Siècle · codes LIV : documents de la présente démonstration.</p>
                     <div id="index-{$type/@slug}" class="gs-index-list" data-type="{$type/@key}">
                         <xsl:for-each select="$facet_names">
-                            <xsl:attribute name="data-facet-{.}" select="gs:facets($entries[1])[@name = current()]/@label"/>
+                            <xsl:attribute name="data-facet-{.}" select="$entries[1]/gs:facets(.)[@name = current()]/@label"/>
                         </xsl:for-each>
                         <xsl:for-each-group select="$sorted" group-by="gs:initial(.)">
                             <xsl:sort select="current-grouping-key()"/>
@@ -115,7 +118,7 @@
                                             <span class="gs-index-mentions" title="mentions dans le corpus complet"><xsl:value-of select="gs:corpus-mentions($e)"/></span>
                                             <span class="gs-index-docs">
                                                 <xsl:for-each select="gs:cited-in($e)">
-                                                    <a class="gs-doc-chip" href="{gs:doc-id(.)}.html" title="{tei:title}"><xsl:value-of select="gs:doc-id(.)"/></a>
+                                                    <a class="gs-doc-chip" href="{@doc}.html" title="{@title}"><xsl:value-of select="@doc"/></a>
                                                 </xsl:for-each>
                                             </span>
                                         </li>

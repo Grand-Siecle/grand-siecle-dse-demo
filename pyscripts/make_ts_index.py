@@ -3,7 +3,9 @@
 Adapted from the template's make_ts_index.py (one document per TEI file, fields title /
 full_text / *_entities). Here, as in the reading view (xslt/editions.xsl), pages are cut on
 tei:pb; each page carries both text layers, the lemmas, the named entities per type (labels
-from data/indices) and a few facets. Schema: see docs/04-plateforme-commune-typesense.md §4.2
+from the source registers in data/indices) and a few facets. The TEI of data/editions are
+read as they are: page n = rank of the pb (the pb carry no @n), document id from the file
+name (LIV0019_reconciled.tei.xml -> LIV0019), sourceDoc and standOff ignored. Schema: see docs/04-plateforme-commune-typesense.md §4.2
 in grand-siecle-max-statique.
 
 The script also creates a search-only API key restricted to the collection and writes the
@@ -47,6 +49,9 @@ ENTITY_FIELDS = {
 }
 ENTITY_TAGS = {f"{{{TEI}}}{t}" for t in
                ("persName", "placeName", "orgName", "rs", "objectName", "material", "title", "date")}
+# display rule of xslt/partials/doc_meta.xsl (gsdoc:forename-fixes): the teiHeader of LIV0001
+# gives the author's forename as "s"; the site shows "Judocus". Not a correction of the TEI.
+AUTHOR_FORENAME_FIXES = {"LIV0001": "Judocus"}
 
 
 def t_(name):
@@ -69,9 +74,11 @@ def text_of(el):
 
 
 def register_labels():
-    """xml:id -> display label, from the 9 data/indices files (same label as the entity page)."""
+    """xml:id -> display label, from the 9 source registers (same label as the entity page).
+    Every register entry is read; only the ids cited by the texts are used, and these are the
+    entries published by the site (its perimeter)."""
     labels = {}
-    for path in glob.glob(str(ROOT / "data" / "indices" / "list*.xml")):
+    for path in glob.glob(str(ROOT / "data" / "indices" / "*.xml")):
         for entry in etree.parse(path).iter():
             eid = entry.get(XML_ID) if isinstance(entry.tag, str) else None
             if not eid or not re.fullmatch(r"[a-z]+-\d{6}", eid):
@@ -130,13 +137,24 @@ def clean_lemma(lemma):
     return re.sub(r"(\D)\d+$", r"\1", lemma)
 
 
+def doc_id_of(path):
+    """LIV0019_reconciled.tei.xml -> LIV0019 (same rule as gsdoc:id-from-uri in xslt/partials/doc_meta.xsl)"""
+    return re.sub(r"(_reconciled)?(\.tei)?\.xml$", "", Path(path).name)
+
+
 def page_records(path, labels):
-    tree = etree.parse(path)
-    doc_id = Path(path).stem
+    tree = etree.parse(path, etree.XMLParser(huge_tree=True))
+    doc_id = doc_id_of(path)
     header = tree.find(t_("teiHeader"))
     title = " ".join(header.findtext("tei:fileDesc/tei:titleStmt/tei:title", namespaces=NS).split())
     pn = header.find("tei:fileDesc/tei:titleStmt/tei:author/tei:persName", NS)
-    author = " ".join(text_of(x) for x in pn if tag(x) in (t_("forename"), t_("surname"))) if pn is not None else ""
+    names = []
+    for x in pn if pn is not None else ():
+        if tag(x) == t_("forename"):
+            names.append(AUTHOR_FORENAME_FIXES.get(doc_id) or text_of(x))
+        elif tag(x) == t_("surname"):
+            names.append(text_of(x))
+    author = " ".join(names)
     year = re.search(r"\d{4}", header.findtext("tei:fileDesc/tei:sourceDesc/tei:bibl/tei:date",
                                                default="", namespaces=NS) or "")
     div = tree.find("tei:text/tei:body/tei:div", NS)
@@ -145,11 +163,10 @@ def page_records(path, labels):
     for child in div:
         if tag(child) == t_("pb"):
             groups.append((child, []))
-        elif tag(child):
+        elif tag(child) and groups:  # content before the first pb is not shown (build warning)
             groups[-1][1].append(child)
 
-    for pb, content in groups:
-        n = int(pb.get("n"))
+    for n, (pb, content) in enumerate(groups, start=1):
         orig, reg = LayerText("orig"), LayerText("reg")
         for el in content:
             for layer in (orig, reg):
@@ -251,7 +268,7 @@ def main():
     labels = register_labels()
     files = sorted(glob.glob(str(ROOT / "data" / "editions" / "*.xml")))
     if not files:
-        sys.exit("ERROR: data/editions is empty, run pyscripts/import_data.py first")
+        sys.exit("ERROR: data/editions is empty, run pyscripts/fetch_data.py first")
     records = [r for f in files for r in page_records(f, labels)]
     t1 = time.perf_counter()
 

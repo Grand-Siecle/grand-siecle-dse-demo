@@ -25,7 +25,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     # Disabled for the Grand Siecle demo: the source TEI are not in this repository
-    # (data/editions is generated locally by pyscripts/import_data.py), and the site is
+    # (data/editions and data/indices are copied locally by pyscripts/fetch_data.py), and the site is
     # a local, non public demo. `ant` now fails on an empty data/editions anyway.
     if: ${{ false }}
     runs-on: ubuntu-latest

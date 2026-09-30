@@ -26,13 +26,15 @@
            <div>
               <head>Protocole de la démo</head>
               <list rend="numbered">
-                 <item><hi rend="bold">Préparation des sources TEI</hi> — les transcriptions HTR (double
-                    couche originale / modernisée, lemmatisation mot à mot, entités nommées détectées par
-                    NER puis réconciliées avec Wikidata) sont importées par un script Python
-                    (<code>pyscripts/import_data.py</code>) : chaque saut de page reçoit un numéro et
-                    l'adresse de son fac-similé IIIF sur Gallica (BnF), les zones de mise en page issues
-                    d'ALTO sont retirées, et seuls les registres d'entités cités par les cinq textes sont
-                    retenus.</item>
+                 <item><hi rend="bold">Sources TEI utilisées telles quelles</hi> — les transcriptions HTR
+                    (double couche originale / modernisée, lemmatisation mot à mot, entités nommées détectées
+                    par NER puis réconciliées avec Wikidata) et les registres d'entités du projet sont copiés
+                    sans aucune modification (sommes SHA-256 à l'appui) : c'est la fabrication du site qui
+                    numérote les pages (rang de chaque saut de page), retrouve l'adresse du fac-similé IIIF
+                    sur Gallica (BnF) à partir de la référence du saut de page, ignore à l'affichage les
+                    zones de mise en page issues d'ALTO et ne publie que les entrées de registre citées par
+                    les textes présents ; les mentions et les extraits en contexte sont calculés à part
+                    (<code>pyscripts/derive_mentions.py</code>), dans un fichier dérivé.</item>
                  <item><hi rend="bold">Publication avec dse-static-cookiecutter</hi> — le site est produit
                     par le gabarit <ref target="https://github.com/acdh-oeaw/dse-static-cookiecutter">dse-static-cookiecutter</ref>
                     de l'Austrian Centre for Digital Humanities and Cultural Heritage (ACDH-CH, Académie

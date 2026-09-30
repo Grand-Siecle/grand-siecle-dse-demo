@@ -2,11 +2,11 @@
 <!--
     Grand Siecle (J4): map of the cited places (carte.html), as in the MaX edition
     (fragments/fr/carte.frag.html + ui/js/carte.js): Leaflet, OpenStreetMap tiles, one
-    circle per geolocated place, radius growing with the mentions in the 5 texts.
+    circle per geolocated place, radius growing with the mentions in the texts present.
     The data of the map is the table written here (one row per place with coordinates,
     data-lat / data-lon / data-mentions), read by js/gs-carte.js: the table is also the
     text alternative of the map (as the template's make_map_and_table.js reads its table).
-    Input document: data/indices/listplace.xml.
+    Input document: data/indices/places.xml (only the places of the perimeter are shown).
 -->
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -21,7 +21,7 @@
 
     <xsl:template match="/">
         <xsl:variable name="places" as="element()*">
-            <xsl:perform-sort select="//tei:place[@xml:id][count(tokenize(normalize-space(tei:location[1]/tei:geo[1]), ' ')[. castable as xs:double]) = 2]">
+            <xsl:perform-sort select="gs:entries($gs:types[@prefix = 'place'])[count(tokenize(normalize-space(tei:location[1]/tei:geo[1]), ' ')[. castable as xs:double]) = 2]">
                 <xsl:sort select="gs:sort-key(.)" lang="fr"/>
             </xsl:perform-sort>
         </xsl:variable>
@@ -38,13 +38,13 @@
                         registres d'autorité.</p>
                     <div id="gs-map" role="region" aria-label="Carte interactive des lieux (la liste qui suit en donne le contenu)"></div>
                     <p class="gs-map-coverage" id="gs-map-status" role="status">
-                        <xsl:value-of select="count($places)"/> lieux géolocalisés sur <xsl:value-of select="count(//tei:place[@xml:id])"/> lieux cités.
+                        <xsl:value-of select="count($places)"/> lieux géolocalisés sur <xsl:value-of select="count(gs:entries($gs:types[@prefix = 'place']))"/> lieux cités.
                         La carte interactive nécessite JavaScript ; la liste ci-dessous en donne le contenu.</p>
                     <details class="gs-alt-list">
                         <summary>Liste des lieux de la carte (<xsl:value-of select="count($places)"/>)</summary>
                         <div class="gs-alt-scroll">
                             <table class="gs-alt-table" id="gs-map-data">
-                                <caption class="visually-hidden">Lieux géolocalisés cités dans les cinq documents</caption>
+                                <caption class="visually-hidden">Lieux géolocalisés cités dans les <xsl:value-of select="gs:number-fr(count($gs:doc-ids), false())"/> documents</caption>
                                 <thead>
                                     <tr>
                                         <th scope="col">Lieu</th>

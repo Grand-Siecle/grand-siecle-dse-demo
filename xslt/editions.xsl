@@ -2,8 +2,14 @@
 <!--
     Grand Siecle: one edition = one document page ({ID}.html, principal output of the
     Ant <xslt> task) + one HTML page per printed page ({ID}-page-{n}.html, written with
-    xsl:result-document). Pages are cut on tei:pb, which the import script
-    (pyscripts/import_data.py) numbers (@n, @xml:id) and links to their IIIF image (@facs).
+    xsl:result-document). The TEI is read as the project encoded it (data/editions holds the
+    source files unchanged):
+    - pages are cut on tei:pb; n = rank of the pb in the text (the pb carry no @n);
+    - the image of a page is found by resolving pb/@corresp to sourceDoc/surface/graphic/@url
+      (IIIF, full size in the source; 1200 px high here, as in MaX);
+    - tei:sourceDoc (ALTO-derived zones and lines, ~68 % of the file) and tei:standOff are
+      not rendered: only text/body is.
+    Departures from these assumptions are reported as build warnings (xsl:message), not errors.
 
     Both pages follow the MaX edition:
     - document page = MaX ui/xsl/tei/document_toc.xsl (metadata card + grid of page thumbnails);
@@ -31,9 +37,10 @@
     <xsl:import href="./partials/doc_meta.xsl"/>
     <xsl:output encoding="UTF-8" media-type="text/html" method="html" version="5.0" indent="no" omit-xml-declaration="yes"/>
 
-    <!-- document id taken from the file name (LIV0019.xml -> LIV0019); TEI/@xml:id is left as in the source -->
-    <xsl:variable name="doc_id" select="replace(tokenize(document-uri(/), '/')[last()], '\.xml$', '')"/>
-    <xsl:variable name="teiSource" select="concat($doc_id, '.xml')"/>
+    <!-- document id taken from the file name (LIV0019_reconciled.tei.xml -> LIV0019, partials/doc_meta.xsl);
+         TEI/@xml:id is left as in the source; the source file itself is offered for download -->
+    <xsl:variable name="doc_id" select="gsdoc:id-from-uri(string(document-uri(/)))"/>
+    <xsl:variable name="teiSource" select="tokenize(document-uri(/), '/')[last()]"/>
     <xsl:variable name="link" select="concat($doc_id, '.html')"/>
     <xsl:variable name="doc_title" select="normalize-space(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[1])"/>
     <xsl:variable name="page_count" select="count(/tei:TEI/tei:text//tei:pb)"/>
@@ -45,9 +52,23 @@
     <!-- default layer, as in MaX: original for the Latin text (LIV0010), modernised otherwise -->
     <xsl:variable name="default_layer" select="if ($doc_lang = 'la') then 'orig' else 'reg'"/>
 
-    <!-- register entries (all data/indices files) used to resolve entity @ref -->
-    <xsl:variable name="indices" select="collection('../data/indices?select=list*.xml')"/>
-    <xsl:key name="entry" match="*[@xml:id]" use="@xml:id"/>
+    <!-- register entries (the nine source registers, complete) used to resolve entity @ref:
+         an id cited by the text is in the published perimeter by definition -->
+    <xsl:variable name="indices" select="collection('../data/indices?select=*.xml')"/>
+    <xsl:key name="entry" match="*[matches(@xml:id, '^[a-z]+-[0-9]{6}$')]" use="@xml:id"/>
+
+    <!-- facsimile of a page: pb/@corresp -> sourceDoc/surface/graphic/@url -->
+    <xsl:key name="surface" match="tei:sourceDoc/tei:surface" use="@xml:id"/>
+    <xsl:function name="gs:facs" as="xs:string">
+        <xsl:param name="pb" as="element(tei:pb)"/>
+        <xsl:variable name="url" select="string((key('surface', substring-after($pb/@corresp, '#'), root($pb))/tei:graphic/@url)[1])"/>
+        <xsl:sequence select="replace($url, 'full/full/0/native', 'full/,1200/0/native')"/>
+    </xsl:function>
+    <!-- page number: rank of the pb (pb are children of body/div, checked below) -->
+    <xsl:function name="gs:page-n" as="xs:integer">
+        <xsl:param name="pb" as="element(tei:pb)"/>
+        <xsl:sequence select="count($pb/preceding-sibling::tei:pb) + 1"/>
+    </xsl:function>
 
     <xsl:variable name="entity_elements" select="/tei:TEI/tei:text//(tei:persName | tei:placeName | tei:orgName | tei:rs
         | tei:objectName | tei:material | tei:title | tei:date[@ref])"/>
@@ -93,24 +114,42 @@
     </xsl:function>
 
     <xsl:template match="/">
-        <!-- pagination invariants (also checked by the import script) -->
-        <xsl:if test="count(/tei:TEI/tei:text//tei:pb) ne count(/tei:TEI/tei:text/tei:body/tei:div/tei:pb)
-            or not(/tei:TEI/tei:text/tei:body/tei:div/*[1][self::tei:pb[@n][@facs]])">
-            <xsl:message terminate="yes" select="concat($doc_id, ': every tei:pb must be a numbered child of body/div, and come first (run pyscripts/import_data.py)')"/>
+        <!-- assumptions of the pagination on the Grand Siecle encoding: warnings, not errors -->
+        <xsl:variable name="div" select="/tei:TEI/tei:text/tei:body/tei:div"/>
+        <xsl:if test="count($div) ne 1">
+            <xsl:message select="concat('WARNING ', $doc_id, ': ', count($div), ' text/body/div (one expected); only the pages of the first are built')"/>
+        </xsl:if>
+        <xsl:variable name="stray_pb" select="count(/tei:TEI/tei:text//tei:pb) - count($div[1]/tei:pb)"/>
+        <xsl:if test="$stray_pb gt 0">
+            <xsl:message select="concat('WARNING ', $doc_id, ': ', $stray_pb, ' pb not children of body/div, ignored for the pagination')"/>
+        </xsl:if>
+        <xsl:if test="$div[1]/*[1][not(self::tei:pb)]">
+            <xsl:message select="concat('WARNING ', $doc_id, ': body/div does not start with a pb; the content before the first pb is not shown')"/>
+        </xsl:if>
+        <xsl:variable name="unexpected" select="distinct-values($div[1]/*[not(self::tei:pb or self::tei:ab or self::tei:fw or self::tei:note)]/name())"/>
+        <xsl:if test="exists($unexpected)">
+            <xsl:message select="concat('WARNING ', $doc_id, ': body/div children not handled by the reading pages: ', string-join($unexpected, ', '))"/>
+        </xsl:if>
+        <xsl:variable name="no_image" select="$div[1]/tei:pb[gs:facs(.) = '']"/>
+        <xsl:if test="$no_image">
+            <xsl:message select="concat('WARNING ', $doc_id, ': ', count($no_image), ' page(s) without image (pb/@corresp not resolved to sourceDoc/surface/graphic/@url): p. ',
+                string-join(for $pb in $no_image return string(gs:page-n($pb)), ', '))"/>
         </xsl:if>
         <xsl:variable name="unresolved" select="$entity_elements[not(gs:resolved(gs:ref(.)))]"/>
         <xsl:message select="concat($doc_id, ': ', count($entity_elements), ' entity elements, ',
-            count($unresolved), ' without a register entry (rendered without link)')"/>
+            count($unresolved), ' without a register entry (rendered without link)', if ($unresolved) then concat(': ', string-join(distinct-values(for $u in $unresolved return (gs:ref($u)[. != ''], concat('(', name($u), ' without @ref)'))[1]), ' ')) else '')"/>
         <xsl:call-template name="document_page">
             <xsl:with-param name="unresolved" select="$unresolved"/>
         </xsl:call-template>
 
-        <!-- one page per tei:pb (body/div children are pb|ab|fw|note, checked by the import script) -->
-        <xsl:for-each-group select="/tei:TEI/tei:text/tei:body/tei:div/*" group-starting-with="tei:pb">
+        <!-- one page per tei:pb (body/div children are pb|ab|fw|note, see the warnings above) -->
+        <xsl:for-each-group select="/tei:TEI/tei:text/tei:body/tei:div[1]/*" group-starting-with="tei:pb">
+            <xsl:if test="current-group()[1][self::tei:pb]">
             <xsl:call-template name="reading_page">
                 <xsl:with-param name="pb" select="current-group()[1]"/>
                 <xsl:with-param name="content" select="current-group()[position() gt 1]"/>
             </xsl:call-template>
+            </xsl:if>
         </xsl:for-each-group>
     </xsl:template>
 
@@ -187,8 +226,10 @@
                         </dl>
                     </div>
                     <xsl:variable name="pages" as="element(page)*">
-                        <xsl:for-each-group select="/tei:TEI/tei:text/tei:body/tei:div/*" group-starting-with="tei:pb">
-                            <page n="{current-group()[1]/@n}" facs="{current-group()[1]/@facs}" empty="{empty(current-group()/self::tei:ab)}"/>
+                        <xsl:for-each-group select="/tei:TEI/tei:text/tei:body/tei:div[1]/*" group-starting-with="tei:pb">
+                            <xsl:for-each select="current-group()[1][self::tei:pb]">
+                                <page n="{gs:page-n(.)}" facs="{gs:facs(.)}" empty="{empty(current-group()/self::tei:ab)}"/>
+                            </xsl:for-each>
                         </xsl:for-each-group>
                     </xsl:variable>
                     <h2 class="gs-section-title">Pages <span class="gs-doc-pagecount">(<xsl:value-of select="count($pages)"/>)</span></h2>
@@ -270,7 +311,8 @@
     <xsl:template name="reading_page">
         <xsl:param name="pb" as="element(tei:pb)"/>
         <xsl:param name="content" as="element()*"/>
-        <xsl:variable name="n" select="xs:integer($pb/@n)"/>
+        <xsl:variable name="n" select="gs:page-n($pb)"/>
+        <xsl:variable name="facs" select="gs:facs($pb)"/>
         <!-- printed page number: LIV0010 surface ids "fN-M" (M = printed number), otherwise the first NumberingZone -->
         <xsl:variable name="printed" select="normalize-space((
             replace($pb/@corresp, '^#f[0-9]+-(.+)$', '$1')[not(. = ('np', $pb/@corresp))],
@@ -285,7 +327,7 @@
             <xsl:sequence select="if ($langs[1]) then gs:lang($langs[1]) else $doc_lang"/>
         </xsl:variable>
         <xsl:variable name="label" select="concat('Page ', $n, ' / ', $page_count)"/>
-        <xsl:variable name="gallica" select="gs:gallica-page($pb/@facs)"/>
+        <xsl:variable name="gallica" select="gs:gallica-page($facs)"/>
         <xsl:result-document href="{$doc_id}-page-{$n}.html">
             <html lang="{$default_lang}" data-layer="{$default_layer}" data-default-layer="{$default_layer}" data-doc="{$doc_id}">
                 <head>
@@ -326,10 +368,10 @@
                                 <a href="{$gallica}">voir sur Gallica</a>
                             </div>
                         </div>
-                        <section class="page" id="{$pb/@xml:id}" data-n="{$n}" aria-label="{$label}">
+                        <section class="page" id="{$doc_id}-page-{$n}" data-n="{$n}" aria-label="{$label}">
                             <figure class="page-facsimile">
                                 <a href="{$gallica}" title="Ouvrir la page dans Gallica (BnF)">
-                                    <img src="{replace($pb/@facs, ',1200', ',800')}" loading="lazy" decoding="async"
+                                    <img src="{replace($facs, ',1200', ',800')}" loading="lazy" decoding="async"
                                         alt="Fac-similé de la page {$n} ({if ($printed != '') then concat('p. imprimée ', $printed, ', ') else ''}vue Gallica) de « {$doc_title} »"/>
                                 </a>
                                 <figcaption class="page-facs-caption">p. <xsl:value-of select="$n"/> — Gallica (BnF)</figcaption>

@@ -9,6 +9,7 @@
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:gsdoc="urn:grand-siecle:doc"
+    xmlns:gs="urn:grand-siecle"
     version="2.0"
     exclude-result-prefixes="#all">
 
@@ -38,7 +39,7 @@
                     <div class="gs-sommaire">
                         <p class="gs-section-kicker">Corpus</p>
                         <h1 class="gs-section-title"><xsl:value-of select="$doc_title"/></h1>
-                        <p class="gs-section-intro">Cinq imprimés du XVII<sup>e</sup> siècle, classés par date
+                        <p class="gs-section-intro"><xsl:value-of select="gs:count-fr(count(gsdoc:editions()), 'imprimé', true())"/> du XVII<sup>e</sup> siècle, classés par date
                             d'édition, transcrits depuis les numérisations Gallica (ALTO), enrichis d'une couche
                             modernisée et d'entités nommées réconciliées avec Wikidata.</p>
                         <div class="gs-doc-grid">

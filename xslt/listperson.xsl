@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    Grand Siecle (J4): register of persons (data/indices/listperson.xml -> listperson.html + one page and one
+    Grand Siecle (J4): register of persons (data/indices/persons.xml, source register -> listperson.html + one page and one
     TEI export per entry). The nine registers share one layout, ported from the MaX edition:
     see listentity.xsl. This file is kept so that build.xml keeps the template's targets.
 -->

@@ -5,13 +5,15 @@
     three key figures, framed portrait), "Le corpus" (one card per edition) and the dark
     "Entrer dans le corpus autrement" section.
     Unlike MaX, where the home fragment is hand written, the cards and the key figures are
-    computed at build time from the TEI (data/editions) and the registers (data/indices).
+    computed at build time from the TEI (data/editions) and the registers (data/indices), read
+    as they are; the wording follows the number of documents present.
 -->
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:gsdoc="urn:grand-siecle:doc"
+    xmlns:gs="urn:grand-siecle"
     version="2.0"
     exclude-result-prefixes="#all">
 
@@ -23,7 +25,7 @@
 
     <xsl:template match="/">
         <xsl:variable name="editions" select="gsdoc:editions()"/>
-        <xsl:variable name="registers" select="collection('../data/indices?select=list*.xml')"/>
+        <xsl:variable name="registers" select="collection('../data/indices?select=*.xml')"/>
         <xsl:variable name="years" select="for $t in $editions return xs:integer(replace(gsdoc:date($t), '^.*?([0-9]{4}).*$', '$1'))"/>
         <html lang="{$default_lang}">
             <head>
@@ -46,7 +48,7 @@
                                         <span class="gs-hero-title-siecle">Siècle</span>
                                     </h1>
                                     <p class="gs-hero-subtitle">Qu'est-ce qu'une bonne peinture ? Explorer les premiers
-                                        discours français sur la peinture et les arts au XVIIe siècle : cinq imprimés
+                                        discours français sur la peinture et les arts au XVIIe siècle : <xsl:value-of select="gs:count-fr(count($editions), 'imprimé', false())"/>
                                         transcrits, modernisés et annotés, reliés à un index d'entités réconciliées
                                         avec Wikidata.</p>
                                     <div class="gs-hero-cta">
@@ -81,7 +83,7 @@
 
                         <section class="gs-section" id="corpus" aria-labelledby="gs-corpus-title">
                             <p class="gs-section-kicker">Le corpus</p>
-                            <h2 class="gs-section-title" id="gs-corpus-title">Cinq imprimés du XVIIe siècle</h2>
+                            <h2 class="gs-section-title" id="gs-corpus-title"><xsl:value-of select="gs:count-fr(count($editions), 'imprimé', true())"/> du XVIIe siècle</h2>
                             <p class="gs-section-intro">Transcriptions issues d'HTR, avec double couche
                                 originale / modernisée, analyse linguistique mot à mot et entités nommées
                                 détectées automatiquement puis réconciliées.</p>
@@ -114,7 +116,7 @@
                                 </a>
                                 <a class="gs-explore-card" href="search.html">
                                     <h3>Recherche</h3>
-                                    <p>Recherche en plein texte dans les transcriptions des cinq documents.</p>
+                                    <p>Recherche en plein texte dans les transcriptions des <xsl:value-of select="gs:count-fr(count($editions), 'document', false())"/>.</p>
                                 </a>
                             </div>
                             <p class="gs-demo-note">Démonstrateur : cette édition « Grand Siècle » est publiée avec

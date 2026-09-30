@@ -12,7 +12,8 @@
     exclude-result-prefixes="#all"
     version="2.0">
 
-    <!-- the five editions, ordered by imprint date (as the MaX Corpus page) -->
+    <!-- the editions present in data/editions (TEI files as they are), ordered by imprint date
+         (as the MaX Corpus page) -->
     <xsl:function name="gsdoc:editions" as="element(tei:TEI)*">
         <xsl:for-each select="collection('../../data/editions?select=*.xml')/tei:TEI">
             <xsl:sort select="normalize-space(tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:bibl/tei:date[1])"/>
@@ -20,11 +21,25 @@
         </xsl:for-each>
     </xsl:function>
 
-    <!-- LIV0019 (from the file name) -->
+    <!-- document id from the file name: LIV0019_reconciled.tei.xml (Grand Siecle naming) or
+         LIV0019.xml -> LIV0019; the page names (LIV0019.html, LIV0019-page-41.html) derive from it.
+         TEI/@xml:id is not used: it is left as the project wrote it. -->
+    <xsl:function name="gsdoc:id-from-uri" as="xs:string">
+        <xsl:param name="uri" as="xs:string"/>
+        <xsl:sequence select="replace(tokenize($uri, '/')[last()], '(_reconciled)?(\.tei)?\.xml$', '')"/>
+    </xsl:function>
     <xsl:function name="gsdoc:id" as="xs:string">
         <xsl:param name="tei" as="element(tei:TEI)"/>
-        <xsl:sequence select="replace(tokenize(document-uri(root($tei)), '/')[last()], '\.xml$', '')"/>
+        <xsl:sequence select="gsdoc:id-from-uri(string(document-uri(root($tei))))"/>
     </xsl:function>
+
+    <!-- Display rule, not a correction of the TEI: the teiHeader of LIV0001 gives the author's
+         forename as "s" (error of the upstream conversion); the site shows "Judocus", as the MaX
+         edition does (scripts/prepare-tei.mjs, AUTHOR_NAME_OVERRIDES). To be removed once the
+         source is fixed. Same rule in pyscripts/make_ts_index.py (AUTHOR_FORENAME_FIXES). -->
+    <xsl:variable name="gsdoc:forename-fixes" as="element()*">
+        <fix doc="LIV0001" forename="Judocus"/>
+    </xsl:variable>
 
     <xsl:function name="gsdoc:name" as="xs:string">
         <xsl:param name="pn" as="element()?"/>
@@ -53,10 +68,12 @@
         <xsl:sequence select="normalize-space($tei/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:bibl/tei:date[1])"/>
     </xsl:function>
 
-    <!-- "Forename Surname" of the titleStmt author -->
+    <!-- "Forename Surname" of the titleStmt author (display rule above applied) -->
     <xsl:template name="doc_author">
         <xsl:param name="tei" as="element(tei:TEI)"/>
-        <xsl:value-of select="gsdoc:name($tei/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:author[1]/tei:persName)"/>
+        <xsl:variable name="pn" select="$tei/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:author[1]/tei:persName"/>
+        <xsl:variable name="fix" select="$gsdoc:forename-fixes[@doc = gsdoc:id($tei)]/@forename"/>
+        <xsl:value-of select="if ($fix and $pn) then normalize-space(string-join(($fix, $pn/tei:surname), ' ')) else gsdoc:name($pn)"/>
     </xsl:template>
 
     <!-- Imprint date of the printed source -->

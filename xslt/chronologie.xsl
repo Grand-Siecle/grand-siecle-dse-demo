@@ -25,7 +25,7 @@
 
     <xsl:function name="gs:sorted" as="element()*">
         <xsl:param name="prefix" as="xs:string"/>
-        <xsl:perform-sort select="$gs:indices//*[starts-with(@xml:id, concat($prefix, '-'))]">
+        <xsl:perform-sort select="gs:entries($gs:types[@prefix = $prefix])">
             <xsl:sort select="gs:sort-key(.)" lang="fr"/>
         </xsl:perform-sort>
     </xsl:function>

@@ -3,7 +3,7 @@
      document holds its own listPerson/listPlace/listOrg/listBibl; the Grand Siecle texts have
      none), adapted to the Grand Siecle registers: names typed main/standard/variant, dates in
      @when, note[@type='description'], typed idno, back-links in noteGrp/note[@type='mentions']
-     (pyscripts/import_data.py + entity_data.py). The register pages themselves (J4) are built
+     (in the former J4 import). Not used by the Grand Siecle pages: the register pages (J4) are built
      by partials/entity_page.xsl. -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tei="http://www.tei-c.org/ns/1.0"

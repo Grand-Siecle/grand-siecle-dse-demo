@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project basedir="." name="tei2html">
-    <!-- Grand Siecle: data/editions and data/indices are produced by pyscripts/import_data.py.
+    <!-- Grand Siecle: data/editions and data/indices hold the project's source files unchanged
+         (pyscripts/fetch_data.py copies them, data/SHA256SUMS proves it). What the pages need
+         beyond the TEI is computed at build time: by the XSLT (page numbers, images, register
+         perimeter, co-occurrences) and by pyscripts/derive_mentions.py, which writes
+         build/derived/mentions.xml (mentions and passages; run by build.sh before ant).
          search.html is rebuilt for a local or project Typesense server (pyscripts/make_ts_index.py);
          removed from the template: noske-search.html (NoSketchEngine hosted by ACDH). data/imprint.xml is a local file
          instead of the ACDH imprint service (shellscripts/dl_imprint.sh).
@@ -12,13 +16,36 @@
     <property name="index" value="./data/meta/about.xml"/>
     <property name="target" value="./html"/>
     <property name="target_xml" value="./html/xml-view"/>
-    <fail message="data/editions contains no TEI: run `uv run pyscripts/import_data.py` first.">
+    <fail message="data/editions contains no TEI: run `uv run pyscripts/fetch_data.py` first.">
         <condition>
             <resourcecount when="equal" count="0">
                 <fileset dir="./data/editions" includes="*.xml"/>
             </resourcecount>
         </condition>
     </fail>
+    <!-- the derived file must exist and be newer than every edition (a removed edition is not
+         detected here: build.sh always derives before running ant) -->
+    <fail message="build/derived/mentions.xml is missing or older than data/editions: run `uv run pyscripts/derive_mentions.py` (or ./build.sh).">
+        <condition>
+            <not>
+                <uptodate targetfile="./build/derived/mentions.xml">
+                    <srcfiles dir="./data/editions" includes="*.xml"/>
+                </uptodate>
+            </not>
+        </condition>
+    </fail>
+    <!-- one ant xslt call per register: source register in, index page out -->
+    <macrodef name="register">
+        <attribute name="source"/>
+        <attribute name="page"/>
+        <attribute name="style" default="listentity"/>
+        <sequential>
+            <xslt force="true" in="./data/indices/@{source}" out="${target}/@{page}" style="./xslt/@{style}.xsl">
+                <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+                <classpath location="${basedir}/saxon/saxon9he.jar"/>
+            </xslt>
+        </sequential>
+    </macrodef>
     <tstamp>
         <format property="build.start" pattern="MM/dd/yyyy hh:mm:ss aa" locale="en,US"/>
     </tstamp>
@@ -30,14 +57,12 @@
         <factory name="net.sf.saxon.TransformerFactoryImpl"/>
         <classpath location="${basedir}/saxon/saxon9he.jar"/>
     </xslt>
+    <!-- LIV0019_reconciled.tei.xml -> LIV0019.html (+ LIV0019-page-{n}.html); same id rule as
+         gsdoc:id-from-uri in xslt/partials/doc_meta.xsl -->
     <xslt force="true" style="./xslt/editions.xsl"  basedir="./data/editions" destdir="${target}" includes="*.xml">
         <factory name="net.sf.saxon.TransformerFactoryImpl"/>
         <classpath location="${basedir}/saxon/saxon9he.jar"/>
-    </xslt>
-    <xslt force="true" style="./xslt/listentity.xsl" basedir="./data/indices" destdir="${target}"
-        includes="listevent.xml,listartwork.xml,listmaterial.xml,listtechnique.xml,listdate.xml">
-        <factory name="net.sf.saxon.TransformerFactoryImpl"/>
-        <classpath location="${basedir}/saxon/saxon9he.jar"/>
+        <mapper type="regexp" from="^(.*?)(_reconciled)?(\.tei)?\.xml$$" to="\1.html"/>
     </xslt>
     <xslt force="true" style="./xslt/meta.xsl"  basedir="./data/meta" destdir="${target}" includes="*.xml">
         <factory name="net.sf.saxon.TransformerFactoryImpl"/>
@@ -55,36 +80,31 @@
         <factory name="net.sf.saxon.TransformerFactoryImpl"/>
         <classpath location="${basedir}/saxon/saxon9he.jar"/>
     </xslt>
-    <xslt force="true" in="./data/indices/listperson.xml" out="${target}/listperson.html" style="./xslt/listperson.xsl">
-        <factory name="net.sf.saxon.TransformerFactoryImpl"/>
-        <classpath location="${basedir}/saxon/saxon9he.jar"/>
-    </xslt>
-    <xslt force="true" in="./data/indices/listplace.xml" out="${target}/listplace.html" style="./xslt/listplace.xsl">
-        <factory name="net.sf.saxon.TransformerFactoryImpl"/>
-        <classpath location="${basedir}/saxon/saxon9he.jar"/>
-    </xslt>
-    <xslt force="true" in="./data/indices/listorg.xml" out="${target}/listorg.html" style="./xslt/listorg.xsl">
-        <factory name="net.sf.saxon.TransformerFactoryImpl"/>
-        <classpath location="${basedir}/saxon/saxon9he.jar"/>
-    </xslt>
-    <xslt force="true" in="./data/indices/listbibl.xml" out="${target}/listbibl.html" style="./xslt/listbibl.xsl">
-        <factory name="net.sf.saxon.TransformerFactoryImpl"/>
-        <classpath location="${basedir}/saxon/saxon9he.jar"/>
-    </xslt>
+    <!-- the nine source registers: index page + one page and one TEI export per entry of the
+         perimeter (entries cited by the documents present) -->
+    <register source="persons.xml" page="listperson.html" style="listperson"/>
+    <register source="places.xml" page="listplace.html" style="listplace"/>
+    <register source="organizations.xml" page="listorg.html" style="listorg"/>
+    <register source="works.xml" page="listbibl.html" style="listbibl"/>
+    <register source="events.xml" page="listevent.html"/>
+    <register source="artworks.xml" page="listartwork.html"/>
+    <register source="materials.xml" page="listmaterial.html"/>
+    <register source="techniques.xml" page="listtechnique.html"/>
+    <register source="dates.xml" page="listdate.html"/>
     <!-- J4: hub of the registers, map and timeline (read the nine data/indices files) -->
-    <xslt force="true" in="./data/indices/listperson.xml" out="${target}/entites.html" style="./xslt/entites.xsl">
+    <xslt force="true" in="./data/indices/persons.xml" out="${target}/entites.html" style="./xslt/entites.xsl">
         <factory name="net.sf.saxon.TransformerFactoryImpl"/>
         <classpath location="${basedir}/saxon/saxon9he.jar"/>
     </xslt>
-    <xslt force="true" in="./data/indices/listplace.xml" out="${target}/carte.html" style="./xslt/carte.xsl">
+    <xslt force="true" in="./data/indices/places.xml" out="${target}/carte.html" style="./xslt/carte.xsl">
         <factory name="net.sf.saxon.TransformerFactoryImpl"/>
         <classpath location="${basedir}/saxon/saxon9he.jar"/>
     </xslt>
-    <xslt force="true" in="./data/indices/listperson.xml" out="${target}/chronologie.html" style="./xslt/chronologie.xsl">
+    <xslt force="true" in="./data/indices/persons.xml" out="${target}/chronologie.html" style="./xslt/chronologie.xsl">
         <factory name="net.sf.saxon.TransformerFactoryImpl"/>
         <classpath location="${basedir}/saxon/saxon9he.jar"/>
     </xslt>
-    <xslt force="true" in="./data/indices/listperson.xml" out="${target}/beacon.txt" style="./xslt/beacon.xsl">
+    <xslt force="true" in="./data/indices/persons.xml" out="${target}/beacon.txt" style="./xslt/beacon.xsl">
         <factory name="net.sf.saxon.TransformerFactoryImpl"/>
         <classpath location="${basedir}/saxon/saxon9he.jar"/>
     </xslt>
@@ -92,9 +112,15 @@
         <factory name="net.sf.saxon.TransformerFactoryImpl"/>
         <classpath location="${basedir}/saxon/saxon9he.jar"/>
     </xslt>
+    <!-- the TEI editions are published as they are (download link on each document page,
+         ~50 MB, identical to the sources: data/SHA256SUMS); the complete source registers
+         (11 474 entries, most outside the site) are not: each published entry has its own
+         TEI export ({xml:id}.xml). Plus the local meta pages, as in the template. -->
     <copy todir="${target}" flatten="true" overwrite="true">
         <fileset dir="./data/">
-            <include name="**/*.xml"/>
+            <include name="editions/*.xml"/>
+            <include name="meta/*.xml"/>
+            <include name="imprint.xml"/>
         </fileset>
     </copy>
     <!-- remove pages and XML copies left over from previous builds -->
