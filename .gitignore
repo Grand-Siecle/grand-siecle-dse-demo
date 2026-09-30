@@ -142,5 +142,6 @@ dmypy.json
 desktop.ini
 
 # MacOS
-.DS_Storedata/.staging/
+.DS_Store
+data/.staging/
 node_modules/
