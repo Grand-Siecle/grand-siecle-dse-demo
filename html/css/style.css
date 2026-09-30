@@ -341,3 +341,31 @@ a.ent:hover, a.ent:focus-visible { color: inherit; background: rgba(156, 122, 60
 @media (prefers-reduced-motion: reduce) {
     * { scroll-behavior: auto !important; }
 }
+
+/* ------------------------------------------------------ search page (J3) */
+.gs-search-help { color: var(--gs-sepia-text); max-width: 60rem; }
+.gs-searchbar { margin: 0.8rem 0; }
+.gs-searchbar .ais-SearchBox-form { display: flex; gap: 0.5rem; }
+.gs-searchbar .ais-SearchBox-loadingIndicator { align-self: center; }
+.gs-search-status { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.2rem; margin-bottom: 1rem; color: var(--gs-sepia-text); }
+.gs-filters { background: var(--gs-cream-warm); border: 1px solid var(--gs-border); border-radius: 3px; padding: 0.6rem 0.9rem; margin-bottom: 1rem; }
+.gs-filters > summary { font-family: var(--gs-font-display); font-weight: 600; font-size: 1.2rem; cursor: pointer; }
+.gs-facet { margin-top: 0.8rem; }
+.gs-facet-title { font-family: var(--gs-font-display); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gs-sepia-text); margin-bottom: 0.3rem; }
+.gs-facet label, .gs-facet .ais-ToggleRefinement-label { display: flex; align-items: baseline; gap: 0.2rem; font-size: 0.95rem; line-height: 1.35; cursor: pointer; }
+.gs-facet-count { margin-left: auto; font-family: var(--gs-font-mono); font-size: 0.75rem; color: var(--gs-sepia-text); }
+.gs-facet .ais-SearchBox-input { font-size: 0.9rem; padding: 0.2rem 0.4rem; margin-bottom: 0.3rem; width: 100%; border: 1px solid var(--gs-border); }
+.gs-facet .ais-SearchBox-submit, .gs-facet .ais-SearchBox-reset { display: none; }
+.gs-hits .gs-hit { background: var(--gs-cream-light); border: 1px solid var(--gs-cream-warm); border-radius: 3px; padding: 0.9rem 1.1rem; margin-bottom: 0.8rem; }
+.gs-hit-title { font-size: 1.3rem; margin: 0; }
+.gs-hit-meta { font-size: 0.9rem; color: var(--gs-sepia-text); margin: 0.1rem 0 0.4rem; }
+.gs-hit-snippet { margin: 0 0 0.4rem; }
+.gs-hit-snippet mark, .ais-Highlight-highlighted, .ais-Snippet-highlighted { background: rgba(196, 154, 74, 0.35); color: inherit; padding: 0 0.1em; }
+.gs-hit-entities { margin: 0; font-size: 0.9rem; display: flex; flex-wrap: wrap; gap: 0.3rem 0.6rem; }
+.gs-empty { font-style: italic; color: var(--gs-sepia-text); }
+.ais-CurrentRefinements-label { font-weight: 600; }
+.pagination { --bs-pagination-color: var(--gs-blue); --bs-pagination-bg: var(--gs-cream-light); --bs-pagination-border-color: var(--gs-border); --bs-pagination-active-bg: var(--gs-blue); --bs-pagination-active-border-color: var(--gs-blue); --bs-pagination-hover-color: var(--gs-blue-dark); --bs-pagination-disabled-bg: var(--gs-cream); }
+@media (min-width: 992px) {
+    .gs-filters > summary { pointer-events: none; list-style: none; }
+    .gs-filters > summary::-webkit-details-marker { display: none; }
+}

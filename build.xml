@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project basedir="." name="tei2html">
     <!-- Grand Siecle: data/editions and data/indices are produced by pyscripts/import_data.py.
-         Removed from the template: search.html (Typesense server hosted by ACDH) and
-         noske-search.html (NoSketchEngine hosted by ACDH). data/imprint.xml is a local file
+         search.html is rebuilt for a local or project Typesense server (pyscripts/make_ts_index.py);
+         removed from the template: noske-search.html (NoSketchEngine hosted by ACDH). data/imprint.xml is a local file
          instead of the ACDH imprint service (shellscripts/dl_imprint.sh).
          No half-empty site on failure: instead of deleting html/*.html before the build,
          every transformation is forced and the files not rewritten by this run are removed
@@ -40,6 +40,10 @@
         <classpath location="${basedir}/saxon/saxon9he.jar"/>
     </xslt>
     <xslt force="true" style="./xslt/meta.xsl"  basedir="./data/meta" destdir="${target}" includes="*.xml">
+        <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+        <classpath location="${basedir}/saxon/saxon9he.jar"/>
+    </xslt>
+    <xslt force="true" in="${index}" out="${target}/search.html" style="./xslt/search.xsl">
         <factory name="net.sf.saxon.TransformerFactoryImpl"/>
         <classpath location="${basedir}/saxon/saxon9he.jar"/>
     </xslt>

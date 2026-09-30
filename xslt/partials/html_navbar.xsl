@@ -56,6 +56,9 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="search.html">Recherche</a>
+                            </li>
+                            <li class="nav-item">
                                 <a title="API" class="nav-link" href="api.xml">API</a>
                             </li>
                         </ul>

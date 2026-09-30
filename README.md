@@ -14,10 +14,20 @@ The source data (raw TEI + registers of the Grand Siècle project) are not in th
   `data/editions/` (5 TEI, one `pb` per printed page, `sourceDoc` removed) and
   `data/indices/` (persons, places, orgs, works cited by the 5 texts)
 * run `ant` — one HTML page per printed page (`html/{ID}-page-{n}.html`), 888 in total
+* search (optional): `TYPESENSE_API_KEY=<admin key> uv run pyscripts/make_ts_index.py` — one
+  Typesense document per printed page, plus a search-only key written to
+  `html/js/search-config.js` (gitignored); settings `TYPESENSE_HOST/PORT/PROTOCOL/COLLECTION`,
+  and `TYPESENSE_PUBLIC_HOST/PORT/PROTOCOL` for the address seen by the browser
+* or all at once: `TYPESENSE_API_KEY=... ./build.sh [--src ...]` (import, ant, index, link check);
+  without `TYPESENSE_API_KEY` the index step is skipped and `search.html` says so
+* tests: `node tools/test-search.mjs http://localhost:8000` (index size, a known query,
+  search page without JavaScript error, message when the server is down);
+  `node tools/compare-search.mjs <dseBase> <maxBase>` plays the same queries on this site and on
+  the MaX/Pagefind site
 * `uv run pyscripts/check_links.py html` — checks internal links
 
 Differences from the template: no ACDH imprint download (`data/imprint.xml` is local),
-no Typesense search page, no NoSketchEngine page.
+no NoSketchEngine page; the search page uses a Typesense server of our own (local in the demo).
 
 ## start dev server
 
