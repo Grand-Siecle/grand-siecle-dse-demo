@@ -1,7 +1,7 @@
 [project]
 name = "grand-siecle-dse"
 version = "0.1.0"
-description = "Add your description here"
+description = "Grand Siecle demo edition built with dse-static-cookiecutter"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [

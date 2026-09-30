@@ -56,7 +56,8 @@
                                 <thead>
                                     <tr>
                                         <th scope="col" width="20" tabulator-formatter="html" tabulator-headerSort="false" tabulator-download="false">#</th>
-                                        <th scope="col" tabulator-headerFilter="input">Name</th>
+                                        <th scope="col" tabulator-headerFilter="input">Nom</th>
+                                        <th scope="col" tabulator-headerFilter="input">Forme normalisée</th>
                                         <th scope="col" tabulator-headerFilter="input">ID</th>
                                     </tr>
                                 </thead>
@@ -76,6 +77,9 @@
                                             </td>
                                             <td>
                                                 <xsl:value-of select=".//tei:orgName[1]/text()"/>
+                                            </td>
+                                            <td>
+                                                <xsl:value-of select="./tei:orgName[@type = 'standard'][1]"/>
                                             </td>
                                             <td>
                                                 <xsl:value-of select="$id"/>

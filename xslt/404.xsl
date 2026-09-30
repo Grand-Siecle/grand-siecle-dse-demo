@@ -14,7 +14,7 @@
 
     <xsl:template match="/">
         <xsl:variable name="doc_title">
-            <xsl:value-of select='"404 - Page not found"'/>
+            <xsl:value-of select='"404 — page introuvable"'/>
         </xsl:variable>
         <html class="h-100" lang="{$default_lang}">
             <head>

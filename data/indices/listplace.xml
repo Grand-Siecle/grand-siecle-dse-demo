@@ -1,54 +1,1583 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title type="main">Orstregister</title>
-            </titleStmt>
-            <publicationStmt>
-                <p/>
-            </publicationStmt>
-            <sourceDesc>
-                <p>born digital</p>
-            </sourceDesc>
-        </fileDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <div><listPlace><place xml:id="pmb50496">
-  <placeName>Hintere Zollamtsstraße</placeName>
-  <placeName type="person_namensvariante_nachname-komma-vorname">Hintere Zollamtstraße</placeName>
-  <desc type="entity_type">Straße (K.STR)</desc>
-  <desc type="entity_type_id">26</desc>
-<location type="coords">
-  <geo>48.211869 16.387333</geo>
-</location>
-<location type="located_in_place">
-  <placeName key="pmb53">III., Landstraße</placeName>
-  <geo>48.19811 16.39482</geo>
-</location>
-  <idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/50496/</idno>
-  <idno type="URL" subtype="legalkraus">https://kraus.wienbibliothek.at/register/orte/pmb50496</idno>
-<listBibl>
-    <bibl type="collections" n="5">legalkraus</bibl>
-</listBibl>
-<noteGrp><note target="D_000002-003-000.xml" type="mentions">2.3 Privatanklage von Karl Kraus gegen Reichspost (verantw. Red. Karl Schiffleitner) wegen Verweigerung einer Berichtigung</note></noteGrp></place><place xml:id="pmb50653">
-  <placeName>Strozzigasse</placeName>
-  <desc type="entity_type">Straße (K.STR)</desc>
-  <desc type="entity_type_id">26</desc>
-<location type="coords">
-  <geo>48.20702 16.349371</geo>
-</location>
-<location type="located_in_place">
-  <placeName key="pmb58">VIII., Josefstadt</placeName>
-  <geo>48.21126 16.34706</geo>
-</location>
-  <idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/50653/</idno>
-  <idno type="URL" subtype="legalkraus">https://kraus.wienbibliothek.at/register/orte/pmb50653</idno>
-<listBibl>
-    <bibl type="collections" n="5">legalkraus</bibl>
-</listBibl>
-<noteGrp><note target="D_000002-003-000.xml" type="mentions">2.3 Privatanklage von Karl Kraus gegen Reichspost (verantw. Red. Karl Schiffleitner) wegen Verweigerung einer Berichtigung</note></noteGrp></place><place xml:id="pmb50"><placeName>Wien</placeName><placeName type="alternative-name">K.K. Reichshaupt- und Residenzstadt Wien</placeName><placeName type="legacy-uri-merge">http://d-nb.info/gnd/4066009-6</placeName><placeName type="alternative-name">Bécs</placeName><placeName type="alternative-name">Land Wien</placeName><placeName type="alternative-name">Vídeň</placeName><placeName type="alternative-name">Wenia</placeName><placeName type="alternative-name">Beč</placeName><placeName type="alternative-name">Vindobona (Wien)</placeName><placeName type="legacy-name-merge">Vindobona</placeName><placeName type="alternative-name">Vienna</placeName><placeName type="legacy-name-merge">Wien?</placeName><desc type="entity_type">Besiedelter Ort (A.BSO)</desc><desc type="entity_type_id">14</desc><location type="coords"><geo>48,2066 16,37341</geo></location><location type="located_in_place"><placeName ref="#pmb41240">Österreich</placeName><geo>47,33333 13,33333</geo></location><idno type="URL" subtype="geonames">https://sws.geonames.org/2761369/</idno><idno type="URL" subtype="">http://pmb.acdh.oeaw.ac.at/apis/api2/entity/2316/</idno><idno type="URL" subtype="">http://pmb.acdh.oeaw.ac.at/apis/api2/entity/20954/</idno><idno type="URL" subtype="d-nb">https://d-nb.info/gnd/4066009-6</idno><idno type="URL" subtype="bahrschnitzler">https://bahrschnitzler.acdh.oeaw.ac.at/entity/pmb50</idno><idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/50</idno><idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/2316</idno><idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/20954</idno><idno type="URL" subtype="schnitzler-briefe">https://schnitzler-briefe.acdh.oeaw.ac.at/pages/hits.html?searchkey=pmb50</idno><idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/65221/</idno><idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/65223/</idno><noteGrp><note target="L041464.xml" type="mentions">Hugo von Hofmannsthal an Hermann Bahr, [23./24. 11. 1891]</note></noteGrp></place><place xml:id="pmb501"><placeName>Kärntnerring</placeName><desc type="entity_type">Straße (K.STR)</desc><desc type="entity_type_id">26</desc><location type="coords"><geo>48,201874800905 16,371985203093</geo></location><location type="located_in_place"><placeName ref="#pmb112">Ringstraße</placeName><geo>48,202432234197 16,371296264238</geo></location><location type="located_in_place"><placeName ref="#pmb51">I., Innere Stadt</placeName><geo>48,20769 16,37049</geo></location><idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entities:K%C3%A4rntner_Ring</idno><idno type="URL" subtype="bahrschnitzler">https://bahrschnitzler.acdh.oeaw.ac.at/entity/pmb501</idno><idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/501</idno><idno type="URL" subtype="schnitzler-briefe">https://schnitzler-briefe.acdh.oeaw.ac.at/pages/hits.html?searchkey=pmb501</idno><noteGrp><note target="L041464.xml" type="mentions">Hugo von Hofmannsthal an Hermann Bahr, [23./24. 11. 1891]</note></noteGrp></place><place xml:id="pmb34"><placeName>Café Griensteidl</placeName><desc type="entity_type">Kaffeehaus (K.KAF)</desc><desc type="entity_type_id">20</desc><location type="coords"><geo>48,208258 16,366111</geo></location><location type="located_in_place"><placeName ref="#pmb51">I., Innere Stadt</placeName><geo>48,20769 16,37049</geo></location><idno type="URL" subtype="bahrschnitzler">https://bahrschnitzler.acdh.oeaw.ac.at/entity/pmb34</idno><idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/34</idno><idno type="URL" subtype="schnitzler-briefe">https://schnitzler-briefe.acdh.oeaw.ac.at/pages/hits.html?searchkey=pmb34</idno><noteGrp><note target="L041464.xml" type="mentions">Hugo von Hofmannsthal an Hermann Bahr, [23./24. 11. 1891]</note></noteGrp></place><place xml:id="pmb182"><placeName>Paris</placeName><placeName type="alternative-name">P'ariz</placeName><placeName type="legacy-uri-merge">http://d-nb.info/gnd/4044660-8</placeName><placeName type="legacy-uri-merge">http://sws.geonames.org/6455259/</placeName><placeName type="alternative-name">Pariž</placeName><placeName type="alternative-name">Parisius</placeName><desc type="entity_type">Besiedelter Ort (A.BSO)</desc><desc type="entity_type_id">14</desc><location type="coords"><geo>48,85341 2,3488</geo></location><idno type="URL" subtype="geonames">http://sws.geonames.org/2988507/</idno><idno type="URL" subtype="bahrschnitzler">https://bahrschnitzler.acdh.oeaw.ac.at/entity/pmb182</idno><idno type="URL" subtype="d-nb">https://d-nb.info/gnd/4044660-8</idno><idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/182</idno><idno type="URL" subtype="schnitzler-briefe">https://schnitzler-briefe.acdh.oeaw.ac.at/pages/hits.html?searchkey=pmb182</idno><noteGrp><note target="L041464.xml" type="mentions">Hugo von Hofmannsthal an Hermann Bahr, [23./24. 11. 1891]</note></noteGrp></place></listPlace></div>
-        </body>
-    </text>
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Lieux</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Projet Grand Siècle (UNIL) — démonstration DSE</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Extrait des registres d'autorité du projet, réduit aux entités citées par les 5 documents de la démonstration.</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listPlace><place xml:id="place-000001" n="393">
+        <placeName type="main">Rome</placeName>
+        <placeName type="sort">Rome</placeName>
+        <placeName type="standard">Rome</placeName>
+        <placeName type="variant">Româ</placeName>
+        <placeName type="variant">broome</placeName>
+        <location><geo>41.89306 12.48278</geo></location>
+        <country key="Q38">Italie</country>
+        <idno type="wikidata" cert="high">Q220</idno>
+        <idno type="geonames">3169070</idno>
+        <note type="description">capitale de l'Italie</note>
+        <note type="mentions">393</note>
+        <note type="sources">LIV0002a|LIV0003|LIV0005|LIV0006|LIV0007|LIV0008|LIV0011|LIV0012|LIV0013|LIV0014|LIV0015|LIV0017|LIV0018|LIV0019|LIV0020|LIV0021|LIV0023|LIV0024|LIV0025a|LIV0025b|LIV0026a|LIV0026b|LIV0026c|LIV0027|LIV0031_t1|LIV0031_t2|LIV0032|LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q17167|Q567806|Q6580</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></place>
+      <place xml:id="place-000004" n="207">
+        <placeName type="main">Paris</placeName>
+        <placeName type="sort">Paris</placeName>
+        <placeName type="standard">Paris</placeName>
+        <placeName type="variant">Paradis</placeName>
+        <placeName type="variant">De Paris</placeName>
+        <placeName type="variant">Parvis</placeName>
+        <placeName type="variant">Paris ce</placeName>
+        <placeName type="variant">avoir de Paris</placeName>
+        <location><geo>48.85667 2.35222</geo></location>
+        <country key="Q142">France</country>
+        <idno type="wikidata" cert="high">Q90</idno>
+        <idno type="geonames">2968815</idno>
+        <note type="description">capitale et ville la plus peuplée de France</note>
+        <note type="mentions">207</note>
+        <note type="sources">LIV0001|LIV0002a|LIV0002b|LIV0003|LIV0004a|LIV0005|LIV0006|LIV0007|LIV0008|LIV0009|LIV0011|LIV0012|LIV0013|LIV0015|LIV0017|LIV0018|LIV0019|LIV0020|LIV0021|LIV0022|LIV0023|LIV0025a|LIV0026a|LIV0026b|LIV0026c|LIV0027|LIV0031_t1|LIV0031_t2|LIV0032|LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q483020|Q830149|Q3181341</note>
+      <noteGrp><note type="mentions" target="LIV0001.xml">La Perpétuelle croix</note><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></place>
+      <place xml:id="place-000017" n="33">
+        <placeName type="main">Palais</placeName>
+        <placeName type="sort">Palaiseau</placeName>
+        <placeName type="standard">Palaiseau</placeName>
+        <placeName type="variant">Palais Royal</placeName>
+        <placeName type="variant">palais iateigios</placeName>
+        <location><geo>48.71833 2.24972</geo></location>
+        <country key="Q142">France</country>
+        <idno type="wikidata" cert="medium">Q205580</idno>
+        <idno type="geonames">2988758</idno>
+        <note type="description">commune française du département de l'Essonne</note>
+        <note type="mentions">33</note>
+        <note type="sources">LIV0009|LIV0015|LIV0017|LIV0024|LIV0026a|LIV0026c|LIV0031_t1|LIV0031_t2</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q2946|Q329948|Q1075988</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></place>
+      <place xml:id="place-000019" n="31">
+        <placeName type="main">Sparte</placeName>
+        <placeName type="sort">Sparte</placeName>
+        <placeName type="standard">Sparte</placeName>
+        <placeName type="variant">Spartes</placeName>
+        <placeName type="variant">Sparta</placeName>
+        <location><geo>37.08194 22.42361</geo></location>
+        <country key="Q41">Grèce</country>
+        <idno type="wikidata" cert="high">Q5690</idno>
+        <idno type="geonames">253394</idno>
+        <note type="description">ancienne ville grecque du Péloponnèse</note>
+        <note type="mentions">31</note>
+        <note type="sources">LIV0020|LIV0025a|LIV0025b|LIV0026c|LIV0027|LIV0028|LIV0031_t2</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q629049|Q2308046|Q738931</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></place>
+      <place xml:id="place-000021" n="26">
+        <placeName type="main">Strasbourg</placeName>
+        <placeName type="sort">Strasbourg</placeName>
+        <placeName type="standard">Strasbourg</placeName>
+        <placeName type="variant">strasbourger</placeName>
+        <location><geo>48.57333 7.75222</geo></location>
+        <country key="Q142">France</country>
+        <idno type="wikidata" cert="high">Q6602</idno>
+        <idno type="geonames">2973783</idno>
+        <note type="description">capitale de la région historique d'Alsace, préfecture du Bas-Rhin et de la région Grand Est</note>
+        <note type="mentions">26</note>
+        <note type="sources">LIV0008|LIV0010|LIV0023</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q126334|Q801473|Q1917272</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000023" n="24">
+        <placeName type="main">Gallia</placeName>
+        <placeName type="sort">Gaule</placeName>
+        <placeName type="standard">Gaule</placeName>
+        <placeName type="variant">Galliarum</placeName>
+        <placeName type="variant">Galliæ</placeName>
+        <placeName type="variant">Galliam</placeName>
+        <placeName type="variant">Galliis</placeName>
+        <location><geo>46.50000 2.90000</geo></location>
+        <country key="Q142">France</country>
+        <idno type="wikidata" cert="high">Q38060</idno>
+        <note type="description">région de l'Europe antique</note>
+        <note type="mentions">24</note>
+        <note type="sources">LIV0004a|LIV0010|LIV0032</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q3094813|Q635595|Q3094814</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000030" n="21">
+        <placeName type="main">ville</placeName>
+        <placeName type="sort">Ville-la-Grand</placeName>
+        <placeName type="standard">Ville-la-Grand</placeName>
+        <placeName type="variant">La Ville</placeName>
+        <placeName type="variant">Village</placeName>
+        <placeName type="variant">Lille</placeName>
+        <placeName type="variant">le ville</placeName>
+        <location><geo>46.20222 6.24694</geo></location>
+        <country key="Q142">France</country>
+        <idno type="wikidata" cert="high">Q829285</idno>
+        <idno type="geonames">2968703</idno>
+        <note type="description">commune française du département de la Haute-Savoie</note>
+        <note type="mentions">21</note>
+        <note type="sources">LIV0007|LIV0011|LIV0013|LIV0014|LIV0018|LIV0019|LIV0021|LIV0027</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q1165252|Q1159891|Q1388654</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></place>
+      <place xml:id="place-000031" n="20">
+        <placeName type="main">Égypte</placeName>
+        <placeName type="sort">Égypte</placeName>
+        <placeName type="standard">Égypte</placeName>
+        <location><geo>27.00000 29.00000</geo></location>
+        <country key="Q79">Égypte</country>
+        <idno type="wikidata" cert="high">Q79</idno>
+        <idno type="geonames">357994</idno>
+        <note type="description">État situé au nord-est de l'Afrique et au sud-ouest de l'Asie</note>
+        <note type="mentions">20</note>
+        <note type="sources">LIV0001|LIV0007|LIV0012|LIV0026a|LIV0026b|LIV0026c|LIV0028|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q2261041|Q2780035|Q2141030</note>
+      <noteGrp><note type="mentions" target="LIV0001.xml">La Perpétuelle croix</note></noteGrp></place>
+      <place xml:id="place-000035" n="19">
+        <placeName type="main">Romæ</placeName>
+        <placeName type="sort">romani</placeName>
+        <placeName type="standard">romani</placeName>
+        <placeName type="variant">Roma</placeName>
+        <location><geo>46.80000 21.70000</geo></location>
+        <country key="Q222">Albanie</country>
+        <idno type="wikidata" cert="medium">Q13201</idno>
+        <note type="description">langue indo-européenne des Roms (Tsiganes)</note>
+        <note type="mentions">19</note>
+        <note type="sources">LIV0010|LIV0032</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q3940432|Q55829521|Q387165</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000061" n="12">
+        <placeName type="main">Temple</placeName>
+        <placeName type="sort">Temple</placeName>
+        <placeName type="standard">Temple</placeName>
+        <placeName type="variant">Les Temples</placeName>
+        <location><geo>51.51095 -0.11433</geo></location>
+        <country key="Q145">Royaume-Uni</country>
+        <idno type="wikidata" cert="high">Q1431071</idno>
+        <idno type="geonames">6954820</idno>
+        <note type="description">station du métro de Londres</note>
+        <note type="mentions">12</note>
+        <note type="sources">LIV0001|LIV0003|LIV0014|LIV0031_t2</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q44539|Q21500480|Q18608513</note>
+      <noteGrp><note type="mentions" target="LIV0001.xml">La Perpétuelle croix</note></noteGrp></place>
+      <place xml:id="place-000068" n="10">
+        <placeName type="main">Bourges</placeName>
+        <placeName type="sort">Bourges</placeName>
+        <placeName type="standard">Bourges</placeName>
+        <placeName type="variant">Bourgage</placeName>
+        <placeName type="variant">Bourg</placeName>
+        <location><geo>47.08361 2.39556</geo></location>
+        <country key="Q142">France</country>
+        <idno type="wikidata" cert="high">Q132404</idno>
+        <idno type="geonames">3031005</idno>
+        <note type="description">commune française du département du Cher (chef-lieu)</note>
+        <note type="mentions">10</note>
+        <note type="sources">LIV0001|LIV0003|LIV0013|LIV0023</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q38243224|Q730221|Q895218</note>
+      <noteGrp><note type="mentions" target="LIV0001.xml">La Perpétuelle croix</note></noteGrp></place>
+      <place xml:id="place-000085" n="9">
+        <placeName type="main">Macedoine</placeName>
+        <placeName type="sort">Macédoine du Nord</placeName>
+        <placeName type="standard">Macédoine du Nord</placeName>
+        <placeName type="variant">Macédone</placeName>
+        <location><geo>41.65000 21.71667</geo></location>
+        <country key="Q221">Macédoine du Nord</country>
+        <idno type="wikidata" cert="high">Q221</idno>
+        <idno type="geonames">718075</idno>
+        <note type="description">pays du sud-est de l’Europe</note>
+        <note type="mentions">9</note>
+        <note type="sources">LIV0012|LIV0014|LIV0020</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q83958|Q103251|Q5277967</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></place>
+      <place xml:id="place-000097" n="8">
+        <placeName type="main">Bethléem</placeName>
+        <placeName type="sort">Bethléem</placeName>
+        <placeName type="standard">Bethléem</placeName>
+        <placeName type="variant">bethlewem</placeName>
+        <location><geo>31.70444 35.20611</geo></location>
+        <country key="Q219060">État de Palestine</country>
+        <idno type="wikidata" cert="high">Q5776</idno>
+        <idno type="geonames">284315</idno>
+        <note type="description">ville située en Cisjordanie, dans les Territoires palestiniens occupés</note>
+        <note type="mentions">8</note>
+        <note type="sources">LIV0001|LIV0002a|LIV0002b|LIV0006|LIV0012|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q28162526|Q111821255|Q831475</note>
+      <noteGrp><note type="mentions" target="LIV0001.xml">La Perpétuelle croix</note></noteGrp></place>
+      <place xml:id="place-000101" n="8">
+        <placeName type="main">Candie</placeName>
+        <placeName type="sort">Candie Prune</placeName>
+        <placeName type="standard">Candie Prune</placeName>
+        <placeName type="variant">Candis</placeName>
+        <placeName type="variant">Ande</placeName>
+        <country key="Q142">France</country>
+        <idno type="wikidata" cert="medium">Q2936292</idno>
+        <note type="mentions">8</note>
+        <note type="sources">LIV0007|LIV0008|LIV0010</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q1366214|Q1033007|Q3655216</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000107" n="8">
+        <placeName type="main">monde</placeName>
+        <placeName type="sort">Terre</placeName>
+        <placeName type="standard">Terre</placeName>
+        <idno type="wikidata" cert="high">Q2</idno>
+        <idno type="geonames">6295630</idno>
+        <note type="description">troisième planète à partir du Soleil dans le système solaire</note>
+        <note type="mentions">8</note>
+        <note type="sources">LIV0001|LIV0021|LIV0026b|LIV0031_t1|LIV0031_t2</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q1|Q16502|Q13780930</note>
+      <noteGrp><note type="mentions" target="LIV0001.xml">La Perpétuelle croix</note></noteGrp></place>
+      <place xml:id="place-000156" n="6">
+        <placeName type="main">Poloniæ</placeName>
+        <placeName type="sort">Polonia Varsovie</placeName>
+        <placeName type="standard">Polonia Varsovie</placeName>
+        <placeName type="variant">Poloniam</placeName>
+        <placeName type="variant">Polonia</placeName>
+        <placeName type="variant">POLONGA</placeName>
+        <country key="Q36">Pologne</country>
+        <idno type="wikidata" cert="medium">Q262569</idno>
+        <note type="description">club polonais de football</note>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0010</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q4272155|Q19731014|Q50749595</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000158" n="6">
+        <placeName type="main">Sion</placeName>
+        <placeName type="sort">Sion</placeName>
+        <placeName type="standard">Sion</placeName>
+        <placeName type="variant">scion|sion</placeName>
+        <location><geo>46.23045 7.36606</geo></location>
+        <country key="Q39">Suisse</country>
+        <idno type="wikidata" cert="high">Q68136</idno>
+        <idno type="geonames">7287176</idno>
+        <note type="description">ville de Suisse et chef-lieu du canton du Valais</note>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0001|LIV0005|LIV0027|LIV0028|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q339533|Q37553660|Q7533488</note>
+      <noteGrp><note type="mentions" target="LIV0001.xml">La Perpétuelle croix</note></noteGrp></place>
+      <place xml:id="place-000159" n="6">
+        <placeName type="main">Syracuse</placeName>
+        <placeName type="sort">Syracuse</placeName>
+        <placeName type="standard">Syracuse</placeName>
+        <location><geo>37.06917 15.28750</geo></location>
+        <country key="Q38">Italie</country>
+        <idno type="wikidata" cert="high">Q13670</idno>
+        <idno type="geonames">6542286</idno>
+        <note type="description">commune et ville portuaire de Sicile, Italie</note>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0020|LIV0025b|LIV0026a|LIV0028</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q128069|Q37018461|Q482405</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></place>
+      <place xml:id="place-000177" n="5">
+        <placeName type="main">Brienneum</placeName>
+        <placeName type="sort">Brienne</placeName>
+        <placeName type="standard">Brienne</placeName>
+        <placeName type="variant">BRIENNE</placeName>
+        <placeName type="variant">Brienneo</placeName>
+        <placeName type="variant">Brinnum</placeName>
+        <placeName type="variant">Brienneus</placeName>
+        <location><geo>46.55694 5.02167</geo></location>
+        <country key="Q142">France</country>
+        <idno type="wikidata" cert="medium">Q1150168</idno>
+        <idno type="geonames">6450881</idno>
+        <note type="description">commune française du département de Saône-et-Loire</note>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0010</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q498869|Q732495|Q72595368</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000247" n="4">
+        <placeName type="main">Germania</placeName>
+        <placeName type="sort">Germania</placeName>
+        <placeName type="standard">Germania</placeName>
+        <placeName type="variant">Angermaniam</placeName>
+        <placeName type="variant">ANGERMANIA</placeName>
+        <country key="Q183">Allemagne</country>
+        <idno type="wikidata" cert="high">Q699945</idno>
+        <note type="description">compagnie aérienne allemande disparue</note>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0010</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q1514097|Q328257|Q2067231</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000252" n="4">
+        <placeName type="main">Ienicopiam</placeName>
+        <placeName type="sort">Ienicopiam</placeName>
+        <placeName type="variant">Lincopiam</placeName>
+        <placeName type="variant">Nicopiam</placeName>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000264" n="4">
+        <placeName type="main">Monti Briſiaco</placeName>
+        <placeName type="sort">Monti Briſiaco</placeName>
+        <placeName type="variant">Montem Briſiacum</placeName>
+        <placeName type="variant">Monte Briſiaco</placeName>
+        <placeName type="variant">MONS BRISIACVS</placeName>
+        <placeName type="variant">mons Brisiacus</placeName>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000275" n="4">
+        <placeName type="main">Riga</placeName>
+        <placeName type="sort">Riga</placeName>
+        <placeName type="standard">Riga</placeName>
+        <placeName type="variant">Rigam</placeName>
+        <placeName type="variant">Rigæ</placeName>
+        <location><geo>56.94750 24.10694</geo></location>
+        <country key="Q211">Lettonie</country>
+        <idno type="wikidata" cert="high">Q1773</idno>
+        <idno type="geonames">456172</idno>
+        <note type="description">capitale de la Lettonie</note>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0010</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q20727049|Q3494576|Q178382</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000291" n="3">
+        <placeName type="main">Amiſiam</placeName>
+        <placeName type="sort">Amiſiam</placeName>
+        <placeName type="variant">AMISIA</placeName>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000336" n="3">
+        <placeName type="main">Gaules</placeName>
+        <placeName type="sort">Gaule</placeName>
+        <placeName type="standard">Gaule</placeName>
+        <placeName type="variant">Les Gaules</placeName>
+        <placeName type="variant">Gaule</placeName>
+        <placeName type="variant">Gaule avoir</placeName>
+        <location><geo>46.50000 2.90000</geo></location>
+        <country key="Q142">France</country>
+        <idno type="wikidata" cert="high">Q38060</idno>
+        <note type="description">région de l'Europe antique</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0017|LIV0020|LIV0031_t2</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q106545515|Q273854|Q29977</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></place>
+      <place xml:id="place-000372" n="3">
+        <placeName type="main">Ratiſponam</placeName>
+        <placeName type="sort">Ratiſponam</placeName>
+        <placeName type="variant">Ratiſponæ</placeName>
+        <placeName type="variant">Ratiſpona</placeName>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000375" n="3">
+        <placeName type="main">Savoie</placeName>
+        <placeName type="sort">Savoie</placeName>
+        <placeName type="standard">Savoie</placeName>
+        <location><geo>45.58333 6.33333</geo></location>
+        <country key="Q142">France</country>
+        <idno type="wikidata" cert="high">Q12745</idno>
+        <idno type="geonames">2975517</idno>
+        <note type="description">département français numéro 73</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0007|LIV0008|LIV0019</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q37250400|Q426025|Q200229</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></place>
+      <place xml:id="place-000396" n="3">
+        <placeName type="main">Varſauiæque</placeName>
+        <placeName type="sort">Varſauiæque</placeName>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000398" n="3">
+        <placeName type="main">Viſtula</placeName>
+        <placeName type="sort">Vistula</placeName>
+        <placeName type="standard">Vistula</placeName>
+        <placeName type="variant">Viſtulæ</placeName>
+        <placeName type="variant">Viſtulam</placeName>
+        <placeName type="variant">uistula</placeName>
+        <location><geo>41.74920 -85.72810</geo></location>
+        <country key="Q30">États-Unis</country>
+        <idno type="wikidata" cert="high">Q7936498</idno>
+        <idno type="geonames">4927807</idno>
+        <note type="description">établissement humain, comté d'Elkhart, Indiana, États-Unis</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0010</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q548|Q9368933|Q2887520</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000399" n="3">
+        <placeName type="main">Vpſaliam</placeName>
+        <placeName type="sort">Vpſaliam</placeName>
+        <placeName type="variant">VESALIA</placeName>
+        <placeName type="variant">VPSALIA</placeName>
+        <placeName type="variant">upsalia</placeName>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000405" n="2">
+        <placeName type="main">Acacio</placeName>
+        <placeName type="sort">Acacio</placeName>
+        <placeName type="standard">Acacio</placeName>
+        <location><geo>24.84111 -102.78222</geo></location>
+        <country key="Q96">Mexique</country>
+        <idno type="wikidata" cert="medium">Q49845902</idno>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0020</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q15332145|Q37477480|Q2634123</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></place>
+      <place xml:id="place-000411" n="2">
+        <placeName type="main">Alſatia</placeName>
+        <placeName type="sort">Éditions Alsatia</placeName>
+        <placeName type="standard">Éditions Alsatia</placeName>
+        <placeName type="variant">Holſatiam</placeName>
+        <placeName type="variant">Holsatia</placeName>
+        <country key="Q142">France</country>
+        <idno type="wikidata" cert="high">Q13142475</idno>
+        <note type="description">maison d'édition</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q112402|Q107282500|Q38280</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000416" n="2">
+        <placeName type="main">Amſtelodamum</placeName>
+        <placeName type="sort">Amstelodamum</placeName>
+        <placeName type="variant">Amstelodamus</placeName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q727|Q9899|Q79504035</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000425" n="2">
+        <placeName type="main">Athénies</placeName>
+        <placeName type="sort">Athénies</placeName>
+        <placeName type="variant">Athènes</placeName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0020|LIV0025a</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></place>
+      <place xml:id="place-000432" n="2">
+        <placeName type="main">Barbarie</placeName>
+        <placeName type="sort">Barbarie</placeName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0020|LIV0025a</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></place>
+      <place xml:id="place-000444" n="2">
+        <placeName type="main">Boruſſiæ</placeName>
+        <placeName type="sort">Boruſſiæ</placeName>
+        <placeName type="variant">Borussia</placeName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000445" n="2">
+        <placeName type="main">BOTNIA Occidentalis</placeName>
+        <placeName type="sort">BOTNIA Occidentalis</placeName>
+        <placeName type="variant">Botnia Orientalis</placeName>
+        <placeName type="variant">Bothnia occidentalis</placeName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000480" n="2">
+        <placeName type="main">Comora</placeName>
+        <placeName type="sort">Comora</placeName>
+        <placeName type="variant">COMARA</placeName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q8460668|Q970|Q18113566</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000500" n="2">
+        <placeName type="main">Delphos</placeName>
+        <placeName type="sort">Dervio</placeName>
+        <placeName type="standard">Dervio</placeName>
+        <placeName type="variant">Delphi</placeName>
+        <location><geo>46.07639 9.30667</geo></location>
+        <country key="Q38">Italie</country>
+        <idno type="wikidata" cert="high">Q42933</idno>
+        <idno type="geonames">6541383</idno>
+        <note type="description">commune italienne</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010|LIV0032</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q768210|Q2673377|Q2322448</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000508" n="2">
+        <placeName type="main">Elbingam</placeName>
+        <placeName type="sort">Elbingam</placeName>
+        <placeName type="variant">ELBINGA</placeName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000516" n="2">
+        <placeName type="main">Flenſburgum</placeName>
+        <placeName type="sort">Flenſburgum</placeName>
+        <placeName type="variant">Flenſhurgum</placeName>
+        <placeName type="variant">Flenscurgus</placeName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000522" n="2">
+        <placeName type="main">GENVA</placeName>
+        <placeName type="sort">Genval</placeName>
+        <placeName type="standard">Genval</placeName>
+        <placeName type="variant">Genua</placeName>
+        <location><geo>50.72556 4.51528</geo></location>
+        <country key="Q31">Belgique</country>
+        <idno type="wikidata" cert="medium">Q2845873</idno>
+        <note type="description">gare ferroviaire belge</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010|LIV0011</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q2553167|Q4488861|Q481394</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000526" n="2">
+        <placeName type="main">GOTTORPIVM</placeName>
+        <placeName type="sort">GOTTORPIVM</placeName>
+        <placeName type="variant">Gottorp</placeName>
+        <placeName type="variant">Gontorpius</placeName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000532" n="2">
+        <placeName type="main">Hamburgum</placeName>
+        <placeName type="sort">Hambourg</placeName>
+        <placeName type="standard">Hambourg</placeName>
+        <placeName type="variant">Hambourg</placeName>
+        <placeName type="variant">Hamburgus</placeName>
+        <location><geo>53.55000 10.00000</geo></location>
+        <country key="Q12548">Saint-Empire romain germanique</country>
+        <idno type="wikidata" cert="high">Q1055</idno>
+        <idno type="geonames">2911297</idno>
+        <note type="description">ville et land (État fédéré) d'Allemagne</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q59640477|Q1626|Q1627</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000567" n="2">
+        <placeName type="main">Liuoniam</placeName>
+        <placeName type="sort">Liuoniam</placeName>
+        <placeName type="variant">LIVONIA</placeName>
+        <placeName type="variant">Liuonia</placeName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000572" n="2">
+        <placeName type="main">Lutetia Pariſiorum</placeName>
+        <placeName type="sort">Lutèce</placeName>
+        <placeName type="standard">Lutèce</placeName>
+        <placeName type="variant">Lutetiæ Pariſiorum</placeName>
+        <placeName type="variant">Lutetia Parisii</placeName>
+        <location><geo>48.85472 2.34750</geo></location>
+        <country key="Q1747689">Rome antique</country>
+        <idno type="wikidata" cert="high">Q270273</idno>
+        <note type="description">cité gallo-romaine, actuelle Paris</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q845625|Q19125464</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000580" n="2">
+        <placeName type="main">Mantua</placeName>
+        <placeName type="sort">Mantua</placeName>
+        <placeName type="standard">Mantua</placeName>
+        <placeName type="variant">MANTVA</placeName>
+        <location><geo>41.49750 -111.94222</geo></location>
+        <country key="Q30">États-Unis</country>
+        <idno type="wikidata" cert="high">Q483588</idno>
+        <idno type="geonames">5777881</idno>
+        <note type="description">établissement humain, comté de Box Elder, Utah, États-Unis</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q6247|Q2131270|Q37133739</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000605" n="2">
+        <placeName type="main">Montibelſigardo</placeName>
+        <placeName type="sort">Montibelſigardo</placeName>
+        <placeName type="variant">Montbeliard</placeName>
+        <placeName type="variant">Montbeliardi</placeName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000621" n="2">
+        <placeName type="main">Nuremberg</placeName>
+        <placeName type="sort">Nuremberg</placeName>
+        <placeName type="standard">Nuremberg</placeName>
+        <placeName type="variant">Nurember</placeName>
+        <location><geo>49.45389 11.07750</geo></location>
+        <country key="Q183">Allemagne</country>
+        <idno type="wikidata" cert="high">Q2090</idno>
+        <idno type="geonames">6556832</idno>
+        <note type="description">ville d'Allemagne</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010|LIV0023</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q248392|Q1181674|Q78909371</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000624" n="2">
+        <placeName type="main">Oppenhemio</placeName>
+        <placeName type="sort">Oppenhemio</placeName>
+        <placeName type="variant">Oppenhemium</placeName>
+        <placeName type="variant">Oppenhemius</placeName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000635" n="2">
+        <placeName type="main">Pernauiam</placeName>
+        <placeName type="sort">Pernauiam</placeName>
+        <placeName type="variant">PERNAVIA</placeName>
+        <placeName type="variant">Pernauia</placeName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000636" n="2">
+        <placeName type="main">Perse</placeName>
+        <placeName type="sort">Iran</placeName>
+        <placeName type="standard">Iran</placeName>
+        <location><geo>32.00000 53.00000</geo></location>
+        <country key="Q794">Iran</country>
+        <idno type="wikidata" cert="high">Q794</idno>
+        <idno type="geonames">130758</idno>
+        <note type="description">État d'Asie de l'Ouest</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0020|LIV0026a</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q9168|Q37224426|Q10511</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></place>
+      <place xml:id="place-000641" n="2">
+        <placeName type="main">Phéniicie</placeName>
+        <placeName type="sort">Phéniicie</placeName>
+        <placeName type="variant">Phenicie</placeName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></place>
+      <place xml:id="place-000645" n="2">
+        <placeName type="main">Piſtoia</placeName>
+        <placeName type="sort">Pistoia</placeName>
+        <placeName type="standard">Pistoia</placeName>
+        <location><geo>43.93333 10.91667</geo></location>
+        <country key="Q38">Italie</country>
+        <idno type="wikidata" cert="high">Q13376</idno>
+        <idno type="geonames">6541867</idno>
+        <note type="description">commune italienne</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q37196753|Q765790|Q42437</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000655" n="2">
+        <placeName type="main">Poſonij</placeName>
+        <placeName type="sort">Poſonij</placeName>
+        <placeName type="variant">POSONIVM</placeName>
+        <placeName type="variant">Posonius</placeName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000667" n="2">
+        <placeName type="main">Reualiam</placeName>
+        <placeName type="sort">Reualiam</placeName>
+        <placeName type="variant">REVALIA</placeName>
+        <placeName type="variant">Reualia</placeName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000701" n="2">
+        <placeName type="main">St Luc à</placeName>
+        <placeName type="sort">St Luc à</placeName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0001</note>
+      <noteGrp><note type="mentions" target="LIV0001.xml">La Perpétuelle croix</note></noteGrp></place>
+      <place xml:id="place-000727" n="2">
+        <placeName type="main">VERONA</placeName>
+        <placeName type="sort">Véronne</placeName>
+        <placeName type="standard">Véronne</placeName>
+        <placeName type="variant">Uerona</placeName>
+        <location><geo>44.73556 5.20861</geo></location>
+        <country key="Q142">France</country>
+        <idno type="wikidata" cert="high">Q314585</idno>
+        <idno type="geonames">6430268</idno>
+        <note type="description">commune française de la Drôme (-2024)</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q37452460|Q1087483|Q2028</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000736" n="2">
+        <placeName type="main">Vuladiſlauia</placeName>
+        <placeName type="sort">Vuladiſlauia</placeName>
+        <placeName type="variant">Vratiſlauiam</placeName>
+        <placeName type="variant">Uuladislauia</placeName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000757" n="1">
+        <placeName type="main">Abo</placeName>
+        <placeName type="sort">Abo</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000809" n="1">
+        <placeName type="main">Amſterdan</placeName>
+        <placeName type="sort">Amſterdan</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000822" n="1">
+        <placeName type="main">Apennini</placeName>
+        <placeName type="sort">Apennini</placeName>
+        <placeName type="variant">Apenninus</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000833" n="1">
+        <placeName type="main">Aremepncopain</placeName>
+        <placeName type="sort">Aremepncopain</placeName>
+        <placeName type="variant">Aremepncopaus</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000858" n="1">
+        <placeName type="main">Auguſtam Vindelicorum</placeName>
+        <placeName type="sort">Auguſtam Vindelicorum</placeName>
+        <placeName type="variant">Augusta Uindelici</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000868" n="1">
+        <placeName type="main">Auſtriæ</placeName>
+        <placeName type="sort">Auſtriæ</placeName>
+        <placeName type="variant">Austria</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000871" n="1">
+        <placeName type="main">Aſchaffenburgum</placeName>
+        <placeName type="sort">Aſchaffenburgum</placeName>
+        <placeName type="variant">Aschaferburgus</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000890" n="1">
+        <placeName type="main">Batauorum</placeName>
+        <placeName type="sort">Batauorum</placeName>
+        <placeName type="variant">Bataui</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000916" n="1">
+        <placeName type="main">Blonicoque</placeName>
+        <placeName type="sort">Blonicoque</placeName>
+        <placeName type="variant">Blonicus</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000921" n="1">
+        <placeName type="main">BOMMELIA</placeName>
+        <placeName type="sort">BOMMELIA</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000923" n="1">
+        <placeName type="main">BONONIA</placeName>
+        <placeName type="sort">BONONIA</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000925" n="1">
+        <placeName type="main">Borgum Nylandiæ oppidum</placeName>
+        <placeName type="sort">Borgum Nylandiæ oppidum</placeName>
+        <placeName type="variant">Borgus Nylandia oppidum</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000926" n="1">
+        <placeName type="main">BORGVS</placeName>
+        <placeName type="sort">BORGVS</placeName>
+        <placeName type="variant">Borrus</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000927" n="1">
+        <placeName type="main">BORM</placeName>
+        <placeName type="sort">BORM</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000934" n="1">
+        <placeName type="main">Brauuembergam</placeName>
+        <placeName type="sort">Brauuembergam</placeName>
+        <placeName type="variant">Brauuembergus</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000945" n="1">
+        <placeName type="main">Caffam</placeName>
+        <placeName type="sort">Caffam</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000971" n="1">
+        <placeName type="main">Capoue</placeName>
+        <placeName type="sort">Capoue</placeName>
+        <placeName type="variant">Capouer</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></place>
+      <place xml:id="place-000974" n="1">
+        <placeName type="main">Careliæ</placeName>
+        <placeName type="sort">Careliæ</placeName>
+        <placeName type="variant">Carelia</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000996" n="1">
+        <placeName type="main">Caſtro Gottorpij</placeName>
+        <placeName type="sort">Caſtro Gottorpij</placeName>
+        <placeName type="variant">Castrum Gottorpius</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-000998" n="1">
+        <placeName type="main">Cedron</placeName>
+        <placeName type="sort">Cedron</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0001</note>
+      <noteGrp><note type="mentions" target="LIV0001.xml">La Perpétuelle croix</note></noteGrp></place>
+      <place xml:id="place-001016" n="1">
+        <placeName type="main">Cheſtochovva</placeName>
+        <placeName type="sort">Cheſtochovva</placeName>
+        <placeName type="variant">Chestochouus</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001020" n="1">
+        <placeName type="main">Chypre</placeName>
+        <placeName type="sort">Chypre</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0019</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></place>
+      <place xml:id="place-001039" n="1">
+        <placeName type="main">CLAVSA</placeName>
+        <placeName type="sort">CLAVSA</placeName>
+        <placeName type="variant">Clausa</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001041" n="1">
+        <placeName type="main">Cloistres</placeName>
+        <placeName type="sort">Cloistres</placeName>
+        <placeName type="variant">cloître</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0001</note>
+      <noteGrp><note type="mentions" target="LIV0001.xml">La Perpétuelle croix</note></noteGrp></place>
+      <place xml:id="place-001046" n="1">
+        <placeName type="main">Codani ſinus</placeName>
+        <placeName type="sort">Codani ſinus</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001047" n="1">
+        <placeName type="main">COELO</placeName>
+        <placeName type="sort">COELO</placeName>
+        <placeName type="variant">Coelus</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001052" n="1">
+        <placeName type="main">COLMENSEC</placeName>
+        <placeName type="sort">COLMENSEC</placeName>
+        <placeName type="variant">Colmensis</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001066" n="1">
+        <placeName type="main">Copenhaguen</placeName>
+        <placeName type="sort">Copenhaguen</placeName>
+        <placeName type="variant">Copenhague</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001067" n="1">
+        <placeName type="main">Corfinium</placeName>
+        <placeName type="sort">Corfinium</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0019</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></place>
+      <place xml:id="place-001076" n="1">
+        <placeName type="main">Cracouia</placeName>
+        <placeName type="sort">Cracouia</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001079" n="1">
+        <placeName type="main">Crotone</placeName>
+        <placeName type="sort">Crotone</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></place>
+      <place xml:id="place-001080" n="1">
+        <placeName type="main">Cruſchuram</placeName>
+        <placeName type="sort">Cruſchuram</placeName>
+        <placeName type="variant">Cruschura</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001081" n="1">
+        <placeName type="main">Cruſuicia</placeName>
+        <placeName type="sort">Cruſuicia</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001084" n="1">
+        <placeName type="main">Cuprimontium</placeName>
+        <placeName type="sort">Cuprimontium</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001085" n="1">
+        <placeName type="main">Curlandiam</placeName>
+        <placeName type="sort">Curlandiam</placeName>
+        <placeName type="variant">Curlandia</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001095" n="1">
+        <placeName type="main">Danube</placeName>
+        <placeName type="sort">Danube</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></place>
+      <place xml:id="place-001096" n="1">
+        <placeName type="main">Danubium</placeName>
+        <placeName type="sort">Danubium</placeName>
+        <placeName type="variant">Danubius</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001099" n="1">
+        <placeName type="main">Delfſilio</placeName>
+        <placeName type="sort">Delfſilio</placeName>
+        <placeName type="variant">delifsilium</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001121" n="1">
+        <placeName type="main">Dublino</placeName>
+        <placeName type="sort">Dublino</placeName>
+        <placeName type="variant">Dublinus</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001141" n="1">
+        <placeName type="main">Ezuram</placeName>
+        <placeName type="sort">Ezuram</placeName>
+        <placeName type="variant">Ezuras</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001146" n="1">
+        <placeName type="main">Ferraria</placeName>
+        <placeName type="sort">Ferraria</placeName>
+        <placeName type="variant">ferrarius1</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001148" n="1">
+        <placeName type="main">Finningiam</placeName>
+        <placeName type="sort">Finningiam</placeName>
+        <placeName type="variant">finningia</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001149" n="1">
+        <placeName type="main">FINNONIA</placeName>
+        <placeName type="sort">FINNONIA</placeName>
+        <placeName type="variant">Finnonius</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001151" n="1">
+        <placeName type="main">Florentiæ</placeName>
+        <placeName type="sort">Florentiæ</placeName>
+        <placeName type="variant">florentia</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001165" n="1">
+        <placeName type="main">Francofurtum</placeName>
+        <placeName type="sort">Francofurtum</placeName>
+        <placeName type="variant">francofurtus</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001169" n="1">
+        <placeName type="main">Gabinio</placeName>
+        <placeName type="sort">Gabinio</placeName>
+        <placeName type="variant">Gabinius</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001187" n="1">
+        <placeName type="main">Gluſtadium</placeName>
+        <placeName type="sort">Gluſtadium</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001198" n="1">
+        <placeName type="main">Graudenſio</placeName>
+        <placeName type="sort">Graudenſio</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001200" n="1">
+        <placeName type="main">GRONINGA</placeName>
+        <placeName type="sort">GRONINGA</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001218" n="1">
+        <placeName type="main">Herbipolim Franconiæ</placeName>
+        <placeName type="sort">Herbipolim Franconiæ</placeName>
+        <placeName type="variant">Herbipolis Franconia</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001220" n="1">
+        <placeName type="main">Hernoſandia</placeName>
+        <placeName type="sort">Hernoſandia</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001227" n="1">
+        <placeName type="main">Holmiam</placeName>
+        <placeName type="sort">Holmiam</placeName>
+        <placeName type="variant">Holmia</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001253" n="1">
+        <placeName type="main">Indiæ</placeName>
+        <placeName type="sort">Indiæ</placeName>
+        <placeName type="variant">India</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001255" n="1">
+        <placeName type="main">Ingriam</placeName>
+        <placeName type="sort">Ingriam</placeName>
+        <placeName type="variant">ingrius</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001267" n="1">
+        <placeName type="main">Iſaram</placeName>
+        <placeName type="sort">Iſaram</placeName>
+        <placeName type="variant">Isara</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001329" n="1">
+        <placeName type="main">LAVRETVM</placeName>
+        <placeName type="sort">LAVRETVM</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001354" n="1">
+        <placeName type="main">Liburnum</placeName>
+        <placeName type="sort">Liburnum</placeName>
+        <placeName type="variant">Liburnus</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001382" n="1">
+        <placeName type="main">LVBECA</placeName>
+        <placeName type="sort">LVBECA</placeName>
+        <placeName type="variant">Lubela</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001397" n="1">
+        <placeName type="main">Magontinum</placeName>
+        <placeName type="sort">Magontinum</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001398" n="1">
+        <placeName type="main">MAGVNTIACVM</placeName>
+        <placeName type="sort">MAGVNTIACVM</placeName>
+        <placeName type="variant">Maguntiacum</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001426" n="1">
+        <placeName type="main">Mekelburgum</placeName>
+        <placeName type="sort">Mekelburgum</placeName>
+        <placeName type="variant">Merelburgus</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001427" n="1">
+        <placeName type="main">Melerum lacum</placeName>
+        <placeName type="sort">Melerum lacum</placeName>
+        <placeName type="variant">Melerus lacus</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001429" n="1">
+        <placeName type="main">Memelium</placeName>
+        <placeName type="sort">Memelium</placeName>
+        <placeName type="variant">Memelius</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001430" n="1">
+        <placeName type="main">MEMELIVM</placeName>
+        <placeName type="sort">MEMELIVM</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001433" n="1">
+        <placeName type="main">Messal</placeName>
+        <placeName type="sort">Messal</placeName>
+        <placeName type="variant">messalla</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></place>
+      <place xml:id="place-001435" n="1">
+        <placeName type="main">Millakulam</placeName>
+        <placeName type="sort">Millakulam</placeName>
+        <placeName type="variant">millaculum</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001439" n="1">
+        <placeName type="main">Mitauuiana arce</placeName>
+        <placeName type="sort">Mitauuiana arce</placeName>
+        <placeName type="variant">Mitauuianus arx</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001445" n="1">
+        <placeName type="main">MODESTIA</placeName>
+        <placeName type="sort">MODESTIA</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001449" n="1">
+        <placeName type="main">MONACHIVM</placeName>
+        <placeName type="sort">MONACHIVM</placeName>
+        <placeName type="variant">Monachius</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001465" n="1">
+        <placeName type="main">MONS BELLIGARDVS</placeName>
+        <placeName type="sort">MONS BELLIGARDVS</placeName>
+        <placeName type="variant">mons Belligardus</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001473" n="1">
+        <placeName type="main">Monte Fiaſcone</placeName>
+        <placeName type="sort">Monte Fiaſcone</placeName>
+        <placeName type="variant">mons fiasco</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001481" n="1">
+        <placeName type="main">mt Odge</placeName>
+        <placeName type="sort">mt Odge</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0001</note>
+      <noteGrp><note type="mentions" target="LIV0001.xml">La Perpétuelle croix</note></noteGrp></place>
+      <place xml:id="place-001484" n="1">
+        <placeName type="main">Munich</placeName>
+        <placeName type="sort">Munich</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001486" n="1">
+        <placeName type="main">Muntpelgard</placeName>
+        <placeName type="sort">Muntpelgard</placeName>
+        <placeName type="variant">muntelgo</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001497" n="1">
+        <placeName type="main">Mœnum</placeName>
+        <placeName type="sort">Mœnum</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001498" n="1">
+        <placeName type="main">Mœnum in Franconia</placeName>
+        <placeName type="sort">Mœnum in Franconia</placeName>
+        <placeName type="variant">moenus in Franconia</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001509" n="1">
+        <placeName type="main">Nemetum</placeName>
+        <placeName type="sort">Nemetum</placeName>
+        <placeName type="variant">Nemetes</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001518" n="1">
+        <placeName type="main">Niumeghen</placeName>
+        <placeName type="sort">Niumeghen</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001521" n="1">
+        <placeName type="main">Norimberga</placeName>
+        <placeName type="sort">Norimberga</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001524" n="1">
+        <placeName type="main">Nouiomago Nemetum</placeName>
+        <placeName type="sort">Nouiomago Nemetum</placeName>
+        <placeName type="variant">Nouiomagus Nemetes</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001527" n="1">
+        <placeName type="main">Oberbartauia</placeName>
+        <placeName type="sort">Oberbartauia</placeName>
+        <placeName type="variant">oberbartauis</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001531" n="1">
+        <placeName type="main">Oldenburgum</placeName>
+        <placeName type="sort">Oldenburgum</placeName>
+        <placeName type="variant">Olderburgus</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001548" n="1">
+        <placeName type="main">Ouer Iſſel</placeName>
+        <placeName type="sort">Ouer Iſſel</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001564" n="1">
+        <placeName type="main">PANNONIA</placeName>
+        <placeName type="sort">PANNONIA</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001568" n="1">
+        <placeName type="main">PARISII</placeName>
+        <placeName type="sort">PARISII</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001608" n="1">
+        <placeName type="main">Piſas</placeName>
+        <placeName type="sort">Piſas</placeName>
+        <placeName type="variant">Pisae</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001618" n="1">
+        <placeName type="main">Ploena</placeName>
+        <placeName type="sort">Ploena</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001620" n="1">
+        <placeName type="main">Polangen</placeName>
+        <placeName type="sort">Polangen</placeName>
+        <placeName type="variant">Polanges</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001621" n="1">
+        <placeName type="main">Polonga Samogitiæ</placeName>
+        <placeName type="sort">Polonga Samogitiæ</placeName>
+        <placeName type="variant">Polonga Samogitia</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001628" n="1">
+        <placeName type="main">Pontificiam</placeName>
+        <placeName type="sort">Pontificiam</placeName>
+        <placeName type="variant">pontificius</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001644" n="1">
+        <placeName type="main">PRAGA</placeName>
+        <placeName type="sort">PRAGA</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001645" n="1">
+        <placeName type="main">Presbourg</placeName>
+        <placeName type="sort">Presbourg</placeName>
+        <placeName type="variant">presbourus</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001670" n="1">
+        <placeName type="main">RAVA</placeName>
+        <placeName type="sort">RAVA</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001741" n="1">
+        <placeName type="main">Salam flumen</placeName>
+        <placeName type="sort">Salam flumen</placeName>
+        <placeName type="variant">salus flumen</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001763" n="1">
+        <placeName type="main">Saïs</placeName>
+        <placeName type="sort">Saïs</placeName>
+        <placeName type="variant">saiss</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></place>
+      <place xml:id="place-001766" n="1">
+        <placeName type="main">SCRACHICOVVIA</placeName>
+        <placeName type="sort">SCRACHICOVVIA</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001767" n="1">
+        <placeName type="main">Scrachiſchouia</placeName>
+        <placeName type="sort">Scrachiſchouia</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001779" n="1">
+        <placeName type="main">Sequanos</placeName>
+        <placeName type="sort">Sequanos</placeName>
+        <placeName type="variant">Sequani</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001788" n="1">
+        <placeName type="main">Shertogenberg</placeName>
+        <placeName type="sort">Shertogenberg</placeName>
+        <placeName type="variant">Shertogenbir</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001792" n="1">
+        <placeName type="main">Sileſiam</placeName>
+        <placeName type="sort">Sileſiam</placeName>
+        <placeName type="variant">Silesia</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001800" n="1">
+        <placeName type="main">Smnalaiidia</placeName>
+        <placeName type="sort">Smnalaiidia</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001808" n="1">
+        <placeName type="main">Stockholm</placeName>
+        <placeName type="sort">Stockholm</placeName>
+        <placeName type="variant">Stocchol</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001810" n="1">
+        <placeName type="main">Sudermaniæ</placeName>
+        <placeName type="sort">Sudermaniæ</placeName>
+        <placeName type="variant">Sudermania</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001851" n="1">
+        <placeName type="main">Theut Naruam</placeName>
+        <placeName type="sort">Theut Naruam</placeName>
+        <placeName type="variant">Theut Narua</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001877" n="1">
+        <placeName type="main">Torunio</placeName>
+        <placeName type="sort">Torunio</placeName>
+        <placeName type="variant">Torunius</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001888" n="1">
+        <placeName type="main">Tribunat</placeName>
+        <placeName type="sort">Tribunat</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></place>
+      <place xml:id="place-001914" n="1">
+        <placeName type="main">Valtigouia</placeName>
+        <placeName type="sort">Valtigouia</placeName>
+        <placeName type="variant">Ualtigouia</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001919" n="1">
+        <placeName type="main">VENETIÆ</placeName>
+        <placeName type="sort">VENETIÆ</placeName>
+        <placeName type="variant">Uenetia</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001923" n="1">
+        <placeName type="main">Verceil</placeName>
+        <placeName type="sort">Verceil</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></place>
+      <place xml:id="place-001924" n="1">
+        <placeName type="main">VESONTIO</placeName>
+        <placeName type="sort">VESONTIO</placeName>
+        <placeName type="variant">Uesontius</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001928" n="1">
+        <placeName type="main">Vetteri lacus</placeName>
+        <placeName type="sort">Vetteri lacus</placeName>
+        <placeName type="variant">ueto lacus</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001930" n="1">
+        <placeName type="main">Viburgo</placeName>
+        <placeName type="sort">Viburgo</placeName>
+        <placeName type="variant">uiburgo</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001931" n="1">
+        <placeName type="main">VICENTIA</placeName>
+        <placeName type="sort">VICENTIA</placeName>
+        <placeName type="variant">Uicyntia</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001932" n="1">
+        <placeName type="main">VIELISCA</placeName>
+        <placeName type="sort">VIELISCA</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001933" n="1">
+        <placeName type="main">Vieliſcæ</placeName>
+        <placeName type="sort">Vieliſcæ</placeName>
+        <placeName type="variant">uieliscus</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001940" n="1">
+        <placeName type="main">VINDOBONA</placeName>
+        <placeName type="sort">VINDOBONA</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001941" n="1">
+        <placeName type="main">Vindobonam</placeName>
+        <placeName type="sort">Vindobonam</placeName>
+        <placeName type="variant">Uindobones</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001945" n="1">
+        <placeName type="main">Vmæ</placeName>
+        <placeName type="sort">Vmæ</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001946" n="1">
+        <placeName type="main">Vormacia</placeName>
+        <placeName type="sort">Vormacia</placeName>
+        <placeName type="variant">uormacia</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001949" n="1">
+        <placeName type="main">Vrbs</placeName>
+        <placeName type="sort">Vrbs</placeName>
+        <placeName type="variant">urbs</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001954" n="1">
+        <placeName type="main">Vvien</placeName>
+        <placeName type="sort">Vvien</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001963" n="1">
+        <placeName type="main">Zeeland</placeName>
+        <placeName type="sort">Zeeland</placeName>
+        <placeName type="variant">Zeelas</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-001965" n="1">
+        <placeName type="main">ÀBBESSE</placeName>
+        <placeName type="sort">ÀBBESSE</placeName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0001</note>
+      <noteGrp><note type="mentions" target="LIV0001.xml">La Perpétuelle croix</note></noteGrp></place>
+      <place xml:id="place-001998" n="0">
+        <placeName type="main">Bieneburgus</placeName>
+        <placeName type="sort">Bieneburgus</placeName>
+        <note type="mentions">0</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-002019" n="0">
+        <placeName type="main">ExDion</placeName>
+        <placeName type="sort">ExDion</placeName>
+        <note type="mentions">0</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></place>
+      <place xml:id="place-002029" n="0">
+        <placeName type="main">Halic</placeName>
+        <placeName type="sort">Halic</placeName>
+        <note type="mentions">0</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></place>
+      <place xml:id="place-002048" n="0">
+        <placeName type="main">Medelpadia</placeName>
+        <placeName type="sort">Medelpadia</placeName>
+        <note type="mentions">0</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      <place xml:id="place-002052" n="0">
+        <placeName type="main">Morauia</placeName>
+        <placeName type="sort">Morauia</placeName>
+        <note type="mentions">0</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></place>
+      </listPlace>
+    </body>
+  </text>
 </TEI>

@@ -4,19 +4,19 @@
     exclude-result-prefixes="xs"
     version="2.0">
     <xsl:template name="tabulator_dl_buttons">
-        <h4>Download Table</h4>
+        <h4>Télécharger le tableau</h4>
         <div class="button-group">
-            <button type="button" class="btn btn-outline-secondary" id="download-csv" title="Download CSV">
+            <button type="button" class="btn btn-outline-secondary" id="download-csv" title="Télécharger en CSV">
                 <i class="bi bi-filetype-csv"></i>
-                <span class="visually-hidden">Download CSV</span>
+                <span class="visually-hidden">Télécharger en CSV</span>
             </button>
-            <button type="button" class="btn btn-outline-secondary" id="download-json" title="Download JSON">
+            <button type="button" class="btn btn-outline-secondary" id="download-json" title="Télécharger en JSON">
                 <i class="bi bi-filetype-json"></i>
-                <span class="visually-hidden">Download JSON</span>
+                <span class="visually-hidden">Télécharger en JSON</span>
             </button>
-            <button type="button" class="btn btn-outline-secondary" id="download-html" title="Download HTML">
+            <button type="button" class="btn btn-outline-secondary" id="download-html" title="Télécharger en HTML">
                 <i class="bi bi-filetype-html"></i>
-                <span class="visually-hidden">Download HTML</span>
+                <span class="visually-hidden">Télécharger en HTML</span>
             </button>
         </div>
     </xsl:template>

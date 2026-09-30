@@ -13,14 +13,14 @@ const map_cfg = {
   min_zoom: "2",
   /* zoom level for a place on the map focused by clicking the corresponding row */
   on_row_click_zoom: 10,
-  initial_coordinates: [47.0708, 15.4386],
+  initial_coordinates: [48.8566, 2.3522],
   base_map_url:
     "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
   /* some map providers need subdomains */
   subdomains: "abcd",
   attribution:
     '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors & <a href="https://carto.com/attributions">CARTO</a>',
-  base_map_label: "Aktuelle Karte"
+  base_map_label: "Carte actuelle"
 };
 
 /*provide a list of your table columns and what tabulator should do with it
@@ -30,14 +30,14 @@ const columns = [
     provide a string val in your html-table */
   {
     headerFilter: "input",
-    title: "Ortsname",
+    title: "Nom du lieu",
     field: "Ortsname",
     formatter: linkToDetailView,
     resizable: true,
   },
   {
     headerFilter: "input",
-    title: "Erwähnungen",
+    title: "Documents",
     field: "mentions",
     formatter: "plaintext",
     resizable: true,
@@ -86,7 +86,7 @@ const langs = {
     pagination: {
       counter: {
         showing: "",
-        of: "of",
+        of: "sur",
         rows: "",
       },
     },
@@ -139,7 +139,7 @@ let wms_cfg = {
 };
 
 let tms_cfg = {
-  label: "Europa um 1700",
+  label: "Europe vers 1700",
   tms_url: "https://emt-project.github.io/mapserver/map_01/{z}/{x}/{y}.png",
   layerOptions: {tms: 1, opacity: 0.8, minZoom: 2, maxZoom: 12, attribution: "Austrian National Library (ÖNB)"},
 }

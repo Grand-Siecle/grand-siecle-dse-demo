@@ -13,11 +13,12 @@
     <xsl:import href="./partials/tabulator_js.xsl"/>
     <xsl:import href="./partials/blockquote.xsl"/>
     <xsl:import href="./partials/zotero.xsl"/>
+    <xsl:import href="./partials/doc_meta.xsl"/>
     <xsl:output encoding="UTF-8" media-type="text/html" method="html" version="5.0" indent="yes" omit-xml-declaration="yes"/>
 
 
     <xsl:template match="/">
-        <xsl:variable name="doc_title" select="'Inhaltsverzeichnis'"/>
+        <xsl:variable name="doc_title" select="'Table des matières'"/>
         <xsl:variable name="link" select="'toc.html'"/>
         <html class="h-100" lang="{$default_lang}">
             <head>
@@ -47,39 +48,39 @@
                     </nav>
                     <div class="container">
                         <h1><xsl:value-of select="$doc_title"/></h1>
+                        <p>Cinq imprimés du XVII<sup>e</sup> siècle, transcrits et annotés par le projet Grand Siècle (UNIL). Chaque document est publié page par page, avec le fac-similé Gallica.</p>
                         <table id="myTable">
                             <thead>
                                 <tr>
                                     <th scope="col" width="20" tabulator-formatter="html" tabulator-headerSort="false" tabulator-download="false">#</th>
-                                    <th scope="col" tabulator-headerFilter="input">Titel</th>
-                                    <th scope="col" tabulator-headerFilter="input">Dateinname</th>
+                                    <th scope="col" tabulator-headerFilter="input">Titre</th>
+                                    <th scope="col" tabulator-headerFilter="input">Auteur</th>
+                                    <th scope="col" tabulator-headerFilter="input">Date</th>
+                                    <th scope="col" tabulator-headerFilter="input">Langues</th>
+                                    <th scope="col" tabulator-sorter="number">Pages</th>
+                                    <th scope="col" tabulator-headerFilter="input">Fichier</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <xsl:for-each
-                                    select="collection('../data/editions?select=*.xml')//tei:TEI">
-                                    <xsl:variable name="full_path">
-                                        <xsl:value-of select="document-uri(/)"/>
-                                    </xsl:variable>
+                                <xsl:for-each select="collection('../data/editions?select=*.xml')//tei:TEI">
+                                    <xsl:sort select="tokenize(document-uri(/), '/')[last()]"/>
+                                    <xsl:variable name="file" select="tokenize(document-uri(/), '/')[last()]"/>
                                     <tr>
                                         <td>
-                                            <a>
-                                                <xsl:attribute name="href">
-                                                  <xsl:value-of
-                                                  select="replace(tokenize($full_path, '/')[last()], '.xml', '.html')"
-                                                  />
-                                                </xsl:attribute>
+                                            <a href="{replace($file, '\.xml$', '.html')}">
                                                 <i class="bi bi-link-45deg"/>
                                             </a>
                                         </td>
                                         <td>
-                                            <xsl:value-of
-                                                select=".//tei:titleStmt/tei:title[1]/text()"/>
+                                            <a href="{replace($file, '\.xml$', '.html')}">
+                                                <xsl:value-of select="normalize-space(tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[1])"/>
+                                            </a>
                                         </td>
-                                        <td>
-                                            <xsl:value-of select="tokenize($full_path, '/')[last()]"
-                                            />
-                                        </td>
+                                        <td><xsl:call-template name="doc_author"><xsl:with-param name="tei" select="."/></xsl:call-template></td>
+                                        <td><xsl:call-template name="doc_date"><xsl:with-param name="tei" select="."/></xsl:call-template></td>
+                                        <td><xsl:call-template name="doc_languages"><xsl:with-param name="tei" select="."/></xsl:call-template></td>
+                                        <td><xsl:call-template name="doc_page_count"><xsl:with-param name="tei" select="."/></xsl:call-template></td>
+                                        <td><xsl:value-of select="$file"/></td>
                                     </tr>
                                 </xsl:for-each>
                             </tbody>

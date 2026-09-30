@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project basedir="." name="tei2html">
+    <!-- Grand Siecle: data/editions and data/indices are produced by pyscripts/import_data.py.
+         Removed from the template: search.html (Typesense server hosted by ACDH) and
+         noske-search.html (NoSketchEngine hosted by ACDH). data/imprint.xml is a local file
+         instead of the ACDH imprint service (shellscripts/dl_imprint.sh). -->
     <property name="index" value="./data/meta/about.xml"/>
     <property name="target" value="./html"/>
     <property name="target_xml" value="./html/xml-view"/>
@@ -23,14 +27,6 @@
         <classpath location="${basedir}/saxon/saxon9he.jar"/>
     </xslt>
     <xslt in="${index}" out="${target}/toc.html" style="./xslt/toc.xsl">
-        <factory name="net.sf.saxon.TransformerFactoryImpl"/>
-        <classpath location="${basedir}/saxon/saxon9he.jar"/>
-    </xslt>
-    <xslt in="${index}" out="${target}/search.html" style="./xslt/search.xsl">
-        <factory name="net.sf.saxon.TransformerFactoryImpl"/>
-        <classpath location="${basedir}/saxon/saxon9he.jar"/>
-    </xslt>
-    <xslt in="${index}" out="${target}/noske-search.html" style="./xslt/noske-search.xsl">
         <factory name="net.sf.saxon.TransformerFactoryImpl"/>
         <classpath location="${basedir}/saxon/saxon9he.jar"/>
     </xslt>

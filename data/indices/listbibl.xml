@@ -1,128 +1,331 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title type="main">Werkverzeichnis</title>
-            </titleStmt>
-            <publicationStmt>
-                <p/>
-            </publicationStmt>
-            <sourceDesc>
-                <p>born digital</p>
-            </sourceDesc>
-        </fileDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <div><listBibl><bibl xml:id="lk_fackel__96" corresp="https://fackel.oeaw.ac.at/f/601,077" type="fackel"><title level="a">Für die Neue Freie Presse existiert keine
-                  Judenfrage</title><title level="s">Die Fackel</title><author key="pmb11988">Karl
-                  Kraus</author><editor key="pmb11988">Karl Kraus</editor><date when-iso="1922-11-01">November 1922</date><num type="volume">Jg. 24</num><num type="issue">Nr. 601–607</num><biblScope from="77" to="81">77–81</biblScope><ref target="https://fackel.oeaw.ac.at/f/601,077">2.3 Privatanklage von Karl Kraus
-                  gegen Reichspost (verantw. Red. Karl Schiffleitner) wegen Verweigerung einer
-                  Berichtigung|D_000002-003-000.xml</ref><ref target="https://fackel.oeaw.ac.at/f/601,077">2.9 Berufungsausführung des
-                  Privatanklägers|D_000002-009-000.xml</ref><ref target="https://fackel.oeaw.ac.at/f/601,077">2.10 Urteil des Landesgerichts in
-                  Strafsachen I. Wien (G.Z. Bl XV 121/23, Vorsitz: Rudolf
-                  Wessely)|D_000002-010-000.xml</ref><ref target="https://fackel.oeaw.ac.at/f/601,077">2.2 Brief Samek an Reichspost
-                  (verantw. Red. Karl Schiffleitner)|D_000002-002-000.xml</ref><noteGrp><note target="D_000002-003-000.xml" type="mentions">2.3 Privatanklage von Karl Kraus gegen Reichspost (verantw. Red. Karl Schiffleitner) wegen Verweigerung einer Berichtigung</note></noteGrp></bibl>
-            <bibl xml:id="pmb62248">
-  <title type="main">Preisschrift über die Grundlage der Moral, nicht gekrönt von der königlich dänischen Sozietät der Wissenschaften</title>
-  <author key="person__5787" role="hat-geschaffen">Schopenhauer, Arthur</author>
-<date notBefore-iso="1841-01-01" when-iso="1841-07-02">1841</date>
-  <idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/62248/</idno>
-  <idno type="URL" subtype="legalkraus">https://kraus.wienbibliothek.at/register/werke/pmb62248</idno>
-<note type="collections">
-  <bibl type="collections" n="5">legalkraus</bibl>
-</note>
-  <note type="work_kind">Philosophische Abhandlung</note>
-<noteGrp><note target="D_000002-003-000.xml" type="mentions">2.3 Privatanklage von Karl Kraus gegen Reichspost (verantw. Red. Karl Schiffleitner) wegen Verweigerung einer Berichtigung</note></noteGrp></bibl><bibl xml:id="pmb41244">
-  <title type="main">Die Fackel</title>
-  <title type="werk_link">https://fackel.oeaw.ac.at</title>
-  <author key="person__11988" role="hat-herausgegeben">Kraus, Karl</author>
-  <author key="person__10364" role="hat-einen-beitrag-geschaffen-zu">Viertel, Berthold</author>
-  <author key="person__11230" role="hat-einen-beitrag-geschaffen-zu">Ehrenstein, Albert</author>
-  <author key="person__12438" role="hat-einen-beitrag-geschaffen-zu">Adam, Robert</author>
-  <author key="person__10574" role="hat-einen-beitrag-geschaffen-zu">Wittels, Fritz</author>
-<date from-iso="1899-01-01" to-iso="1899-12-31">1899  – 1936</date>
-  <idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/apis/api2/entity/41244/</idno>
-  <idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/41244</idno>
-  <idno type="URL" subtype="schnitzler-briefe">https://schnitzler-briefe.acdh.oeaw.ac.at/pages/hits.html?searchkey=pmb41244</idno>
-  <idno type="URL" subtype="schnitzler-tagebuch">https://schnitzler-tagebuch.acdh.oeaw.ac.at/pmb41244.html</idno>
-  <idno type="URL" subtype="legalkraus">https://kraus.wienbibliothek.at/register/werke/pmb41244</idno>
-<note type="collections">
-  <bibl type="collections" n="3">Manuell angelegt</bibl>
-  <bibl type="collections" n="5">legalkraus</bibl>
-</note>
-  <note type="work_kind">Publikationsorgan &gt;&gt; Zeitschrift</note>
-<noteGrp><note target="D_000002-003-000.xml" type="mentions">2.3 Privatanklage von Karl Kraus gegen Reichspost (verantw. Red. Karl Schiffleitner) wegen Verweigerung einer Berichtigung</note></noteGrp></bibl><bibl xml:id="pmb58510">
-  <title type="main">Theodor Herzl’s Tagebücher. 1895–1904</title>
-  <title type="werk_link">https://sammlungen.ub.uni-frankfurt.de/freimann/urn/urn:nbn:de:hebis:30:1-146009</title>
-  <author key="person__11673" role="hat-geschaffen">Herzl, Theodor</author>
-<date notBefore-iso="1922-01-01" when-iso="1922-07-02">1922</date>
-  <idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/58510/</idno>
-  <idno type="URL" subtype="schnitzler-tagebuch">https://schnitzler-tagebuch.acdh.oeaw.ac.at/pmb58510.html</idno>
-  <idno type="URL" subtype="legalkraus">https://kraus.wienbibliothek.at/register/werke/pmb58510</idno>
-<note type="collections">
-  <bibl type="collections" n="3">Manuell angelegt</bibl>
-  <bibl type="collections" n="5">legalkraus</bibl>
-</note>
-  <note type="work_kind">Tagebuch</note>
-<noteGrp><note target="D_000002-003-000.xml" type="mentions">2.3 Privatanklage von Karl Kraus gegen Reichspost (verantw. Red. Karl Schiffleitner) wegen Verweigerung einer Berichtigung</note></noteGrp></bibl><bibl xml:id="pmb36374">
-  <title type="main">Neue Freie Presse</title>
-  <title type="werk_link-anno">http://anno.onb.ac.at/cgi-content/anno?aid=nfp</title>
-  <author key="person__10875" role="hat-herausgegeben">Benedikt, Moriz</author>
-  <author key="person__10872" role="hat-herausgegeben">Benedikt, Ernst</author>
-  <author key="person__10809" role="hat-herausgegeben">Bacher, Eduard</author>
-<date from-iso="1864-01-01" to-iso="1864-12-31">1864  – 1939</date>
-  <idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/apis/api2/entity/36374/</idno>
-  <idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/36374</idno>
-  <idno type="URL" subtype="schnitzler-briefe">https://schnitzler-briefe.acdh.oeaw.ac.at/pages/hits.html?searchkey=pmb36374</idno>
-  <idno type="URL" subtype="legalkraus">https://kraus.wienbibliothek.at/register/werke/pmb36374</idno>
-<note type="collections">
-  <bibl type="collections" n="3">Manuell angelegt</bibl>
-  <bibl type="collections" n="5">legalkraus</bibl>
-</note>
-  <note type="work_kind">Publikationsorgan &gt;&gt; Tageszeitung</note>
-<noteGrp><note target="D_000002-003-000.xml" type="mentions">2.3 Privatanklage von Karl Kraus gegen Reichspost (verantw. Red. Karl Schiffleitner) wegen Verweigerung einer Berichtigung</note></noteGrp></bibl><bibl xml:id="lk_fackel__95" corresp="https://fackel.oeaw.ac.at/f/601,001" type="fackel"><title level="a">Vom großen Welttheaterschwindel</title><title level="s">Die
-                  Fackel</title><author key="pmb11988">Karl Kraus</author><editor key="pmb11988">Karl Kraus</editor><date when-iso="1922-11-01">November 1922</date><num type="volume">Jg. 24</num><num type="issue">Nr. 601–607</num><biblScope from="1" to="7">1–7</biblScope><ref target="https://fackel.oeaw.ac.at/f/601,001">2.3
-                  Privatanklage von Karl Kraus gegen Reichspost (verantw. Red. Karl Schiffleitner)
-                  wegen Verweigerung einer Berichtigung|D_000002-003-000.xml</ref><ref target="https://fackel.oeaw.ac.at/f/601,005">2.3 Privatanklage von Karl Kraus
-                  gegen Reichspost (verantw. Red. Karl Schiffleitner) wegen Verweigerung einer
-                  Berichtigung|D_000002-003-000.xml</ref><ref target="https://fackel.oeaw.ac.at/f/601,004">2.3 Privatanklage von Karl Kraus
-                  gegen Reichspost (verantw. Red. Karl Schiffleitner) wegen Verweigerung einer
-                  Berichtigung|D_000002-003-000.xml</ref><ref target="https://fackel.oeaw.ac.at/f/601,001">2.10 Urteil des Landesgerichts in
-                  Strafsachen I. Wien (G.Z. Bl XV 121/23, Vorsitz: Rudolf
-                  Wessely)|D_000002-010-000.xml</ref><ref target="https://fackel.oeaw.ac.at/f/601,003">2.3 Privatanklage von Karl Kraus
-                  gegen Reichspost (verantw. Red. Karl Schiffleitner) wegen Verweigerung einer
-                  Berichtigung|D_000002-003-000.xml</ref><ref target="https://fackel.oeaw.ac.at/f/601,001">2.2 Brief Samek an Reichspost
-                  (verantw. Red. Karl Schiffleitner)|D_000002-002-000.xml</ref><ref target="https://fackel.oeaw.ac.at/f/601,001">2.4 Urteil des Strafbezirksgerichts I
-                  Wien (G.Z. U I 3/23/4, Richter: Christoph Höflmayr, Verteidiger: Heinrich
-                  Foglar-Deinhardstein)|D_000002-004-000.xml</ref><noteGrp><note target="D_000002-003-000.xml" type="mentions">2.3 Privatanklage von Karl Kraus gegen Reichspost (verantw. Red. Karl Schiffleitner) wegen Verweigerung einer Berichtigung</note></noteGrp></bibl>
-            <bibl xml:id="pmb42850">
-  <title type="main">Reichspost</title>
-  <title type="werk_link">http://anno.onb.ac.at/cgi-content/anno?aid=rpt</title>
-  <author key="person__53731" role="hat-herausgegeben">Funder, Friedrich</author>
-<date from-iso="1893-01-01" to-iso="1893-12-31">1893  – 1938</date>
-  <idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/apis/api2/entity/42850/</idno>
-  <idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/42850</idno>
-  <idno type="URL" subtype="schnitzler-briefe">https://schnitzler-briefe.acdh.oeaw.ac.at/pages/hits.html?searchkey=pmb42850</idno>
-  <idno type="URL" subtype="legalkraus">https://kraus.wienbibliothek.at/register/werke/pmb42850</idno>
-<note type="collections">
-  <bibl type="collections" n="3">Manuell angelegt</bibl>
-  <bibl type="collections" n="5">legalkraus</bibl>
-</note>
-  <note type="work_kind">Publikationsorgan &gt;&gt; Tageszeitung</note>
-<noteGrp><note target="D_000002-003-000.xml" type="mentions">2.3 Privatanklage von Karl Kraus gegen Reichspost (verantw. Red. Karl Schiffleitner) wegen Verweigerung einer Berichtigung</note></noteGrp></bibl><bibl xml:id="pmb62204">
-  <title type="main">Ein Kreislauf</title>
-  <title type="werk_bibliografische-angabe">EIn Kreislauf, in:  Reichspost Nr. 319, 19.11.1922 (Morgenblatt), S. 3.</title>
-  <title type="werk_link-anno">https://anno.onb.ac.at/cgi-content/anno?aid=rpt&amp;datum=19221129&amp;seite=3</title>
-<date>1922-11-29  – 1922-11-29</date>
-  <idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/62204/</idno>
-  <idno type="URL" subtype="legalkraus">https://kraus.wienbibliothek.at/register/werke/pmb62204</idno>
-<note type="collections">
-  <bibl type="collections" n="5">legalkraus</bibl>
-</note>
-  <note type="work_kind">Zeitungsbericht</note>
-<noteGrp><note target="D_000002-003-000.xml" type="mentions">2.3 Privatanklage von Karl Kraus gegen Reichspost (verantw. Red. Karl Schiffleitner) wegen Verweigerung einer Berichtigung</note></noteGrp></bibl><bibl xml:id="pmb29823"><title>Das Märchen. Schauspiel in drei Aufzügen</title><note type="bibliografische_angabe">Arthur Schnitzler: Das Märchen. Schauspiel in drei Aufzügen. Dresden, Leipzig: E. Pierson’s Verlag 1894.</note><note type="uri_worklink">https://babel.hathitrust.org/cgi/pt?id=coo.31924026341598&amp;view=1up&amp;seq=5</note><author ref="#pmbperson__2121" role="hat-geschaffen">Schnitzler, Arthur</author><date>1891  – 1891</date><idno type="URL" subtype="asaf">https://asaf.com/S.04.01.04</idno><idno type="URL" subtype="wikidata">https://www.wikidata.org/wiki/Q1169917</idno><idno type="URL" subtype="theadok">https://theadok.at/work/38151</idno><idno type="URL" subtype="books">https://books.google.at/books?id=eUc8AQAAMAAJ&amp;q=arthur+schnitzler+das+märchen&amp;dq=arthur+schnitzler+das+märchen&amp;hl=de&amp;sa=X&amp;ved=0ahUKEwjWwoD61YTgAhVLFCwKHfC-ApQQ6AEIKTAA</idno><idno type="URL" subtype="bahrschnitzler">https://bahrschnitzler.acdh.oeaw.ac.at/entity/pmb29823</idno><idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/29823</idno><idno type="URL" subtype="schnitzler-briefe">https://schnitzler-briefe.acdh.oeaw.ac.at/pages/hits.html?searchkey=pmb29823</idno><idno type="URL" subtype="schnitzler-tagebuch">https://schnitzler-tagebuch.acdh.oeaw.ac.at/pmb29823.html</idno><note type="work_kind">Drama &gt;&gt; Mehraktiges Drama</note><noteGrp><note target="L041464.xml" type="mentions">Hugo von Hofmannsthal an Hermann Bahr, [23./24. 11. 1891]</note></noteGrp></bibl><bibl xml:id="pmb31261"><title>Neue Bücher. III. Hermann Bahr’s Russische Reise</title><author ref="#pmbperson__4804" role="hat-geschaffen">Hansson, Ola</author><date when="1891-11-01">01.11.1891</date><idno type="URL" subtype="books">https://books.google.at/books?redir_esc=y&amp;hl=de&amp;id=DgEDAAAAIAAJ&amp;focus=searchwithinvolume&amp;q=ola#v=onepage&amp;q&amp;f=false</idno><idno type="URL" subtype="bahrschnitzler">https://bahrschnitzler.acdh.oeaw.ac.at/entity/pmb31261</idno><idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/31261</idno><note type="work_kind">Text</note><noteGrp><note target="L041464.xml" type="mentions">Hugo von Hofmannsthal an Hermann Bahr, [23./24. 11. 1891]</note></noteGrp></bibl></listBibl></div>
-        </body>
-    </text>
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Œuvres</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Projet Grand Siècle (UNIL) — démonstration DSE</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Extrait des registres d'autorité du projet, réduit aux entités citées par les 5 documents de la démonstration.</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listBibl><bibl xml:id="work-000003" n="27">
+        <title type="main">Rhétorique</title>
+        <title type="standard">Rhétorique</title>
+        <title type="variant">Rlétorique</title>
+        <title type="variant">Rhétoriques</title>
+        <title type="variant">Rhhétorique</title>
+        <title type="variant">harRhétorique</title>
+        <author key="Q868">Aristote</author>
+        <textLang key="Q35497">grec ancien</textLang>
+        <note type="genre" key="Q384515">traité</note>
+        <idno type="wikidata" cert="high">Q1896045</idno>
+        <note type="description">œuvre d'Aristote</note>
+        <note type="mentions">27</note>
+        <note type="sources">LIV0012|LIV0020|LIV0026a|LIV0027|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q104730361|Q1973998|Q3302759</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></bibl>
+      <bibl xml:id="work-000004" n="14">
+        <title type="main">Grammaire</title>
+        <note type="mentions">14</note>
+        <note type="sources">LIV0012|LIV0015|LIV0017|LIV0019|LIV0020|LIV0025b</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></bibl>
+      <bibl xml:id="work-000006" n="13">
+        <title type="main">Oraison</title>
+        <title type="standard">Oraison</title>
+        <title type="variant">L’oraison</title>
+        <note type="genre" key="Q40953">prière</note>
+        <idno type="wikidata" cert="high">Q3355021</idno>
+        <note type="description">call to prayer</note>
+        <note type="mentions">13</note>
+        <note type="sources">LIV0002b|LIV0006|LIV0015|LIV0020</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q501501|Q125407141|Q5110313</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></bibl>
+      <bibl xml:id="work-000010" n="9">
+        <title type="main">Romans</title>
+        <title type="standard">Épître aux Romains</title>
+        <title type="variant">roman</title>
+        <author key="Q9200">Paul de Tarse</author>
+        <note type="genre" key="Q215495">épître</note>
+        <idno type="wikidata" cert="high">Q48203</idno>
+        <note type="description">livre du Nouveau Testament</note>
+        <note type="mentions">9</note>
+        <note type="sources">LIV0009|LIV0015|LIV0020|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q613120|Q1344108|Q239078</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></bibl>
+      <bibl xml:id="work-000013" n="7">
+        <title type="main">Poésie</title>
+        <title type="standard">poésie lyrique</title>
+        <title type="variant">La Poesie</title>
+        <title type="variant">poestique</title>
+        <title type="variant">poéèsie</title>
+        <title type="variant">poessie</title>
+        <note type="genre" key="Q3326349">lyrisme</note>
+        <idno type="wikidata" cert="medium">Q182357</idno>
+        <note type="description">genre littéraire</note>
+        <note type="mentions">7</note>
+        <note type="sources">LIV0015|LIV0017|LIV0019|LIV0025a|LIV0026a</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q482|Q3236984|Q19530246</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></bibl>
+      <bibl xml:id="work-000015" n="6">
+        <title type="main">Cantiques</title>
+        <title type="standard">Cantiques</title>
+        <title type="variant">Cantique</title>
+        <title type="variant">cartique</title>
+        <date type="publication" when="1947-01-01"/>
+        <idno type="wikidata" cert="high">Q5455847</idno>
+        <note type="description">compositions (5) de Benjamin Britten</note>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0001|LIV0026b|LIV0026c|LIV0028</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q2509255|Q6176502|Q1705521</note>
+      <noteGrp><note type="mentions" target="LIV0001.xml">La Perpétuelle croix</note></noteGrp></bibl>
+      <bibl xml:id="work-000022" n="6">
+        <title type="main">vers</title>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0004a|LIV0015|LIV0017</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q1625766|Q781817|Q621</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></bibl>
+      <bibl xml:id="work-000037" n="4">
+        <title type="main">Homère</title>
+        <title type="standard">Homère</title>
+        <note type="genre" key="Q37484">épopée</note>
+        <idno type="wikidata" cert="high">Q6691</idno>
+        <note type="description">poète épique de la Grèce antique, auteur de l’Illiade et de l’Odyssée</note>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0019|LIV0026a|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q65557968|Q49126008|Q11710021</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></bibl>
+      <bibl xml:id="work-000044" n="4">
+        <title type="main">Remarques</title>
+        <title type="standard">Notes critiques sur la question nationale</title>
+        <title type="variant">remarque</title>
+        <author key="Q1394">Lénine</author>
+        <textLang key="Q7737">russe</textLang>
+        <idno type="wikidata" cert="medium">Q6045549</idno>
+        <note type="description">livre de Vladimir Lenin</note>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0019</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q64706686|Q19227288|Q64706617</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></bibl>
+      <bibl xml:id="work-000063" n="3">
+        <title type="main">Éloquence</title>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0020|LIV0027</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q1489271|Q2109598|Q5367195</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></bibl>
+      <bibl xml:id="work-000076" n="2">
+        <title type="main">Conjouislance</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0001</note>
+      <noteGrp><note type="mentions" target="LIV0001.xml">La Perpétuelle croix</note></noteGrp></bibl>
+      <bibl xml:id="work-000080" n="2">
+        <title type="main">Dialogue</title>
+        <title type="standard">Dialogue</title>
+        <date type="publication" when="1999-02-01"/>
+        <textLang key="Q22282939">pas de contenu linguistique</textLang>
+        <note type="genre" key="Q205560">trip hop</note>
+        <idno type="wikidata" cert="medium">Q427392</idno>
+        <note type="description">album de Four Tet</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0017</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q131395|Q3025978|Q5270595</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></bibl>
+      <bibl xml:id="work-000082" n="2">
+        <title type="main">Dialéctique</title>
+        <title type="standard">Dialectique</title>
+        <author key="Q4295">Pierre Abélard</author>
+        <textLang key="Q397">latin</textLang>
+        <note type="genre" key="Q35760">essai</note>
+        <idno type="wikidata" cert="high">Q3706551</idno>
+        <note type="description">œuvre de Pierre Abélard</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0017</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q9453|Q1974273|Q1208415</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></bibl>
+      <bibl xml:id="work-000083" n="2">
+        <title type="main">discours</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0020|LIV0026a</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q861911|Q190539|Q15054354</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></bibl>
+      <bibl xml:id="work-000095" n="2">
+        <title type="main">Hyperboles</title>
+        <title type="variant">hyperbole</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0019</note>
+        <note type="reconciliation-confidence">low</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></bibl>
+      <bibl xml:id="work-000114" n="2">
+        <title type="main">Morale</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0020</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q37556145|Q6023513|Q48324</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></bibl>
+      <bibl xml:id="work-000123" n="2">
+        <title type="main">Philosophie</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0020|LIV0025b</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q5891|Q9471|Q179805</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></bibl>
+      <bibl xml:id="work-000128" n="2">
+        <title type="main">Politique</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0019|LIV0020</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q7163|Q1156854|Q1519812</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></bibl>
+      <bibl xml:id="work-000132" n="2">
+        <title type="main">Préface</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0019</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q670787|Q1345079|Q110824375</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></bibl>
+      <bibl xml:id="work-000134" n="2">
+        <title type="main">Rhétorique Française</title>
+        <title type="variant">rhétorique franceois</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0012|LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></bibl>
+      <bibl xml:id="work-000137" n="2">
+        <title type="main">Topiques</title>
+        <title type="standard">Topiques</title>
+        <title type="variant">topique</title>
+        <author key="Q868">Aristote</author>
+        <textLang key="Q35497">grec ancien</textLang>
+        <note type="genre" key="Q384515">traité</note>
+        <idno type="wikidata" cert="high">Q1095335</idno>
+        <note type="description">œuvre d'Aristote</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0020</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q112175088</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></bibl>
+      <bibl xml:id="work-000150" n="1">
+        <title type="main">ACTIS ET EPISTOLIS</title>
+        <title type="variant">Actius et2 Epistolius</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></bibl>
+      <bibl xml:id="work-000158" n="1">
+        <title type="main">Argumentum</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></bibl>
+      <bibl xml:id="work-000169" n="1">
+        <title type="main">CARMEN.</title>
+        <title type="variant">Carmes</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></bibl>
+      <bibl xml:id="work-000173" n="1">
+        <title type="main">Ciceromastix</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></bibl>
+      <bibl xml:id="work-000175" n="1">
+        <title type="main">composition</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></bibl>
+      <bibl xml:id="work-000203" n="1">
+        <title type="main">Décalogue</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0019</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></bibl>
+      <bibl xml:id="work-000204" n="1">
+        <title type="main">Démphène</title>
+        <title type="variant">Démosthène</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></bibl>
+      <bibl xml:id="work-000213" n="1">
+        <title type="main">Grammaire solœciâmes</title>
+        <title type="variant">grammaire sollisme</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></bibl>
+      <bibl xml:id="work-000215" n="1">
+        <title type="main">Géographie</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></bibl>
+      <bibl xml:id="work-000227" n="1">
+        <title type="main">Je Ciel</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0019</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></bibl>
+      <bibl xml:id="work-000229" n="1">
+        <title type="main">Jronies</title>
+        <title type="variant">ironie</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></bibl>
+      <bibl xml:id="work-000236" n="1">
+        <title type="main">Lettre</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0019</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></bibl>
+      <bibl xml:id="work-000283" n="1">
+        <title type="main">Poésie Hébraïque</title>
+        <title type="variant">poewsie hébraïeque</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0019</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></bibl>
+      <bibl xml:id="work-000289" n="1">
+        <title type="main">Pseaumes</title>
+        <title type="variant">psaume</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0019</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></bibl>
+      <bibl xml:id="work-000293" n="1">
+        <title type="main">Romulo</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></bibl>
+      <bibl xml:id="work-000304" n="1">
+        <title type="main">Tapisseries</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0019</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></bibl>
+      <bibl xml:id="work-000307" n="1">
+        <title type="main">Thehonnêtes</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0019</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></bibl>
+      <bibl xml:id="work-000312" n="1">
+        <title type="main">Tragédies</title>
+        <title type="variant">tragédie</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></bibl>
+      <bibl xml:id="work-000314" n="1">
+        <title type="main">Tropes</title>
+        <title type="variant">trope</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></bibl>
+      </listBibl>
+    </body>
+  </text>
 </TEI>

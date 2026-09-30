@@ -3,7 +3,9 @@
 html/*.xml
 html/beacon.txt
 /html/oai-pmh
-data/imprint.xml
+# data/imprint.xml is a local file (see build.xml)
+# large prepared TEI: regenerate with `uv run pyscripts/import_data.py`
+data/editions/*.xml
 
 
 # Byte-compiled / optimized / DLL files

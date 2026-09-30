@@ -1,92 +1,267 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title type="main">Werkverzeichnis</title>
-            </titleStmt>
-            <publicationStmt>
-                <p/>
-            </publicationStmt>
-            <sourceDesc>
-                <p>born digital</p>
-            </sourceDesc>
-        </fileDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <div><listOrg><org xml:id="pmb50491">
-  <orgName>Strafbezirksgericht I</orgName>
-  <orgName type="wien-geschichte-wiki">https://www.geschichtewiki.wien.gv.at/Bezirksgericht_Josefstadt</orgName>
-  <orgName type="legacy-name-merge">Strafbezirksgericht</orgName>
-  <desc type="entity_type">Gericht</desc>
-  <desc type="entity_type_id">1037</desc>
-<location type="located_in_place">
-  <placeName key="pmb58">VIII., Josefstadt</placeName>
-  <geo>48.21126 16.34706</geo>
-  <note type="IDNO" subtype="geonames">http://sws.geonames.org/2775027/</note>
-  <note type="IDNO" subtype="pmb">http://pmb.acdh.oeaw.ac.at/apis/api2/entity/15566/</note>
-  <note type="IDNO" subtype="gnd">https://d-nb.info/gnd/4108158-4</note>
-  <note type="IDNO" subtype="schnitzler-bahr">https://schnitzler-bahr.acdh.oeaw.ac.at/pmb58.html</note>
-  <note type="IDNO" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/58</note>
-  <note type="IDNO" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/15566</note>
-  <note type="IDNO" subtype="schnitzler-briefe">https://schnitzler-briefe.acdh.oeaw.ac.at/pages/hits.html?searchkey=pmb58</note>
-  <note type="IDNO" subtype="legalkraus">https://kraus.wienbibliothek.at/register/orte/pmb58</note>
-  <note type="IDNO" subtype="schnitzler-tagebuch">https://schnitzler-tagebuch.acdh.oeaw.ac.at/pmb58.html</note>
-  <note type="IDNO" subtype="wikidata">https://www.wikidata.org/entity/Q256778</note>
-</location>
-<location type="located_in_place">
-  <placeName key="pmb50664">Schiffamtsgasse</placeName>
-  <geo>48.218669 16.373101</geo>
-  <note type="IDNO" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/50664/</note>
-  <note type="IDNO" subtype="legalkraus">https://kraus.wienbibliothek.at/register/orte/pmb50664</note>
-</location>
-  <idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/apis/api2/entity/36877/</idno>
-  <idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/36877</idno>
-  <idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/50491/</idno>
-  <idno type="URL" subtype="legalkraus">https://kraus.wienbibliothek.at/register/institutionen/pmb50491</idno>
-<listBibl>
-    <bibl type="collections" n="5">legalkraus</bibl>
-</listBibl>
-<noteGrp><note target="D_000002-003-000.xml" type="mentions">2.3 Privatanklage von Karl Kraus gegen Reichspost (verantw. Red. Karl Schiffleitner) wegen Verweigerung einer Berichtigung</note></noteGrp></org><org xml:id="pmb29637">
-  <orgName>Reichspost</orgName>
-  <orgName type="werk_link-anno">http://anno.onb.ac.at/info/rpt_info.htm</orgName>
-  <desc type="entity_type">Tageszeitungsredaktion</desc>
-  <desc type="entity_type_id">972</desc>
-<location type="located_in_place">
-  <placeName key="pmb50">Wien</placeName>
-  <geo>48.2066 16.37341</geo>
-  <note type="IDNO" subtype="geonames">https://sws.geonames.org/2761369/</note>
-  <note type="IDNO" subtype="pmb">http://pmb.acdh.oeaw.ac.at/apis/api2/entity/2316/</note>
-  <note type="IDNO" subtype="pmb">http://pmb.acdh.oeaw.ac.at/apis/api2/entity/20954/</note>
-  <note type="IDNO" subtype="gnd">https://d-nb.info/gnd/4066009-6</note>
-  <note type="IDNO" subtype="schnitzler-bahr">https://schnitzler-bahr.acdh.oeaw.ac.at/pmb50.html</note>
-  <note type="IDNO" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/50</note>
-  <note type="IDNO" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/2316</note>
-  <note type="IDNO" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/20954</note>
-  <note type="IDNO" subtype="schnitzler-briefe">https://schnitzler-briefe.acdh.oeaw.ac.at/pages/hits.html?searchkey=pmb50</note>
-  <note type="IDNO" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/65221/</note>
-  <note type="IDNO" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/65223/</note>
-  <note type="IDNO" subtype="legalkraus">https://kraus.wienbibliothek.at/register/orte/pmb50</note>
-  <note type="IDNO" subtype="schnitzler-tagebuch">https://schnitzler-tagebuch.acdh.oeaw.ac.at/pmb50.html</note>
-  <note type="IDNO" subtype="wikidata">https://www.wikidata.org/entity/Q1741</note>
-</location>
-<location type="located_in_place">
-  <placeName key="pmb50653">Strozzigasse</placeName>
-  <geo>48.20702 16.349371</geo>
-  <note type="IDNO" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/50653/</note>
-  <note type="IDNO" subtype="legalkraus">https://kraus.wienbibliothek.at/register/orte/pmb50653</note>
-</location>
-  <idno type="URL" subtype="schnitzler-bahr">https://schnitzler-bahr.acdh.oeaw.ac.at/pmb29637.html</idno>
-  <idno type="URL" subtype="pmb">https://pmb.acdh.oeaw.ac.at/entity/29637</idno>
-  <idno type="URL" subtype="legalkraus">https://kraus.wienbibliothek.at/register/institutionen/pmb29637</idno>
-  <idno type="URL" subtype="wikidata">https://www.wikidata.org/wiki/Q2139624</idno>
-<listBibl>
-    <bibl type="collections" n="1">ASBW</bibl>
-    <bibl type="collections" n="2">Erster Import</bibl>
-    <bibl type="collections" n="5">legalkraus</bibl>
-</listBibl>
-<noteGrp><note target="D_000002-003-000.xml" type="mentions">2.3 Privatanklage von Karl Kraus gegen Reichspost (verantw. Red. Karl Schiffleitner) wegen Verweigerung einer Berichtigung</note></noteGrp></org></listOrg></div>
-        </body>
-    </text>
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Organisations</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Projet Grand Siècle (UNIL) — démonstration DSE</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Extrait des registres d'autorité du projet, réduit aux entités citées par les 5 documents de la démonstration.</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listOrg><org xml:id="org-000009" n="51">
+        <orgName type="main">Sénat</orgName>
+        <orgName type="sort">Sénat des États-Unis</orgName>
+        <orgName type="standard">Sénat des États-Unis</orgName>
+        <orgName type="variant">Sénats</orgName>
+        <event type="foundation"><date when="1789"/></event>
+        <idno type="wikidata" cert="high">Q66096</idno>
+        <idno type="viaf">129637095</idno>
+        <idno type="isni">0000000405077242</idno>
+        <idno type="gnd">1020979-7</idno>
+        <note type="description">chambre haute du Congrès des États-Unis</note>
+        <note type="mentions">51</note>
+        <note type="sources">LIV0004a|LIV0014|LIV0017|LIV0024|LIV0025a|LIV0027|LIV0031_t1|LIV0031_t2</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q215987|Q855343|Q389423</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></org>
+      <org xml:id="org-000015" n="26">
+        <orgName type="main">Jurisconsultes</orgName>
+        <orgName type="sort">jurisconsulte</orgName>
+        <orgName type="standard">jurisconsulte</orgName>
+        <orgName type="variant">iurisconsultes</orgName>
+        <orgName type="variant">jurisconsulte</orgName>
+        <idno type="wikidata" cert="medium">Q2664701</idno>
+        <note type="description">personne ayant une grande maitrise du droit et de la jurisprudence et prodiguant des conseils en la matière</note>
+        <note type="mentions">26</note>
+        <note type="sources">LIV0012|LIV0015|LIV0020|LIV0025a|LIV0025b|LIV0026a</note>
+        <note type="reconciliation-confidence">medium</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></org>
+      <org xml:id="org-000024" n="18">
+        <orgName type="main">République</orgName>
+        <orgName type="sort">République du Congo</orgName>
+        <orgName type="standard">République du Congo</orgName>
+        <orgName type="variant">la République</orgName>
+        <orgName type="variant">république romain</orgName>
+        <event type="foundation"><date when="1960-01-01"/></event>
+        <idno type="wikidata" cert="medium">Q971</idno>
+        <idno type="viaf">173167475</idno>
+        <idno type="isni">0000000123242385</idno>
+        <idno type="gnd">4032097-2</idno>
+        <note type="description">pays d'Afrique centrale, dont la capitale est Brazzaville, indépendant depuis 1960</note>
+        <note type="mentions">18</note>
+        <note type="sources">LIV0012|LIV0014|LIV0020|LIV0022|LIV0025b</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q183|Q148|Q668</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></org>
+      <org xml:id="org-000031" n="13">
+        <orgName type="main">Lacédémoniens</orgName>
+        <orgName type="sort">Spartiates</orgName>
+        <orgName type="variant">Les Lacédémoniens</orgName>
+        <orgName type="variant">Lacedemohiens</orgName>
+        <orgName type="variant">lacédémonien</orgName>
+        <note type="mentions">13</note>
+        <note type="sources">LIV0014|LIV0018|LIV0020|LIV0025a|LIV0026a|LIV0028</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q3215917</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></org>
+      <org xml:id="org-000041" n="9">
+        <orgName type="main">Compagnie</orgName>
+        <orgName type="sort">compagnie</orgName>
+        <orgName type="standard">compagnie</orgName>
+        <idno type="wikidata" cert="high">Q783794</idno>
+        <idno type="gnd">4231694-7</idno>
+        <note type="description">association de personnes individuelles réelles et/ou d'autres sociétés</note>
+        <note type="mentions">9</note>
+        <note type="sources">LIV0003|LIV0004a|LIV0015|LIV0019</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q6881511|Q36380|Q102538</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></org>
+      <org xml:id="org-000050" n="8">
+        <orgName type="main">armée</orgName>
+        <orgName type="sort">armée</orgName>
+        <orgName type="standard">armée</orgName>
+        <orgName type="variant">armées</orgName>
+        <orgName type="variant">armèée</orgName>
+        <idno type="wikidata" cert="high">Q8473</idno>
+        <idno type="gnd">4039305-7</idno>
+        <note type="description">groupe armé agissant au nom d'une société</note>
+        <note type="mentions">8</note>
+        <note type="sources">LIV0015|LIV0020|LIV0031_t2</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q37726|Q222595|Q9212</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></org>
+      <org xml:id="org-000057" n="8">
+        <orgName type="main">Stoiciens</orgName>
+        <orgName type="sort">stoïcisme</orgName>
+        <orgName type="standard">stoïcisme</orgName>
+        <orgName type="variant">Stoicies</orgName>
+        <orgName type="variant">stoïcien</orgName>
+        <orgName type="variant">stoïécien</orgName>
+        <orgName type="variant">stoïscien</orgName>
+        <event type="foundation"><date when="-0300"/></event>
+        <idno type="wikidata" cert="high">Q48235</idno>
+        <idno type="gnd">4077910-5</idno>
+        <note type="description">courant philosophique</note>
+        <note type="mentions">8</note>
+        <note type="sources">LIV0017|LIV0020|LIV0026a|LIV0026c|LIV0028</note>
+        <note type="reconciliation-confidence">high</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></org>
+      <org xml:id="org-000116" n="4">
+        <orgName type="main">Peripateticiens</orgName>
+        <orgName type="sort">Peripateticiens</orgName>
+        <orgName type="variant">péripatéticien</orgName>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0017|LIV0020|LIV0028</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></org>
+      <org xml:id="org-000130" n="3">
+        <orgName type="main">Academies</orgName>
+        <orgName type="sort">Société royale du Canada</orgName>
+        <orgName type="standard">Société royale du Canada</orgName>
+        <orgName type="variant">académique</orgName>
+        <orgName type="variant">académie</orgName>
+        <event type="foundation"><date when="1882"/></event>
+        <idno type="wikidata" cert="medium">Q94301</idno>
+        <idno type="viaf">159113084</idno>
+        <idno type="isni">0000000110343590</idno>
+        <idno type="gnd">37845-8</idno>
+        <note type="description">plus ancien organisme national bilingue regroupant les plus éminents universitaires, humanistes, scientifiques et artistes canadiens</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0017|LIV0031_t1</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q955824|Q3233780|Q16058015</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></org>
+      <org xml:id="org-000168" n="3">
+        <orgName type="main">Privilège du Roi</orgName>
+        <orgName type="sort">Privilège du Roi</orgName>
+        <orgName type="variant">privilège de_le roi</orgName>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0003|LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></org>
+      <org xml:id="org-000172" n="3">
+        <orgName type="main">Rhéteurs</orgName>
+        <orgName type="sort">Rhéteurs</orgName>
+        <orgName type="variant">rhéteur</orgName>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0017|LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></org>
+      <org xml:id="org-000201" n="2">
+        <orgName type="main">Architectes</orgName>
+        <orgName type="sort">architecte</orgName>
+        <orgName type="standard">architecte</orgName>
+        <orgName type="variant">Les Architectes</orgName>
+        <orgName type="variant">architecte</orgName>
+        <orgName type="variant">le architecte</orgName>
+        <idno type="wikidata" cert="high">Q42973</idno>
+        <idno type="gnd">4002844-6</idno>
+        <note type="description">créateur artistique et technique d'un bâtiment</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0020|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q2860249|Q6335683|Q754679</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></org>
+      <org xml:id="org-000302" n="2">
+        <orgName type="main">Pythagoriens</orgName>
+        <orgName type="sort">Pythagoriens</orgName>
+        <orgName type="variant">pythagorien</orgName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></org>
+      <org xml:id="org-000341" n="1">
+        <orgName type="main">Academie des morts</orgName>
+        <orgName type="sort">Academie des morts</orgName>
+        <orgName type="variant">académie de_le mort</orgName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></org>
+      <org xml:id="org-000357" n="1">
+        <orgName type="main">Apôtresyrie éléison</orgName>
+        <orgName type="sort">Apôtresyrie éléison</orgName>
+        <orgName type="variant">kyrie eleison</orgName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0001</note>
+      <noteGrp><note type="mentions" target="LIV0001.xml">La Perpétuelle croix</note></noteGrp></org>
+      <org xml:id="org-000359" n="1">
+        <orgName type="main">aragnées</orgName>
+        <orgName type="sort">aragnées</orgName>
+        <orgName type="variant">aragnèée</orgName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></org>
+      <org xml:id="org-000369" n="1">
+        <orgName type="main">avocats</orgName>
+        <orgName type="sort">avocats</orgName>
+        <orgName type="variant">avocat</orgName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></org>
+      <org xml:id="org-000404" n="1">
+        <orgName type="main">Chtiste éléison</orgName>
+        <orgName type="sort">Chtiste éléison</orgName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0001</note>
+      <noteGrp><note type="mentions" target="LIV0001.xml">La Perpétuelle croix</note></noteGrp></org>
+      <org xml:id="org-000413" n="1">
+        <orgName type="main">Compagnie de JEsvs</orgName>
+        <orgName type="sort">Compagnie de JEsvs</orgName>
+        <orgName type="variant">compagnie de Iesvs</orgName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0001</note>
+      <noteGrp><note type="mentions" target="LIV0001.xml">La Perpétuelle croix</note></noteGrp></org>
+      <org xml:id="org-000421" n="1">
+        <orgName type="main">CoNRART</orgName>
+        <orgName type="sort">CoNRART</orgName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></org>
+      <org xml:id="org-000453" n="1">
+        <orgName type="main">Démocraties</orgName>
+        <orgName type="sort">Démocraties</orgName>
+        <orgName type="variant">démocratie</orgName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></org>
+      <org xml:id="org-000542" n="1">
+        <orgName type="main">Matelots</orgName>
+        <orgName type="sort">Matelots</orgName>
+        <orgName type="variant">matelot</orgName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0019</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></org>
+      <org xml:id="org-000563" n="1">
+        <orgName type="main">Oratoire</orgName>
+        <orgName type="sort">Oratoire</orgName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></org>
+      <org xml:id="org-000621" n="1">
+        <orgName type="main">République des lettres</orgName>
+        <orgName type="sort">République des lettres</orgName>
+        <orgName type="variant">république de_le lettre</orgName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></org>
+      <org xml:id="org-000670" n="1">
+        <orgName type="main">Égyptiens</orgName>
+        <orgName type="sort">Égyptiens</orgName>
+        <orgName type="variant">égyptien</orgName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></org>
+      <org xml:id="org-000674" n="1">
+        <orgName type="main">éoliers</orgName>
+        <orgName type="sort">éoliers</orgName>
+        <orgName type="variant">écolier</orgName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></org>
+      </listOrg>
+    </body>
+  </text>
 </TEI>

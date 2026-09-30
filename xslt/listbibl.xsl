@@ -58,9 +58,9 @@
                             <thead>
                                 <tr>
                                     <th scope="col" width="20" tabulator-formatter="html" tabulator-headerSort="false" tabulator-download="false">#</th>
-                                    <th scope="col" tabulator-headerFilter="input">Titel</th>
-                                    <th scope="col" tabulator-headerFilter="input">Autor</th>
-                                    <th scope="col" tabulator-headerFilter="input">Datum</th>
+                                    <th scope="col" tabulator-headerFilter="input">Titre</th>
+                                    <th scope="col" tabulator-headerFilter="input">Auteur</th>
+                                    <th scope="col" tabulator-headerFilter="input">Langue</th>
                                     <th scope="col" tabulator-headerFilter="input">ID</th>
                                 </tr>
                             </thead>
@@ -85,7 +85,7 @@
                                             <xsl:value-of select=".//tei:author[1]//text()"/>
                                         </td>
                                         <td>
-                                            <xsl:value-of select=".//tei:date[1]/text()"/>
+                                            <xsl:value-of select="./tei:textLang[1]"/>
                                         </td>
                                         <td>
                                             <xsl:value-of select="$id"/>

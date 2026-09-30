@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Local replacement for the ACDH imprint service (shellscripts/dl_imprint.sh in the template). -->
+<root>
+    <div lang="fr">
+        <p>Démonstration technique non publique réalisée pour le projet <strong>Grand Siècle</strong> (Université de Lausanne – UNIL, Université de Genève – UNIGE).</p>
+        <p>Textes et registres : projet Grand Siècle, licence <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a>. Fac-similés : Bibliothèque nationale de France, Gallica (IIIF).</p>
+        <p>Site produit avec le gabarit <a href="https://github.com/acdh-oeaw/dse-static-cookiecutter">dse-static-cookiecutter</a> de l'ACDH (licence MIT).</p>
+    </div>
+</root>

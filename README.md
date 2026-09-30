@@ -6,29 +6,18 @@
 
 ## initial (one time) setup
 
-* run `./shellscripts/dl_imprint.sh`
+The source data (raw TEI + registers of the Grand Siècle project) are not in this repo.
+`data/editions/*.xml` (16 MB, prepared TEI) is gitignored and regenerated from them:
 
-* run `ant`
+* `uv run pyscripts/import_data.py --src /path/to/grand-siecle-max-statique/data`
+  (default: `$GS_SOURCE_DATA`, then `../grand-siecle-max-statique/data`) — writes
+  `data/editions/` (5 TEI, one `pb` per printed page, `sourceDoc` removed) and
+  `data/indices/` (persons, places, orgs, works cited by the 5 texts)
+* run `ant` — one HTML page per printed page (`html/{ID}-page-{n}.html`), 888 in total
+* `uv run pyscripts/check_links.py html` — checks internal links
 
-> [!NOTE]
-> The `build.xml` triggered by the `ant` command presumes the following folder-file structure in the data repo:
-> 
-> ```
-> data/
-> ├── editions/
-> │   ├── *.xml
-> │   ├── *.xml
-> │   └── *.xml
-> ├── indices/
-> │   ├── listbibl.xml
-> │   ├── listorg.xml
-> │   ├── listperson.xml
-> │   └── listplace.xml
-> └── meta/
->     └── about.xml
-> ```
-> 
-> Otherwise, modify the relevant lines of the `build.xml`.
+Differences from the template: no ACDH imprint download (`data/imprint.xml` is local),
+no Typesense search page, no NoSketchEngine page.
 
 ## set up GitHub repo
 * create a public, new, and empty (without README, .gitignore, license) GitHub repo https://github.com/Grand-Siecle/grand-siecle-dse 

@@ -12,7 +12,7 @@
     <xsl:output encoding="UTF-8" media-type="text/html" method="html" version="5.0" indent="yes" omit-xml-declaration="yes"/>
 
     <xsl:template match="/">
-        <xsl:variable name="doc_title" select="'Impressum'"/>
+        <xsl:variable name="doc_title" select="'Mentions légales'"/>
         <html class="h-100" lang="{$default_lang}">
             <head>
                 <xsl:call-template name="html_head">

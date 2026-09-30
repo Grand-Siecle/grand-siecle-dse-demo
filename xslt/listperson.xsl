@@ -58,8 +58,10 @@
                             <thead>
                                 <tr>
                                     <th scope="col" width="20" tabulator-formatter="html" tabulator-headerSort="false" tabulator-download="false">#</th>
-                                    <th scope="col" tabulator-headerFilter="input">Nachname</th>
-                                    <th scope="col" tabulator-headerFilter="input">Vorname</th>
+                                    <th scope="col" tabulator-headerFilter="input">Nom</th>
+                                    <th scope="col" tabulator-headerFilter="input">Forme normalisée</th>
+                                    <th scope="col" tabulator-headerFilter="input">Naissance</th>
+                                    <th scope="col" tabulator-headerFilter="input">Mort</th>
                                     <th scope="col" tabulator-headerFilter="input">ID</th>
                                 </tr>
                             </thead>
@@ -78,10 +80,16 @@
                                             </a>
                                         </td>
                                         <td>
-                                            <xsl:value-of select=".//tei:surname/text()"/>
+                                            <xsl:value-of select="./tei:persName[1]"/>
                                         </td>
                                         <td>
-                                            <xsl:value-of select=".//tei:forename/text()"/>
+                                            <xsl:value-of select="./tei:persName[@type = 'standard'][1]"/>
+                                        </td>
+                                        <td>
+                                            <xsl:value-of select="./tei:birth/tei:date/@when"/>
+                                        </td>
+                                        <td>
+                                            <xsl:value-of select="./tei:death/tei:date/@when"/>
                                         </td>
                                         <td>
                                             <xsl:value-of select="$id"/>

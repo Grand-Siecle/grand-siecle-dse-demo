@@ -31,7 +31,13 @@
                     <div class="container">
                         <xsl:call-template name="one_time_alert"/>
                         <h1><xsl:value-of select="$project_short_title"/></h1>
-                        <h2><xsl:value-of select="$project_title"/></h2>
+                        <h2 class="fs-3"><xsl:value-of select="$project_title"/></h2>
+                        <p class="lead">Cinq imprimés du XVII<sup>e</sup> siècle (888 pages) transcrits, lemmatisés et annotés par le projet Grand Siècle (UNIL), publiés page par page avec leurs fac-similés Gallica.</p>
+                        <p>
+                            <a class="btn btn-primary" href="toc.html">Table des matières</a>
+                            <xsl:text> </xsl:text>
+                            <a class="btn btn-outline-secondary" href="listperson.html">Registres</a>
+                        </p>
                         <div class="text-center p-4">
                             <xsl:call-template name="blockquote"/>
                         </div>

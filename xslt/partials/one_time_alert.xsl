@@ -7,9 +7,9 @@
         <div style="display:none" id="once-popup">
             <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
                 <strong class="text-center fs-2">
-                    Beta Version
+                    Démonstration — version de travail
                 </strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
             </div>
         </div>
         <script type="text/javascript" src="js/one_time_alert.js"></script>
