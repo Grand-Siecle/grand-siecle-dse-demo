@@ -18,3 +18,326 @@ div#map {
 #main {
     scroll-margin-top: 1rem;
 }
+
+/* ==========================================================================
+   Grand Siecle theme (J2): tokens from the MaX edition (ui/css/grand-siecle.css, --gs-*),
+   self-hosted fonts (EB Garamond, Cormorant Garamond, SIL Open Font License 1.1,
+   latin / latin-ext / greek subsets downloaded from Google Fonts), reading page.
+   ========================================================================== */
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 500 600;
+    font-display: swap;
+    src: url(../fonts/CormorantGaramond-normal-latin-ext.woff2) format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 500 600;
+    font-display: swap;
+    src: url(../fonts/CormorantGaramond-normal-latin.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'EB Garamond';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url(../fonts/EBGaramond-italic-greek.woff2) format('woff2');
+    unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+    font-family: 'EB Garamond';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url(../fonts/EBGaramond-italic-latin-ext.woff2) format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: 'EB Garamond';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url(../fonts/EBGaramond-italic-latin.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'EB Garamond';
+    font-style: normal;
+    font-weight: 400 600;
+    font-display: swap;
+    src: url(../fonts/EBGaramond-normal-greek.woff2) format('woff2');
+    unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+    font-family: 'EB Garamond';
+    font-style: normal;
+    font-weight: 400 600;
+    font-display: swap;
+    src: url(../fonts/EBGaramond-normal-latin-ext.woff2) format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: 'EB Garamond';
+    font-style: normal;
+    font-weight: 400 600;
+    font-display: swap;
+    src: url(../fonts/EBGaramond-normal-latin.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* --------------------------------------------------------------- tokens */
+:root {
+    --gs-cream: #F5F0E8;
+    --gs-cream-light: #FEFCF7;
+    --gs-cream-warm: #EDE5D8;
+    --gs-sepia: #2C2418;
+    --gs-sepia-medium: #5a4a3a;
+    --gs-sepia-light: #8a7a6a;
+    --gs-blue: #1E3A6D;
+    --gs-blue-light: #2B5B8A;
+    --gs-blue-dark: #0F2340;
+    --gs-gold: #9C7A3C;
+    --gs-gold-light: rgba(156, 122, 60, 0.25);
+    --gs-gold-bright: #C49A4A;
+    --gs-border: #E0D5BC;
+    /* darker tones for small text, AA 4.5:1 on cream */
+    --gs-gold-text: #7F612A;
+    --gs-sepia-text: #766655;
+    /* entity types */
+    --gs-type-person: #2B5B8A;
+    --gs-type-place: #3A6B4A;
+    --gs-type-organization: #5B3A7A;
+    --gs-type-work: #A85831;
+    --gs-type-event: #5C4B8C;
+    --gs-type-technique: #6B6B2F;
+    --gs-type-date: #7A5A3A;
+    --gs-type-artwork: #8A5A2A;
+    --gs-type-material: #4A5A6A;
+    /* fonts: self-hosted, local fallback */
+    --gs-font-display: 'Cormorant Garamond', Garamond, Georgia, serif;
+    --gs-font-text: 'EB Garamond', Garamond, Georgia, serif;
+    --gs-font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+    --gs-radius: 2px;
+    /* Bootstrap mapping */
+    --bs-body-bg: var(--gs-cream);
+    --bs-body-color: var(--gs-sepia);
+    --bs-body-font-family: var(--gs-font-text);
+    --bs-link-color: var(--gs-blue);
+    --bs-link-color-rgb: 30, 58, 109;
+    --bs-link-hover-color: var(--gs-gold-text);
+    --bs-link-hover-color-rgb: 127, 97, 42;
+    --bs-border-radius: var(--gs-radius);
+    --bs-secondary-color: var(--gs-sepia-text);
+}
+
+/* ----------------------------------------------------------------- base */
+body {
+    background: var(--gs-cream);
+    color: var(--gs-sepia);
+    font-family: var(--gs-font-text);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+h1, h2, h3, h4, .gs-brand {
+    font-family: var(--gs-font-display);
+    font-weight: 600;
+    color: var(--gs-sepia);
+}
+h1 { font-size: 2.2rem; }
+:focus-visible {
+    outline: 2px solid var(--gs-gold);
+    outline-offset: 2px;
+    box-shadow: none;
+}
+.text-muted { color: var(--gs-sepia-text) !important; }
+.breadcrumb { font-size: 0.9rem; margin-bottom: 0; }
+.btn-primary {
+    --bs-btn-bg: var(--gs-blue);
+    --bs-btn-border-color: var(--gs-blue);
+    --bs-btn-hover-bg: var(--gs-blue-dark);
+    --bs-btn-hover-border-color: var(--gs-blue-dark);
+    --bs-btn-active-bg: var(--gs-blue-dark);
+}
+.btn-outline-secondary {
+    --bs-btn-color: var(--gs-sepia);
+    --bs-btn-border-color: var(--gs-border);
+    --bs-btn-hover-bg: var(--gs-cream-warm);
+    --bs-btn-hover-color: var(--gs-sepia);
+    --bs-btn-hover-border-color: var(--gs-gold);
+    --bs-btn-disabled-color: var(--gs-sepia-text);
+    --bs-btn-disabled-border-color: var(--gs-border);
+    background: var(--gs-cream-light);
+}
+
+/* navbar and footer */
+.gs-navbar {
+    background: var(--gs-blue-dark);
+    min-height: 64px;
+    --bs-navbar-color: rgba(254, 252, 247, 0.85);
+    --bs-navbar-hover-color: var(--gs-gold-bright);
+    --bs-navbar-active-color: var(--gs-cream-light);
+}
+.gs-navbar .nav-link { font-size: 1.05rem; }
+.gs-brand { color: var(--gs-cream-light) !important; font-size: 1.6rem; letter-spacing: 0.08em; }
+.gs-brand-grand { text-transform: uppercase; font-weight: 500; }
+.gs-brand-siecle { font-style: italic; color: var(--gs-gold-bright); letter-spacing: 0.02em; }
+.dropdown-menu { font-family: var(--gs-font-text); }
+footer.bg-body-tertiary { background: var(--gs-cream-warm) !important; color: var(--gs-sepia-text); }
+
+/* home and table of contents */
+.lead { font-size: 1.25rem; }
+#myTable, .tabulator { font-family: var(--gs-font-text); background: var(--gs-cream-light); }
+.tabulator .tabulator-header, .tabulator .tabulator-header .tabulator-col { background: var(--gs-cream-warm); }
+.tabulator-row.tabulator-row-even { background: var(--gs-cream); }
+.page-index a { font-family: var(--gs-font-mono); font-size: 0.85rem; }
+
+/* ---------------------------------------------------------- reading page */
+.gs-reader-head { margin: 0.5rem 0 1rem; border-bottom: 1px solid var(--gs-border); padding-bottom: 0.8rem; }
+.gs-reader-head h1 { margin: 0.2rem 0; }
+.gs-back { margin: 0; font-size: 0.9rem; }
+.gs-reader-meta { margin: 0; font-size: 0.95rem; color: var(--gs-sepia-text); }
+.gs-doc-id { font-family: var(--gs-font-mono); font-size: 0.85rem; color: var(--gs-gold-text); }
+.gs-printed { font-style: italic; }
+
+.gs-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem 1rem;
+    background: var(--gs-cream-warm);
+    border: 1px solid var(--gs-border);
+    border-radius: 3px;
+    padding: 0.6rem 0.9rem;
+    margin-bottom: 0.8rem;
+}
+.gs-toolbar-group { display: flex; align-items: center; gap: 0.4rem; }
+.gs-toolbar-label {
+    font-family: var(--gs-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+    color: var(--gs-sepia-text);
+}
+.gs-toolbar .btn {
+    font-family: var(--gs-font-text);
+    background: var(--gs-cream-light);
+    border: 1px solid var(--gs-border);
+    color: var(--gs-sepia);
+}
+.gs-toolbar .btn[aria-pressed='true'] { background: var(--gs-gold-text); border-color: var(--gs-gold-text); color: var(--gs-cream-light); }
+.gs-ling-status { font-style: italic; font-size: 0.85rem; color: var(--gs-sepia-text); }
+
+.gs-page-nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.6rem; margin: 0.8rem 0; }
+.gs-jump { display: flex; align-items: center; gap: 0.4rem; }
+.gs-jump label { font-size: 0.95rem; }
+.gs-jump input { width: 5.5rem; }
+.gs-kbd-hint { font-size: 0.85rem; color: var(--gs-sepia-text); text-align: center; }
+
+/* page = facsimile | transcription */
+.gs-page {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(260px, 2fr) 3fr;
+    gap: 2rem;
+    background: var(--gs-cream-light);
+    border: 1px solid var(--gs-cream-warm);
+    border-radius: 3px;
+    padding: 1.8rem 1.6rem;
+}
+.page-facsimile { position: sticky; top: 1rem; align-self: start; margin: 0; }
+.page-facsimile img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto 2 / 3; /* placeholder ratio until the image is loaded */
+    background: var(--gs-cream-warm);
+    border: 1px solid var(--gs-border);
+    box-shadow: 0 4px 20px rgba(44, 36, 24, 0.12);
+}
+.page-facsimile figcaption { font-size: 0.85rem; color: var(--gs-sepia-text); margin-top: 0.4rem; }
+.gs-facs-fallback {
+    display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.3rem;
+    aspect-ratio: 2 / 3; background: var(--gs-cream-warm); border: 1px solid var(--gs-border);
+    font-style: italic; color: var(--gs-sepia-text); text-align: center; padding: 1rem;
+}
+.page-transcription { font-size: 1.12rem; line-height: 1.75; max-width: 42rem; overflow-wrap: break-word; }
+.page-untranscribed { font-style: italic; color: var(--gs-sepia-text); }
+.zone { margin-bottom: 0.8rem; }
+
+/* layers: both are in the HTML, html/@data-layer picks one */
+html[data-layer='reg'] .layer-orig,
+html[data-layer='orig'] .layer-reg { display: none; }
+
+/* forme work: printed page number always visible, the rest behind the toggle */
+.fw { color: var(--gs-sepia-text); font-size: 0.85rem; font-style: italic; border-left: 2px solid var(--gs-gold-light); padding-left: 0.5rem; margin: 0.3rem 0; }
+body.gs-show-fw div.fw[hidden] { display: block !important; } /* beats Bootstrap [hidden] */
+.fw-numbering {
+    position: absolute; top: 0.4rem; right: 0.6rem;
+    font-family: var(--gs-font-mono); font-size: 0.75rem; font-style: normal;
+    color: var(--gs-sepia-text); border: none; padding: 0; margin: 0;
+}
+.fw-runningtitle { text-transform: uppercase; letter-spacing: 0.1em; font-style: normal; }
+
+/* marginal notes */
+.marginal-note {
+    float: right; clear: right;
+    width: 11rem; margin: 0 0 0.8rem 1rem;
+    font-size: 0.85rem; line-height: 1.45;
+    color: var(--gs-sepia-medium);
+    border-left: 2px solid var(--gs-gold); padding-left: 0.55rem;
+}
+
+/* languages and words */
+.foreign, [lang='la'] .zone:not([lang]), .zone[lang='la'], [lang='grc'] { font-style: italic; }
+.zone[lang='la'] .foreign[lang='fr'] { font-style: normal; }
+.w[data-next]::after { content: '\2011'; color: var(--gs-sepia-light); }
+body.gs-ling-on .layer-orig .w, body.gs-ling-on .layer-both .w { cursor: help; }
+body.gs-ling-on .w:hover { background: rgba(43, 91, 138, 0.12); }
+.gs-tooltip {
+    position: absolute; z-index: 1080; max-width: 20rem;
+    background: var(--gs-blue-dark); color: var(--gs-cream-light);
+    font-size: 0.85rem; line-height: 1.45;
+    border: 1px solid rgba(196, 154, 74, 0.4); border-radius: 3px;
+    padding: 0.5rem 0.75rem; pointer-events: none;
+}
+.gs-tt-line1 { font-weight: 600; }
+.gs-tt-pos { color: var(--gs-gold-bright); font-style: italic; font-weight: 400; }
+.gs-tt-msd { color: rgba(254, 252, 247, 0.75); font-size: 0.8rem; }
+
+/* named entities: colour per type, line style per NER confidence (@cert) */
+.ent {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 2px solid var(--gs-type, var(--gs-sepia-light));
+    padding: 0 0.05em;
+}
+a.ent:hover, a.ent:focus-visible { color: inherit; background: rgba(156, 122, 60, 0.18); }
+.ent-person { --gs-type: var(--gs-type-person); background: rgba(43, 91, 138, 0.08); }
+.ent-place { --gs-type: var(--gs-type-place); background: rgba(58, 107, 74, 0.08); }
+.ent-org { --gs-type: var(--gs-type-organization); background: rgba(91, 58, 122, 0.08); }
+.ent-work { --gs-type: var(--gs-type-work); background: rgba(168, 88, 49, 0.08); }
+.ent-event { --gs-type: var(--gs-type-event); background: rgba(92, 75, 140, 0.08); }
+.ent-technique { --gs-type: var(--gs-type-technique); background: rgba(107, 107, 47, 0.08); }
+.ent-date { --gs-type: var(--gs-type-date); background: rgba(122, 90, 58, 0.08); }
+.ent-artwork { --gs-type: var(--gs-type-artwork); background: rgba(138, 90, 42, 0.08); }
+.ent-material { --gs-type: var(--gs-type-material); background: rgba(74, 90, 106, 0.08); }
+.ent[data-cert='mid'] { border-bottom-style: dotted; }
+.ent[data-cert='low'] { border-bottom-style: dotted; opacity: 0.6; }
+.ent-unresolved { border-bottom-style: dashed; cursor: default; }
+
+@media (max-width: 1100px) {
+    .marginal-note { float: none; width: auto; margin: 0.6rem 0; }
+}
+@media (max-width: 900px) {
+    .gs-page { grid-template-columns: 1fr; padding: 1.2rem 1rem; gap: 1rem; }
+    .page-facsimile { position: static; }
+    .page-facsimile img { max-height: 70vh; }
+}
+@media (prefers-reduced-motion: reduce) {
+    * { scroll-behavior: auto !important; }
+}

@@ -9,7 +9,7 @@
 The source data (raw TEI + registers of the Grand Siècle project) are not in this repo.
 `data/editions/*.xml` (16 MB, prepared TEI) is gitignored and regenerated from them:
 
-* `uv run pyscripts/import_data.py --src /path/to/grand-siecle-max-statique/data`
+* `uv sync --locked`, then `uv run --locked pyscripts/import_data.py --src /path/to/grand-siecle-max-statique/data`
   (default: `$GS_SOURCE_DATA`, then `../grand-siecle-max-statique/data`) — writes
   `data/editions/` (5 TEI, one `pb` per printed page, `sourceDoc` removed) and
   `data/indices/` (persons, places, orgs, works cited by the 5 texts)
@@ -19,21 +19,22 @@ The source data (raw TEI + registers of the Grand Siècle project) are not in th
 Differences from the template: no ACDH imprint download (`data/imprint.xml` is local),
 no Typesense search page, no NoSketchEngine page.
 
-## set up GitHub repo
-* create a public, new, and empty (without README, .gitignore, license) GitHub repo https://github.com/Grand-Siecle/grand-siecle-dse 
-* run `git init` in the root folder of your application grand-siecle-dse
-* execute the commands described under `…or push an existing repository from the command line` in your new created GitHub repo https://github.com/Grand-Siecle/grand-siecle-dse
-
 ## start dev server
 
 * `cd html/`
 * `uv run -m http.server`
 * go to [http://0.0.0.0:8000/](http://0.0.0.0:8000/)
 
-## publish as GitHub Page
+## publication
 
-* go to https://https://github.com/Grand-Siecle/grand-siecle-dse/actions/workflows/build.yml
-* click the `Run workflow` button
+This is a local, non public demo: the source data are not in this repository and the
+GitHub Pages workflow of the template is disabled (`.github/workflows/build.yml`, `if: false`).
+
+## screenshots
+
+* `npm install` (installs playwright 1.61.1, which matches the Chromium headless shell
+  revision 1228 cached in `~/.cache/ms-playwright`)
+* `node tools/screenshots.mjs <outDir> name=http://localhost:8000/toc.html [...] [--full]`
 
 ## Python scripting
 The project uses [uv](https://docs.astral.sh/uv/), as Python package and project manager.

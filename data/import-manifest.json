@@ -1,0 +1,24 @@
+{
+ "imported_at": "2026-09-30T12:19:44+00:00",
+ "source_dir": "/home/rayondemiel/Projet_UNIL/grand-siecle-max-statique/data",
+ "source_git_commit": "99572a1de53cca2327e00a60c6186e85c5f676e1",
+ "source_tei_tracked_by_git": false,
+ "pages": 888,
+ "register_entries": 665,
+ "sources": {
+  "LIV0001_reconciled.tei.xml": "5772bfa25755576a3da02f99c6258ac9421739da58c016d19158ef206ac333da",
+  "LIV0010_reconciled.tei.xml": "b2ad8014ae1f3d43421be9b8609129199c074c60938809ff0a4ec997eb0d0c98",
+  "LIV0017_reconciled.tei.xml": "4e3d968a97564c67b0e6567cbe747a46f5f1c00f8d90fa91e74ea43a5d3b03c4",
+  "LIV0019_reconciled.tei.xml": "33189c4e11beae13adb36396d3776869595f93b92bb27e168c15cf7d6619f1e0",
+  "LIV0020_reconciled.tei.xml": "5015484f6ae9e5a65e2618e7855d11df0fe8860259bd4615e8bf6ca32a827e52",
+  "registers/artworks.xml": "7203c2f171aa35f9bf77424dd54f78fee15682b075fbb98881c311937e5f64ec",
+  "registers/dates.xml": "db2e3391e21badf442c26bccd7a2bcb143161579d271c7c2e87644aeec72b5bc",
+  "registers/events.xml": "db64496cc1e247316465246729cf114656f1b98976ac25b73e95e0ad8f61d7ba",
+  "registers/materials.xml": "eb28b654fdbd220db6a20d82432797389ffc83972833019cce55152b556ba357",
+  "registers/organizations.xml": "87a19a93050c2d09c6795462decb165aad697236f47d1513d208940acb65b118",
+  "registers/persons.xml": "696c12a54ad2c0743257944354cf0b5651546610b0099396e8d2d3997b4ce178",
+  "registers/places.xml": "8603292166803fd14420703629193d46eb4a2533a174db63fb990d281dfb44c5",
+  "registers/techniques.xml": "33ab9dfb263a674d2779c3960ae02bad180ea04b563cb100cd3c8b5ff8f36695",
+  "registers/works.xml": "48cd9edfd5dde8f995bc6263803a011808a3ab132fe4765317d1b82df09b6ec7"
+ }
+}

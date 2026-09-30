@@ -7,9 +7,10 @@
     <xsl:param name="redmine_id">18716</xsl:param>
     <xsl:param name="project_short_title">Grand Siècle</xsl:param>
     <xsl:param name="default_lang">fr</xsl:param>
-    <xsl:param name="github_url">https://github.com/Grand-Siecle/grand-siecle-dse</xsl:param>
+    <!-- local, non public demo: no repository link, relative citation URLs -->
+    <xsl:param name="github_url"></xsl:param>
     <xsl:param name="html_title">Grand Siècle</xsl:param>
     <xsl:param name="project_logo">images/logo.png</xsl:param>
-    <xsl:param name="base_url">https://Grand-Siecle.github.io/grand-siecle-dse/</xsl:param>
+    <xsl:param name="base_url"></xsl:param>
     <xsl:param name="data_repo">https://github.com/Grand-Siecle/dse-static-data</xsl:param>
 </xsl:stylesheet>

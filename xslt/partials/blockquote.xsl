@@ -11,7 +11,7 @@
             <h2 class="fs-4">Citer cette page</h2>
             <blockquote class="blockquote">
                 <p>
-                    <xsl:value-of select="$project_title"/>, projet Grand Siècle (UNIL), 2026 (<a href="{$fullUrl}"><xsl:value-of select="$fullUrl"/></a>)
+                    <xsl:value-of select="$project_title"/>, projet Grand Siècle (UNIL), 2026<xsl:if test="$fullUrl != ''"> (<a href="{$fullUrl}"><xsl:value-of select="$fullUrl"/></a>)</xsl:if>
                 </p>
             </blockquote>
         </div>

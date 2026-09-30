@@ -13,7 +13,7 @@
             <xsl:for-each select="./tei:idno">
                 <xsl:variable name="v" select="normalize-space(.)"/>
                 <xsl:variable name="url" select="
-                    if (starts-with($v, 'http')) then $v
+                    if (matches($v, '^https?://')) then $v
                     else if (@type = 'wikidata') then concat('https://www.wikidata.org/wiki/', $v)
                     else if (@type = 'geonames') then concat('https://www.geonames.org/', $v)
                     else if (@type = 'viaf') then concat('https://viaf.org/viaf/', $v)

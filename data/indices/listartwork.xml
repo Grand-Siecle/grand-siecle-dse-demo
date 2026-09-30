@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Objets et œuvres d'art</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Projet Grand Siècle (UNIL) — démonstration DSE</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Extrait des registres d'autorité du projet, réduit aux entités citées par les 5 documents de la démonstration.</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listObject><object xml:id="artwork-000014" n="2">
+        <objectName type="main">ornement</objectName>
+        <objectName type="standard">ornement</objectName>
+        <idno type="wikidata" cert="high">Q335261</idno>
+        <idno type="aat">300266794</idno>
+        <note type="description">décoration utilisée pour embellir un bâtiment ou un objet</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0019</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q4470686|Q739589|Q3356530</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></object>
+      <object xml:id="artwork-000053" n="1">
+        <objectName type="main">Thermopyles</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0019</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q521432|Q3452057|Q21533414</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></object>
+      </listObject>
+    </body>
+  </text>
+</TEI>

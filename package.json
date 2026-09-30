@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "description": "Dev tools for the Grand Siecle DSE demo (screenshots). Playwright is pinned to the version whose Chromium headless shell (revision 1228) is cached locally.",
+  "devDependencies": {
+    "playwright": "1.61.1"
+  }
+}

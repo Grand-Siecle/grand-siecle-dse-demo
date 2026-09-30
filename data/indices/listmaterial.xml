@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Matériaux</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Projet Grand Siècle (UNIL) — démonstration DSE</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Extrait des registres d'autorité du projet, réduit aux entités citées par les 5 documents de la démonstration.</p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <classDecl>
+        <taxonomy xml:id="materials"><category xml:id="material-000001" n="136">
+        <catDesc>
+          <term type="main">matière</term>
+          <term type="variant">matières</term>
+          <term type="variant">matière solide</term>
+        </catDesc>
+        <note type="mentions">136</note>
+        <note type="sources">LIV0002b|LIV0004a|LIV0006|LIV0007|LIV0008|LIV0011|LIV0012|LIV0015|LIV0017|LIV0018|LIV0020|LIV0021|LIV0025a|LIV0025b|LIV0026a|LIV0026b|LIV0026c|LIV0027|LIV0028|LIV0031_t1|LIV0031_t2|LIV0033</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q496|Q41872|Q35758</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></category>
+      <category xml:id="material-000002" n="77">
+        <catDesc>
+          <term type="main">marbre</term>
+          <term type="standard">marbre</term>
+          <term type="variant">marbre blanc</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q40861</idno>
+        <idno type="aat">300011443</idno>
+        <note type="description">roche dérivée du calcaire</note>
+        <note type="mentions">77</note>
+        <note type="sources">LIV0007|LIV0008|LIV0009|LIV0011|LIV0012|LIV0017|LIV0021|LIV0025a|LIV0025b|LIV0026b|LIV0027</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q40088|Q2016506|Q2052367</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></category>
+      <category xml:id="material-000011" n="15">
+        <catDesc>
+          <term type="main">papier</term>
+          <term type="standard">papier</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q11472</idno>
+        <idno type="aat">300014109</idno>
+        <note type="description">matière fabriquée à partir de fibres cellulosiques végétales et animales</note>
+        <note type="mentions">15</note>
+        <note type="sources">LIV0018|LIV0019|LIV0020|LIV0025a|LIV0025b|LIV0026a|LIV0026b|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q37266561|Q21279007|Q1513685</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></category>
+      <category xml:id="material-000021" n="7">
+        <catDesc>
+          <term type="main">chaux</term>
+          <term type="variant">la chaux</term>
+        </catDesc>
+        <note type="mentions">7</note>
+        <note type="sources">LIV0009|LIV0014|LIV0019|LIV0026b</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q694575|Q837466|Q845587</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></category>
+      <category xml:id="material-000033" n="5">
+        <catDesc>
+          <term type="main">sable</term>
+          <term type="standard">sable</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q34679</idno>
+        <idno type="aat">300014341</idno>
+        <note type="description">matériau granulaire constitué de petites particules provenant de la désagrégation d'autres roches</note>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0019|LIV0025b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q936496|Q37133498|Q97657833</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></category>
+      <category xml:id="material-000041" n="4">
+        <catDesc>
+          <term type="main">liège</term>
+        </catDesc>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0007|LIV0020</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q21765571|Q1866688|Q94000</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></category>
+      <category xml:id="material-000042" n="4">
+        <catDesc>
+          <term type="main">marmore</term>
+        </catDesc>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0010|LIV0032</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q3294512|Q40861|Q17637371</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></category>
+      <category xml:id="material-000067" n="3">
+        <catDesc>
+          <term type="main">toile</term>
+          <term type="standard">toile</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q12321255</idno>
+        <idno type="aat">300014078</idno>
+        <note type="description">tissu sur lequel on peint</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0019|LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q4259259|Q813966|Q1153946</note>
+      <noteGrp><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></category>
+      <category xml:id="material-000119" n="1">
+        <catDesc>
+          <term type="main">argento</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></category>
+      <category xml:id="material-000122" n="1">
+        <catDesc>
+          <term type="main">auro</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></category>
+      <category xml:id="material-000132" n="1">
+        <catDesc>
+          <term type="main">bonne matière</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></category>
+      <category xml:id="material-000158" n="1">
+        <catDesc>
+          <term type="main">FERRO</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></category>
+      <category xml:id="material-000159" n="1">
+        <catDesc>
+          <term type="main">fers</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0001</note>
+      <noteGrp><note type="mentions" target="LIV0001.xml">La Perpétuelle croix</note></noteGrp></category>
+      </taxonomy>
+      </classDecl>
+    </encodingDesc>
+  </teiHeader>
+  <text>
+    <body/>
+  </text>
+</TEI>

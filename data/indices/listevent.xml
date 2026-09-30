@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Événements</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Projet Grand Siècle (UNIL) — démonstration DSE</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Extrait des registres d'autorité du projet, réduit aux entités citées par les 5 documents de la démonstration.</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listEvent><event xml:id="event-000008" n="26">
+        <label type="main">siècle</label>
+        <label type="standard">siècle des Lumières</label>
+        <label type="variant">le siècle</label>
+        <date notBefore="1700"/>
+        <date notAfter="1820"/>
+        <placeName key="Q27496">Europe de l'Ouest</placeName>
+        <idno type="wikidata" cert="medium">Q12539</idno>
+        <desc>période historique</desc>
+        <note type="mentions">26</note>
+        <note type="sources">LIV0003|LIV0006|LIV0017|LIV0026b|LIV0026c|LIV0031_t2</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q578|Q3104547|Q530936</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></event>
+      <event xml:id="event-000037" n="6">
+        <label type="main">Rencontre</label>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0015|LIV0020</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q2761147|Q16510064|Q52359320</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></event>
+      <event xml:id="event-000042" n="5">
+        <label type="main">bello</label>
+        <label type="standard">Bello</label>
+        <label type="variant">bellum</label>
+        <placeName key="Q3926556">quadrangle de Beethoven</placeName>
+        <idno type="wikidata" cert="high">Q3696572</idno>
+        <desc>cratère sur Mercure</desc>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0010|LIV0032</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q3637811|Q24663955|Q16479858</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></event>
+      <event xml:id="event-000081" n="3">
+        <label type="main">siècles passés</label>
+        <label type="variant">siècle passe</label>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0017|LIV0019|LIV0025b</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note></noteGrp></event>
+      <event xml:id="event-000090" n="2">
+        <label type="main">chute de Troie</label>
+        <label type="variant">cheval de Troie</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0020|LIV0026c</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q3821535</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></event>
+      <event xml:id="event-000125" n="2">
+        <label type="main">guerres</label>
+        <label type="standard">guerres indiennes</label>
+        <label type="variant">guerre</label>
+        <date notBefore="1622"/>
+        <date notAfter="1924"/>
+        <placeName key="Q49">Amérique du Nord</placeName>
+        <idno type="wikidata" cert="medium">Q849680</idno>
+        <desc>conflits frontaliers intermittents entre les colons américains, canadiens et européens et les peuples autochtones d'Amérique du Nord</desc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0002a|LIV0017</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q78994|Q207318|Q2697981</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></event>
+      <event xml:id="event-000161" n="2">
+        <label type="main">Tragédie</label>
+        <label type="variant">trage</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0012|LIV0017</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></event>
+      <event xml:id="event-000194" n="1">
+        <label type="main">bellum Germanicum</label>
+        <label type="variant">bellum Germanicus</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></event>
+      <event xml:id="event-000197" n="1">
+        <label type="main">brigandages</label>
+        <label type="variant">brigandage</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q106437260</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></event>
+      <event xml:id="event-000212" n="1">
+        <label type="main">Comitia</label>
+        <label type="variant">comitium</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></event>
+      <event xml:id="event-000229" n="1">
+        <label type="main">crucifiément</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0001</note>
+      <noteGrp><note type="mentions" target="LIV0001.xml">La Perpétuelle croix</note></noteGrp></event>
+      <event xml:id="event-000285" n="1">
+        <label type="main">La perpétuelle Croix</label>
+        <label type="variant">le perpétuel croix</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0001</note>
+      <noteGrp><note type="mentions" target="LIV0001.xml">La Perpétuelle croix</note></noteGrp></event>
+      <event xml:id="event-000302" n="1">
+        <label type="main">matière divine</label>
+        <label type="variant">matière divinement</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></event>
+      <event xml:id="event-000320" n="1">
+        <label type="main">Paſcua</label>
+        <label type="variant">pascuum</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></event>
+      <event xml:id="event-000356" n="1">
+        <label type="main">Tous les siècles</label>
+        <label type="variant">tout le siècle</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></event>
+      <event xml:id="event-000357" n="1">
+        <label type="main">tradidie</label>
+        <label type="variant">tragédie</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></event>
+      <event xml:id="event-000358" n="1">
+        <label type="main">tradidieDomitius</label>
+        <label type="variant">tragédiedomitius</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></event>
+      </listEvent>
+    </body>
+  </text>
+</TEI>

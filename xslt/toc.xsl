@@ -53,7 +53,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col" width="20" tabulator-formatter="html" tabulator-headerSort="false" tabulator-download="false">#</th>
-                                    <th scope="col" tabulator-headerFilter="input">Titre</th>
+                                    <th scope="col" tabulator-headerFilter="input" tabulator-formatter="html">Titre</th>
                                     <th scope="col" tabulator-headerFilter="input">Auteur</th>
                                     <th scope="col" tabulator-headerFilter="input">Date</th>
                                     <th scope="col" tabulator-headerFilter="input">Langues</th>

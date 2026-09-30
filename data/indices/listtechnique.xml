@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Techniques</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Projet Grand Siècle (UNIL) — démonstration DSE</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Extrait des registres d'autorité du projet, réduit aux entités citées par les 5 documents de la démonstration.</p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <classDecl>
+        <taxonomy xml:id="techniques"><category xml:id="technique-000001" n="20">
+        <catDesc>
+          <term type="main">style</term>
+          <term type="standard">style</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q1292119</idno>
+        <idno type="aat">300055835</idno>
+        <note type="description">aspect caractéristique prononcée des objets, de l'art et de la culture</note>
+        <note type="mentions">20</note>
+        <note type="sources">LIV0012|LIV0015|LIV0017|LIV0019|LIV0020|LIV0026b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q37552559|Q18786715|Q2313235</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note><note type="mentions" target="LIV0019.xml">Lettres touchant... la langue françoise</note><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></category>
+      <category xml:id="technique-000004" n="6">
+        <catDesc>
+          <term type="main">prose</term>
+        </catDesc>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0015|LIV0020</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q37004182|Q1416480|Q507027</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></category>
+      <category xml:id="technique-000027" n="2">
+        <catDesc>
+          <term type="main">Phisionomie</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0020|LIV0026c</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></category>
+      <category xml:id="technique-000039" n="1">
+        <catDesc>
+          <term type="main">Astrologie</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></category>
+      <category xml:id="technique-000042" n="1">
+        <catDesc>
+          <term type="main">composition</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></category>
+      </taxonomy>
+      </classDecl>
+    </encodingDesc>
+  </teiHeader>
+  <text>
+    <body/>
+  </text>
+</TEI>

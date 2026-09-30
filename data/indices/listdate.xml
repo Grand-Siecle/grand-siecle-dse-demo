@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Dates</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Projet Grand Siècle (UNIL) — démonstration DSE</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Extrait des registres d'autorité du projet, réduit aux entités citées par les 5 documents de la démonstration.</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <list type="chronology"><item xml:id="date-000027" n="2">
+        <date>cents ans auparavant</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0020</note>
+      <noteGrp><note type="mentions" target="LIV0020.xml">Considérations sur l'éloquence françoise de ce tems</note></noteGrp></item>
+      <item xml:id="date-000053" n="1">
+        <date>ANNO DOMINI CIO IOCXXXII</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></item>
+      <item xml:id="date-000088" n="1">
+        <date>Id. Octobris</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></item>
+      <item xml:id="date-000096" n="1">
+        <date>Kal. Aug.</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></item>
+      <item xml:id="date-000097" n="1">
+        <date>Kal. Iun</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></item>
+      <item xml:id="date-000098" n="1">
+        <date>Kal. Septembr</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></item>
+      <item xml:id="date-000107" n="1">
+        <date>M. CCCC. L.</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></item>
+      <item xml:id="date-000108" n="1">
+        <date>M. DC. LIV</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></item>
+      <item xml:id="date-000109" n="1">
+        <date>MARS</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      <noteGrp><note type="mentions" target="LIV0010.xml">Itinerarium</note></noteGrp></item>
+      <item xml:id="date-000129" n="1">
+        <date>sixieme année</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+      <noteGrp><note type="mentions" target="LIV0017.xml">Dialogue des causes de la corruption de l'éloquence</note></noteGrp></item>
+      </list>
+    </body>
+  </text>
+</TEI>
