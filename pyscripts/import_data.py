@@ -18,7 +18,8 @@ Preparation applied to each TEI (the rest of the file is kept as is):
     pipeline does (scripts/prepare-tei.mjs, AUTHOR_NAME_OVERRIDES).
 
 The 9 registers are imported (4 in the template's list files, 5 in generic
-list files rendered by xslt/listentity.xsl).
+list files; all rendered by xslt/listentity.xsl). The index files are then enriched
+by pyscripts/entity_data.py (mention counts, passages in context, co-occurrences).
 
 Register perimeter (same rule as the MaX pipeline, scripts/build-entities.mjs):
   entity kept if it is referenced by an @ref in one of the 5 texts OR if its
@@ -43,6 +44,8 @@ import time
 from pathlib import Path
 
 from lxml import etree
+
+import entity_data
 
 TEI_NS = "http://www.tei-c.org/ns/1.0"
 XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
@@ -265,6 +268,11 @@ def main():
     entries = build_indices(src_dir, cited_by_doc, titles)
     if entries != EXPECTED_TOTAL_ENTRIES:
         fail(f"{entries} register entries, expected {EXPECTED_TOTAL_ENTRIES}")
+
+    print("Entity data (mentions, passages, co-occurrences: pyscripts/entity_data.py)")
+    stats = entity_data.enrich(STAGING / "indices", src_dir, DOC_IDS, titles)
+    print(f"  {stats['entries']} entries, {stats['mentions']} inline mentions, "
+          f"{stats['kwic']} passages, in {stats['seconds']:.1f} s")
 
     # all controls passed: replace data/editions and data/indices
     for stage, final in ((STAGING / "editions", EDITIONS_DIR), (STAGING / "indices", INDICES_DIR)):

@@ -1,30 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- About page (xslt/meta.xsl -> html/about.html). Adapted from the MaX edition
+     (fragments/fr/about.frag.html): same structure, the production chain described is the
+     one of this DSE demo. -->
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
            <titleStmt>
-              <title type="main">À propos</title>
-              <title type="sub">Grand Siècle — démonstration DSE</title>
+              <title type="main">À propos de la démonstration</title>
+              <title type="sub">La démonstration</title>
            </titleStmt>
            <publicationStmt>
-              <p>Projet Grand Siècle (UNIL)</p>
+              <p>Projet Grand Siècle — Universités de Lausanne (UNIL) et de Genève (UNIGE)</p>
            </publicationStmt>
            <sourceDesc>
-              <p>Texte rédigé pour la démonstration.</p>
+              <p>Texte rédigé pour la démonstration DSE, adapté de la page « À propos » de l'édition MaX.</p>
            </sourceDesc>
         </fileDesc>
     </teiHeader>
     <text>
         <body>
-           <p>Ce site est une démonstration technique : il publie cinq imprimés du corpus Grand Siècle
-              (LIV0001, LIV0010, LIV0017, LIV0019, LIV0020) avec le gabarit
-              <ref target="https://github.com/acdh-oeaw/dse-static-cookiecutter">dse-static-cookiecutter</ref>
-              de l'Austrian Centre for Digital Humanities (ACDH), afin de le comparer à d'autres solutions de publication
-              (MaX, TEI Publisher).</p>
-           <p>Les transcriptions proviennent d'une chaîne OCR (ALTO → TEI SegmOnto), avec lemmatisation, modernisation
-              automatique et reconnaissance d'entités nommées réconciliées avec Wikidata. Elles n'ont pas été relues
-              intégralement.</p>
-           <p>Les fac-similés sont servis par Gallica (Bibliothèque nationale de France) via IIIF.</p>
+           <p>Grand Siècle est un projet de recherche consacré aux premiers discours français sur la
+              peinture (fin du XVIe – XVIIe siècle). Cette démonstration en présente un extrait — cinq
+              imprimés parisiens publiés entre 1630 et 1662 — sous la forme d'une édition numérique
+              entièrement statique.</p>
+           <div>
+              <head>Protocole de la démo</head>
+              <list rend="numbered">
+                 <item><hi rend="bold">Préparation des sources TEI</hi> — les transcriptions HTR (double
+                    couche originale / modernisée, lemmatisation mot à mot, entités nommées détectées par
+                    NER puis réconciliées avec Wikidata) sont importées par un script Python
+                    (<code>pyscripts/import_data.py</code>) : chaque saut de page reçoit un numéro et
+                    l'adresse de son fac-similé IIIF sur Gallica (BnF), les zones de mise en page issues
+                    d'ALTO sont retirées, et seuls les registres d'entités cités par les cinq textes sont
+                    retenus.</item>
+                 <item><hi rend="bold">Publication avec dse-static-cookiecutter</hi> — le site est produit
+                    par le gabarit <ref target="https://github.com/acdh-oeaw/dse-static-cookiecutter">dse-static-cookiecutter</ref>
+                    de l'Austrian Centre for Digital Humanities and Cultural Heritage (ACDH-CH, Académie
+                    autrichienne des sciences) : Apache Ant enchaîne des transformations XSLT 2.0
+                    (Saxon-HE) qui écrivent directement des pages HTML — une par page imprimée (888),
+                    une fiche par document, les registres et leurs fiches. La personnalisation tient dans
+                    les feuilles XSLT, la feuille de style et quelques scripts JavaScript ; le thème
+                    reprend celui de l'édition MaX.</item>
+                 <item><hi rend="bold">Registres d'autorité</hi> — neuf registres d'entités (personnes,
+                    lieux, organisations, œuvres, événements, objets, matériaux, techniques, dates) sont
+                    générés depuis les fichiers TEI d'autorité du projet ; leurs fiches renvoient, quand
+                    ils sont connus, vers les référentiels externes (Wikidata, VIAF, GeoNames…) et vers
+                    les passages du corpus qui les citent.</item>
+                 <item><hi rend="bold">Site statique et recherche</hi> — le résultat est un dossier de
+                    fichiers HTML servi tel quel, sans serveur applicatif. Seule la recherche plein texte
+                    fait exception : elle interroge un serveur Typesense, alimenté par un script Python
+                    (<code>pyscripts/make_ts_index.py</code>, une entrée par page imprimée) ; sans ce
+                    serveur, le reste du site fonctionne.</item>
+              </list>
+           </div>
+           <div>
+              <head>Avertissement</head>
+              <p>Les entités nommées sont issues d'une détection automatique (CamemBERT + GLiNER)
+                 appliquée à des transcriptions d'OCR/HTR : des erreurs de segmentation, d'attribution ou
+                 de réconciliation subsistent. Les niveaux de confiance (haute / moyenne) sont matérialisés
+                 dans le texte et filtrables. Les transcriptions n'ont pas été relues intégralement.</p>
+           </div>
+           <div>
+              <head>Crédits</head>
+              <p>Projet de recherche des universités de Lausanne (UNIL) et de Genève (UNIGE).
+                 Fac-similés : Gallica / Bibliothèque nationale de France (IIIF). Gabarit de publication :
+                 dse-static-cookiecutter (ACDH-CH, licence MIT), Saxon-HE (Saxonica, licence MPL 2.0).
+                 Polices EB Garamond et Cormorant Garamond (SIL Open Font License). Portrait de la page
+                 d'accueil : Nicolas Poussin, <title>Autoportrait</title>, 1650, musée du Louvre (domaine
+                 public). Textes et données du projet sous licence
+                 <ref target="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</ref>.</p>
+           </div>
         </body>
     </text>
 </TEI>

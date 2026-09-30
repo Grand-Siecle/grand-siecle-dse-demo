@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Entity detail blocks (modal bodies and entity pages), adapted to the Grand Siecle registers:
-     names typed main/standard/variant, dates in @when, note[@type='description'], typed idno,
-     back-links in noteGrp/note[@type='mentions'] (added by pyscripts/import_data.py). -->
+<!-- Entity detail blocks of the template (modal bodies, called by partials/shared.xsl when a
+     document holds its own listPerson/listPlace/listOrg/listBibl; the Grand Siecle texts have
+     none), adapted to the Grand Siecle registers: names typed main/standard/variant, dates in
+     @when, note[@type='description'], typed idno, back-links in noteGrp/note[@type='mentions']
+     (pyscripts/import_data.py + entity_data.py). The register pages themselves (J4) are built
+     by partials/entity_page.xsl. -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tei="http://www.tei-c.org/ns/1.0"
     version="2.0" exclude-result-prefixes="xsl tei xs">
@@ -58,7 +61,7 @@
             <xsl:for-each select="./tei:noteGrp/tei:note[@type = 'mentions']">
                 <dd>
                     <a href="{replace(@target, '\.xml$', '.html')}">
-                        <xsl:value-of select="./text()"/>
+                        <xsl:value-of select="(./tei:title, ./text())[1]"/>
                     </a>
                 </dd>
             </xsl:for-each>

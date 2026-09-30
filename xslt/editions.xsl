@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    Grand Siecle: one edition = one landing page ({ID}.html, principal output of the
+    Grand Siecle: one edition = one document page ({ID}.html, principal output of the
     Ant <xslt> task) + one HTML page per printed page ({ID}-page-{n}.html, written with
     xsl:result-document). Pages are cut on tei:pb, which the import script
     (pyscripts/import_data.py) numbers (@n, @xml:id) and links to their IIIF image (@facs).
 
-    Reading page (J2), modelled on the MaX edition (ui/xsl/tei/text_hook.xsl):
-    both layers (orig / reg) are in the HTML, the visible one is chosen by
-    html/@data-layer (CSS) and switched by js/gs-reader.js; facsimile next to the text;
-    named entities linked to the register pages; marginal notes; forme work (fw);
-    @lang on every page and passage; word annotations (lemma, POS, msd) as data-*.
+    Both pages follow the MaX edition:
+    - document page = MaX ui/xsl/tei/document_toc.xsl (metadata card + grid of page thumbnails);
+    - reading page = MaX text_hook.xsl / nav_bar.xsl / grand-siecle.js: page navigation in the
+      header bar (arrows + page selector), display toolbar (layer, forme work, word analysis,
+      entity filter, legend), breadcrumb, page context, facsimile next to the text.
+      Both layers (orig / reg) are in the HTML, the visible one is chosen by html/@data-layer
+      (CSS) and switched by js/gs-reader.js; named entities are linked to the register pages
+      (popover in js/gs-reader.js); marginal notes; forme work (fw); @lang on every page and
+      passage; word annotations (lemma, POS, msd) as data-*.
 -->
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:gs="urn:grand-siecle"
+    xmlns:gsdoc="urn:grand-siecle:doc"
     version="2.0"
     exclude-result-prefixes="#all">
 
-    <xsl:import href="./partials/shared.xsl"/>
     <xsl:import href="./partials/html_navbar.xsl"/>
     <xsl:import href="./partials/html_head.xsl"/>
     <xsl:import href="./partials/html_footer.xsl"/>
-    <xsl:import href="./partials/blockquote.xsl"/>
     <xsl:import href="./partials/zotero.xsl"/>
     <xsl:import href="./partials/doc_meta.xsl"/>
     <xsl:output encoding="UTF-8" media-type="text/html" method="html" version="5.0" indent="no" omit-xml-declaration="yes"/>
@@ -38,15 +41,7 @@
         <xsl:call-template name="doc_author"><xsl:with-param name="tei" select="/tei:TEI"/></xsl:call-template>
     </xsl:variable>
     <!-- main language = langUsage/language with the highest @usage -->
-    <xsl:variable name="doc_lang" as="xs:string">
-        <xsl:variable name="langs" as="xs:string*">
-            <xsl:for-each select="/tei:TEI/tei:teiHeader/tei:profileDesc/tei:langUsage/tei:language">
-                <xsl:sort select="xs:integer((@usage, 0)[1])" order="descending"/>
-                <xsl:sequence select="string(@ident)"/>
-            </xsl:for-each>
-        </xsl:variable>
-        <xsl:sequence select="gs:lang(($langs, 'fra')[1])"/>
-    </xsl:variable>
+    <xsl:variable name="doc_lang" as="xs:string" select="gs:lang((gsdoc:langs(/tei:TEI), 'fra')[1])"/>
     <!-- default layer, as in MaX: original for the Latin text (LIV0010), modernised otherwise -->
     <xsl:variable name="default_layer" select="if ($doc_lang = 'la') then 'orig' else 'reg'"/>
 
@@ -91,36 +86,11 @@
             else 'date'"/>
     </xsl:function>
 
-    <xsl:function name="gs:type-label" as="xs:string">
-        <xsl:param name="type" as="xs:string"/>
-        <xsl:sequence select="(('Personne', 'Lieu', 'Organisation', 'Œuvre', 'Événement', 'Objet', 'Matériau', 'Technique', 'Date')
-            [index-of(('person', 'place', 'org', 'work', 'event', 'artwork', 'material', 'technique', 'date'), $type)[1]], $type)[1]"/>
-    </xsl:function>
-
     <!-- Gallica viewer page of an IIIF image URL: .../iiif/ark:/12148/bpt6k.../f44/full/... -> .../ark:/12148/bpt6k.../f44.item -->
     <xsl:function name="gs:gallica-page" as="xs:string">
         <xsl:param name="iiif" as="xs:string"/>
         <xsl:sequence select="replace($iiif, '^https://gallica\.bnf\.fr/iiif/(ark:/[^/]+/[^/]+/f[0-9]+)/.*$', 'https://gallica.bnf.fr/$1.item')"/>
     </xsl:function>
-
-    <xsl:template name="breadcrumb">
-        <xsl:param name="current"/>
-        <nav style="--bs-breadcrumb-divider: '>';" aria-label="fil d'Ariane" class="ps-5 p-3">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html"><xsl:value-of select="$project_short_title"/></a></li>
-                <li class="breadcrumb-item"><a href="toc.html">Table des matières</a></li>
-                <xsl:choose>
-                    <xsl:when test="$current">
-                        <li class="breadcrumb-item"><a href="{$link}"><xsl:value-of select="$doc_title"/></a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><xsl:value-of select="$current"/></li>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <li class="breadcrumb-item active" aria-current="page"><xsl:value-of select="$doc_title"/></li>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </ol>
-        </nav>
-    </xsl:template>
 
     <xsl:template match="/">
         <!-- pagination invariants (also checked by the import script) -->
@@ -131,89 +101,11 @@
         <xsl:variable name="unresolved" select="$entity_elements[not(gs:resolved(gs:ref(.)))]"/>
         <xsl:message select="concat($doc_id, ': ', count($entity_elements), ' entity elements, ',
             count($unresolved), ' without a register entry (rendered without link)')"/>
+        <xsl:call-template name="document_page">
+            <xsl:with-param name="unresolved" select="$unresolved"/>
+        </xsl:call-template>
 
-        <!-- 1. landing page of the document -->
-        <xsl:variable name="bibl" select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:bibl"/>
-        <xsl:variable name="ms" select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier"/>
-        <html class="h-100" lang="{$default_lang}">
-            <head>
-                <xsl:call-template name="html_head">
-                    <xsl:with-param name="html_title" select="$doc_title"/>
-                </xsl:call-template>
-                <xsl:call-template name="zoterMetaTags">
-                    <xsl:with-param name="pageId" select="$link"/>
-                    <xsl:with-param name="zoteroTitle" select="$doc_title"/>
-                </xsl:call-template>
-                <meta name="citation_author" content="{$doc_author}"/>
-            </head>
-            <body class="d-flex flex-column h-100">
-                <xsl:call-template name="nav_bar"/>
-                <main id="main" tabindex="-1" class="flex-shrink-0 flex-grow-1">
-                    <xsl:call-template name="breadcrumb"/>
-                    <div class="container">
-                        <h1><xsl:value-of select="$doc_title"/></h1>
-                        <dl class="row">
-                            <dt class="col-sm-3">Auteur</dt>
-                            <dd class="col-sm-9"><xsl:value-of select="$doc_author"/></dd>
-                            <dt class="col-sm-3">Édition</dt>
-                            <dd class="col-sm-9">
-                                <xsl:value-of select="string-join((normalize-space($bibl/tei:pubPlace), normalize-space($bibl/tei:date))[. != ''], ', ')"/>
-                                <xsl:for-each select="$bibl/tei:respStmt">
-                                    <xsl:text> — </xsl:text>
-                                    <xsl:value-of select="normalize-space(tei:resp)"/>
-                                    <xsl:text> : </xsl:text>
-                                    <xsl:value-of select="normalize-space(string-join((tei:persName/tei:forename, tei:persName/tei:surname), ' '))"/>
-                                </xsl:for-each>
-                            </dd>
-                            <dt class="col-sm-3">Langues</dt>
-                            <dd class="col-sm-9">
-                                <xsl:call-template name="doc_languages"><xsl:with-param name="tei" select="/tei:TEI"/></xsl:call-template>
-                            </dd>
-                            <dt class="col-sm-3">Exemplaire</dt>
-                            <dd class="col-sm-9">
-                                <xsl:value-of select="string-join(($ms/tei:repository, $ms/tei:idno[not(@type)]), ' ')"/>
-                                <xsl:if test="$ms/tei:idno[@type = 'ark']">
-                                    <xsl:text> — </xsl:text>
-                                    <a href="https://catalogue.bnf.fr/{$ms/tei:idno[@type = 'ark']}">notice BnF</a>
-                                </xsl:if>
-                                <xsl:if test="$ms/tei:idno[@type = 'iiif']">
-                                    <xsl:text> — </xsl:text>
-                                    <a href="{$ms/tei:idno[@type = 'iiif']}">manifeste IIIF (Gallica)</a>
-                                </xsl:if>
-                            </dd>
-                            <dt class="col-sm-3">Pages</dt>
-                            <dd class="col-sm-9"><xsl:value-of select="$page_count"/></dd>
-                            <dt class="col-sm-3">Entités annotées</dt>
-                            <dd class="col-sm-9">
-                                <xsl:value-of select="count($entity_elements)"/>
-                                <xsl:if test="$unresolved">
-                                    <xsl:value-of select="concat(' (dont ', count($unresolved), ' sans fiche de registre)')"/>
-                                </xsl:if>
-                            </dd>
-                            <dt class="col-sm-3">Source TEI</dt>
-                            <dd class="col-sm-9"><a href="{$teiSource}"><i class="bi bi-download"/><xsl:text> </xsl:text><xsl:value-of select="$teiSource"/></a></dd>
-                        </dl>
-                        <p>
-                            <a class="btn btn-primary" href="{$doc_id}-page-1.html">Commencer la lecture</a>
-                        </p>
-                        <h2 class="fs-4">Pages</h2>
-                        <ol class="list-inline page-index">
-                            <xsl:for-each select="/tei:TEI/tei:text//tei:pb">
-                                <li class="list-inline-item"><a href="{$doc_id}-page-{@n}.html"><xsl:value-of select="@n"/></a></li>
-                            </xsl:for-each>
-                        </ol>
-                        <div class="text-center p-4">
-                            <xsl:call-template name="blockquote">
-                                <xsl:with-param name="pageId" select="$link"/>
-                            </xsl:call-template>
-                        </div>
-                    </div>
-                </main>
-                <xsl:call-template name="html_footer"/>
-            </body>
-        </html>
-
-        <!-- 2. one page per tei:pb (body/div children are pb|ab|fw|note, checked by the import script) -->
+        <!-- one page per tei:pb (body/div children are pb|ab|fw|note, checked by the import script) -->
         <xsl:for-each-group select="/tei:TEI/tei:text/tei:body/tei:div/*" group-starting-with="tei:pb">
             <xsl:call-template name="reading_page">
                 <xsl:with-param name="pb" select="current-group()[1]"/>
@@ -222,32 +114,157 @@
         </xsl:for-each-group>
     </xsl:template>
 
+    <!-- ============================ document page (MaX document_toc.xsl) ============================ -->
+    <xsl:template name="document_page">
+        <xsl:param name="unresolved" as="element()*"/>
+        <xsl:variable name="fileDesc" select="/tei:TEI/tei:teiHeader/tei:fileDesc"/>
+        <xsl:variable name="author" select="$fileDesc/tei:titleStmt/tei:author[1]"/>
+        <xsl:variable name="ms" select="$fileDesc/tei:sourceDesc/tei:msDesc/tei:msIdentifier"/>
+        <xsl:variable name="manifest" select="string($ms/tei:idno[@type = 'iiif'][1])"/>
+        <xsl:variable name="publishers" select="gsdoc:publishers(/tei:TEI, ())"/>
+        <html lang="{$default_lang}">
+            <head>
+                <xsl:call-template name="html_head">
+                    <xsl:with-param name="html_title" select="concat($doc_title, ' — ', $project_short_title)"/>
+                    <xsl:with-param name="bootstrap_icons" select="false()"/>
+                </xsl:call-template>
+                <xsl:call-template name="zoterMetaTags">
+                    <xsl:with-param name="pageId" select="$link"/>
+                    <xsl:with-param name="zoteroTitle" select="$doc_title"/>
+                </xsl:call-template>
+                <meta name="citation_author" content="{$doc_author}"/>
+            </head>
+            <body class="d-flex flex-column min-vh-100">
+                <xsl:call-template name="nav_bar"/>
+                <main id="main" tabindex="-1" class="container gs-main flex-grow-1">
+                    <h1 class="gs-doc-fiche-title"><xsl:value-of select="$doc_title"/></h1>
+                    <div class="gs-doc-fiche">
+                        <dl class="gs-doc-meta">
+                            <xsl:if test="normalize-space($doc_author)">
+                                <dt>Auteur</dt>
+                                <dd>
+                                    <xsl:value-of select="$doc_author"/>
+                                    <xsl:variable name="birth" select="substring(string($author/tei:birth/@when), 1, 4)"/>
+                                    <xsl:variable name="death" select="substring(string($author/tei:death/@when), 1, 4)"/>
+                                    <xsl:if test="$birth != '' or $death != ''">
+                                        <xsl:value-of select="concat(' (', $birth, '–', $death, ')')"/>
+                                    </xsl:if>
+                                </dd>
+                            </xsl:if>
+                            <dt>Publication</dt>
+                            <dd>
+                                <xsl:value-of select="normalize-space($fileDesc/tei:sourceDesc/tei:bibl/tei:pubPlace[1])"/>
+                                <xsl:if test="exists($publishers)"><xsl:value-of select="concat(', chez ', string-join($publishers, ' · '))"/></xsl:if>
+                                <xsl:value-of select="concat(', ', gsdoc:date(/tei:TEI))"/>
+                            </dd>
+                            <dt>Langues</dt>
+                            <dd><xsl:value-of select="string-join(gsdoc:langs(/tei:TEI), ', ')"/></dd>
+                            <xsl:if test="$ms/tei:idno[@type = 'ark']">
+                                <dt>Source</dt>
+                                <dd>
+                                    <a href="https://gallica.bnf.fr/{$ms/tei:idno[@type = 'ark'][1]}"><xsl:value-of select="$ms/tei:idno[@type = 'ark'][1]"/></a>
+                                    <xsl:text> (Gallica / BnF)</xsl:text>
+                                </dd>
+                            </xsl:if>
+                            <xsl:if test="$manifest != ''">
+                                <dt>IIIF</dt>
+                                <dd>
+                                    <a href="{$manifest}">manifeste</a>
+                                    <xsl:text> · </xsl:text>
+                                    <a href="{replace($manifest, '/iiif/(ark:/[^/]+/[^/]+)/manifest\.json$', '/$1')}">voir sur Gallica</a>
+                                </dd>
+                            </xsl:if>
+                            <!-- DSE additions: the TEI file and the entity count -->
+                            <dt>Source TEI</dt>
+                            <dd><a href="{$teiSource}" download="{$teiSource}"><xsl:value-of select="$teiSource"/></a></dd>
+                            <dt>Entités</dt>
+                            <dd>
+                                <xsl:value-of select="concat(count($entity_elements), ' mentions annotées')"/>
+                                <xsl:if test="$unresolved">
+                                    <xsl:value-of select="concat(' (dont ', count($unresolved), ' sans fiche de registre)')"/>
+                                </xsl:if>
+                            </dd>
+                        </dl>
+                    </div>
+                    <xsl:variable name="pages" as="element(page)*">
+                        <xsl:for-each-group select="/tei:TEI/tei:text/tei:body/tei:div/*" group-starting-with="tei:pb">
+                            <page n="{current-group()[1]/@n}" facs="{current-group()[1]/@facs}" empty="{empty(current-group()/self::tei:ab)}"/>
+                        </xsl:for-each-group>
+                    </xsl:variable>
+                    <h2 class="gs-section-title">Pages <span class="gs-doc-pagecount">(<xsl:value-of select="count($pages)"/>)</span></h2>
+                    <xsl:if test="$pages[@empty = 'true']">
+                        <p class="gs-doc-stats"><span aria-hidden="true">◦ </span>fac-similé seul (page non transcrite)</p>
+                    </xsl:if>
+                    <ul class="gs-page-grid">
+                        <xsl:for-each select="$pages">
+                            <li>
+                                <a href="{$doc_id}-page-{@n}.html">
+                                    <img class="gs-page-thumb" loading="lazy" decoding="async" width="300" height="440" alt=""
+                                        src="{replace(@facs, '/full/[^/]+/', '/full/,300/')}"/>
+                                    <span class="gs-page-label">
+                                        <xsl:value-of select="concat('p. ', @n)"/>
+                                        <xsl:if test="@empty = 'true'">
+                                            <span class="gs-page-empty" title="page non transcrite"><span aria-hidden="true"> ◦</span><span class="visually-hidden"> (fac-similé seul)</span></span>
+                                        </xsl:if>
+                                    </span>
+                                </a>
+                            </li>
+                        </xsl:for-each>
+                    </ul>
+                </main>
+                <xsl:call-template name="html_footer">
+                    <xsl:with-param name="bootstrap_js" select="false()"/>
+                </xsl:call-template>
+            </body>
+        </html>
+    </xsl:template>
+
+    <!-- ========================= reading page (MaX text_hook / nav_bar) ========================= -->
+
+    <!-- page navigation shown in the header bar; the selector lists the current page only,
+         js/gs-reader.js fills in the other pages (saves ~17 kB on each of the 888 pages) -->
     <xsl:template name="page_nav">
         <xsl:param name="n" as="xs:integer"/>
-        <xsl:param name="where" as="xs:string"/>
-        <nav class="gs-page-nav gs-page-nav-{$where}" aria-label="Pages du document ({$where})">
+        <nav class="gs-page-nav" aria-label="Navigation dans le document">
             <xsl:choose>
                 <xsl:when test="$n gt 1">
-                    <a class="btn btn-outline-secondary gs-page-prev" href="{$doc_id}-page-{$n - 1}.html" rel="prev">
-                        <span aria-hidden="true">← </span>Page précédente</a>
+                    <a class="gs-page-arrow gs-page-prev" href="{$doc_id}-page-{$n - 1}.html" rel="prev" title="Page précédente" aria-label="Page précédente">←</a>
                 </xsl:when>
-                <xsl:otherwise><span class="btn btn-outline-secondary disabled" aria-disabled="true"><span aria-hidden="true">← </span>Page précédente</span></xsl:otherwise>
+                <xsl:otherwise><span class="gs-page-arrow gs-page-off" aria-hidden="true">←</span></xsl:otherwise>
             </xsl:choose>
-            <xsl:if test="$where = 'haut'">
-                <form class="gs-jump" action="{$link}" data-doc="{$doc_id}" data-max="{$page_count}">
-                    <label for="gs-jump-input">Aller à la page</label>
-                    <input id="gs-jump-input" name="page" type="number" min="1" max="{$page_count}" value="{$n}" inputmode="numeric" class="form-control form-control-sm"/>
-                    <span class="gs-jump-of">/ <xsl:value-of select="$page_count"/></span>
-                    <button type="submit" class="btn btn-sm btn-outline-secondary">OK</button>
-                </form>
-            </xsl:if>
+            <select class="gs-page-select" aria-label="Aller à la page" data-doc="{$doc_id}" data-max="{$page_count}">
+                <option value="{$doc_id}-page-{$n}.html" selected="selected"><xsl:value-of select="concat('p. ', $n)"/></option>
+            </select>
             <xsl:choose>
                 <xsl:when test="$n lt $page_count">
-                    <a class="btn btn-outline-secondary gs-page-next" href="{$doc_id}-page-{$n + 1}.html" rel="next">Page suivante<span aria-hidden="true"> →</span></a>
+                    <a class="gs-page-arrow gs-page-next" href="{$doc_id}-page-{$n + 1}.html" rel="next" title="Page suivante" aria-label="Page suivante">→</a>
                 </xsl:when>
-                <xsl:otherwise><span class="btn btn-outline-secondary disabled" aria-disabled="true">Page suivante<span aria-hidden="true"> →</span></span></xsl:otherwise>
+                <xsl:otherwise><span class="gs-page-arrow gs-page-off" aria-hidden="true">→</span></xsl:otherwise>
             </xsl:choose>
         </nav>
+    </xsl:template>
+
+    <!-- display toolbar (built by JavaScript in MaX, static here; hidden without JavaScript) -->
+    <xsl:template name="toolbar">
+        <div class="gs-doc-toolbar" role="group" aria-label="Options d’affichage du texte">
+            <span class="gs-toolbar-group" role="group" aria-labelledby="gs-layer-label">
+                <span class="gs-toolbar-label" id="gs-layer-label">Couche</span>
+                <button type="button" class="gs-toolbar-btn gs-layer-btn" data-value="orig" aria-pressed="{$default_layer = 'orig'}">Original</button>
+                <button type="button" class="gs-toolbar-btn gs-layer-btn" data-value="reg" aria-pressed="{$default_layer = 'reg'}">Modernisé</button>
+            </span>
+            <button type="button" class="gs-toolbar-btn gs-fw-btn" aria-pressed="false">Éléments de forme</button>
+            <button type="button" class="gs-toolbar-btn gs-ling-btn" aria-pressed="false">Analyse linguistique</button>
+            <span class="gs-ling-status" aria-live="polite"></span>
+            <span class="gs-toolbar-group">
+                <label class="gs-toolbar-label" for="gs-ner-select">Entités</label>
+                <select class="gs-toolbar-select" id="gs-ner-select">
+                    <option value="all">Toutes les entités</option>
+                    <option value="high">Haute confiance</option>
+                    <option value="off">Masquées</option>
+                </select>
+            </span>
+            <!-- the legend (entity types and confidence lines) is added here by js/gs-reader.js -->
+        </div>
     </xsl:template>
 
     <xsl:template name="reading_page">
@@ -270,83 +287,81 @@
         <xsl:variable name="label" select="concat('Page ', $n, ' / ', $page_count)"/>
         <xsl:variable name="gallica" select="gs:gallica-page($pb/@facs)"/>
         <xsl:result-document href="{$doc_id}-page-{$n}.html">
-            <html class="h-100" lang="{$default_lang}" data-layer="{$default_layer}" data-default-layer="{$default_layer}" data-doc="{$doc_id}">
+            <html lang="{$default_lang}" data-layer="{$default_layer}" data-default-layer="{$default_layer}" data-doc="{$doc_id}">
                 <head>
                     <xsl:call-template name="html_head">
                         <xsl:with-param name="html_title" select="concat($doc_title, ' — ', $label)"/>
+                        <xsl:with-param name="bootstrap_icons" select="false()"/>
                     </xsl:call-template>
                     <xsl:if test="$n gt 1"><link rel="prev" href="{$doc_id}-page-{$n - 1}.html"/></xsl:if>
                     <xsl:if test="$n lt $page_count"><link rel="next" href="{$doc_id}-page-{$n + 1}.html"/></xsl:if>
-                    <script src="js/gs-reader.js" defer="defer"/>
+                    <script src="js/gs-reader.js" defer="defer"></script>
                 </head>
-                <body class="d-flex flex-column h-100 gs-reader">
-                    <xsl:call-template name="nav_bar"/>
-                    <main id="main" tabindex="-1" class="flex-shrink-0 flex-grow-1">
-                        <xsl:call-template name="breadcrumb">
-                            <xsl:with-param name="current" select="$label"/>
-                        </xsl:call-template>
-                        <div class="container-xxl gs-reader-container">
-                            <header class="gs-reader-head">
-                                <p class="gs-back"><a href="{$link}"><span aria-hidden="true">← </span>Fiche du document</a></p>
-                                <h1><xsl:value-of select="$doc_title"/></h1>
-                                <p class="gs-reader-meta">
-                                    <span class="gs-doc-id"><xsl:value-of select="$doc_id"/></span>
-                                    <xsl:value-of select="concat(' · page ', $n, ' / ', $page_count)"/>
-                                    <xsl:if test="$printed != ''">
-                                        <xsl:text> · </xsl:text>
-                                        <span class="gs-printed" title="Numéro imprimé sur la page (lu par OCR)">p. imprimée <xsl:value-of select="$printed"/></span>
-                                    </xsl:if>
+                <body class="d-flex flex-column min-vh-100 gs-reader">
+                    <xsl:call-template name="nav_bar">
+                        <xsl:with-param name="page_nav" as="node()*">
+                            <xsl:call-template name="page_nav"><xsl:with-param name="n" select="$n"/></xsl:call-template>
+                        </xsl:with-param>
+                    </xsl:call-template>
+                    <main id="main" tabindex="-1" class="container gs-main flex-grow-1">
+                        <xsl:call-template name="toolbar"/>
+                        <nav class="gs-breadcrumb" aria-label="Fil d'Ariane">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="toc.html">Corpus</a></li>
+                                <li class="breadcrumb-item"><a href="{$link}"><xsl:value-of select="$doc_title"/></a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><xsl:value-of select="concat('p. ', $n)"/></li>
+                            </ol>
+                        </nav>
+                        <div class="gs-doc-context">
+                            <a class="gs-doc-back" href="{$link}"><span aria-hidden="true">← </span>Fiche du document</a>
+                            <h1 class="gs-doc-title"><xsl:value-of select="$doc_title"/></h1>
+                            <div class="gs-doc-pageinfo">
+                                <span class="gs-doc-id"><xsl:value-of select="$doc_id"/></span>
+                                <xsl:value-of select="concat(' · page ', $n, ' / ', $page_count)"/>
+                                <xsl:if test="$printed != ''">
                                     <xsl:text> · </xsl:text>
-                                    <a href="{$gallica}">voir sur Gallica</a>
-                                </p>
-                            </header>
-                            <div class="gs-toolbar">
-                                <div class="gs-toolbar-group" role="group" aria-labelledby="gs-layer-label">
-                                    <span class="gs-toolbar-label" id="gs-layer-label">Couche</span>
-                                    <button type="button" class="btn btn-sm gs-layer-btn" data-value="orig" aria-pressed="{if ($default_layer = 'orig') then 'true' else 'false'}">Original</button>
-                                    <button type="button" class="btn btn-sm gs-layer-btn" data-value="reg" aria-pressed="{if ($default_layer = 'reg') then 'true' else 'false'}">Modernisé</button>
-                                </div>
-                                <button type="button" class="btn btn-sm gs-fw-btn" aria-pressed="false">Éléments de forme</button>
-                                <button type="button" class="btn btn-sm gs-ling-btn" aria-pressed="false">Analyse linguistique</button>
-                                <span class="gs-ling-status" aria-live="polite"/>
+                                    <span class="gs-printed" title="Numéro imprimé sur la page (lu par OCR)">p. imprimée <xsl:value-of select="$printed"/></span>
+                                </xsl:if>
+                                <xsl:text> · </xsl:text>
+                                <a href="{$gallica}">voir sur Gallica</a>
                             </div>
-                            <xsl:call-template name="page_nav">
-                                <xsl:with-param name="n" select="$n"/>
-                                <xsl:with-param name="where" select="'haut'"/>
-                            </xsl:call-template>
-                            <section class="gs-page" id="{$pb/@xml:id}" data-n="{$n}" aria-label="{$label}">
-                                <figure class="page-facsimile">
-                                    <a href="{$gallica}" title="Ouvrir la page dans Gallica (BnF)">
-                                        <img src="{replace($pb/@facs, ',1200', ',800')}" loading="lazy" decoding="async"
-                                            alt="Fac-similé de la page {$n} ({if ($printed != '') then concat('p. imprimée ', $printed, ', ') else ''}vue Gallica) de « {$doc_title} »"/>
-                                    </a>
-                                    <figcaption>Vue <xsl:value-of select="$n"/> — Gallica (BnF) · <a href="{$pb/@facs}">image IIIF</a></figcaption>
-                                </figure>
-                                <div class="page-transcription" lang="{$page_lang}">
-                                    <xsl:choose>
-                                        <xsl:when test="$content">
-                                            <xsl:apply-templates select="$content"/>
-                                        </xsl:when>
-                                        <xsl:otherwise>
-                                            <p class="page-untranscribed">Page sans texte transcrit (fac-similé seul).</p>
-                                        </xsl:otherwise>
-                                    </xsl:choose>
-                                </div>
-                            </section>
-                            <xsl:call-template name="page_nav">
-                                <xsl:with-param name="n" select="$n"/>
-                                <xsl:with-param name="where" select="'bas'"/>
-                            </xsl:call-template>
-                            <p class="gs-kbd-hint">Raccourcis : touches <kbd>←</kbd> et <kbd>→</kbd> pour changer de page.</p>
                         </div>
+                        <section class="page" id="{$pb/@xml:id}" data-n="{$n}" aria-label="{$label}">
+                            <figure class="page-facsimile">
+                                <a href="{$gallica}" title="Ouvrir la page dans Gallica (BnF)">
+                                    <img src="{replace($pb/@facs, ',1200', ',800')}" loading="lazy" decoding="async"
+                                        alt="Fac-similé de la page {$n} ({if ($printed != '') then concat('p. imprimée ', $printed, ', ') else ''}vue Gallica) de « {$doc_title} »"/>
+                                </a>
+                                <figcaption class="page-facs-caption">p. <xsl:value-of select="$n"/> — Gallica (BnF)</figcaption>
+                            </figure>
+                            <div class="page-transcription" lang="{$page_lang}">
+                                <xsl:choose>
+                                    <xsl:when test="$content">
+                                        <xsl:apply-templates select="$content"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <p class="page-untranscribed">Page sans texte transcrit (fac-similé seul).</p>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </div>
+                        </section>
                     </main>
-                    <xsl:call-template name="html_footer"/>
+                    <xsl:call-template name="html_footer">
+                        <xsl:with-param name="bootstrap_js" select="false()"/>
+                    </xsl:call-template>
                 </body>
             </html>
         </xsl:result-document>
     </xsl:template>
 
-    <!-- ======================= text rendering (overrides partials/shared.xsl) ======================= -->
+    <!-- ======================= text rendering ======================= -->
+    <!-- partials/shared.xsl (template rules for generic TEI and Bootstrap entity modals) is no
+         longer imported: every element of the page content is handled here, which keeps the
+         reading pages independent of the register partials (entities.xsl). -->
+
+    <xsl:template match="tei:date">
+        <span class="date"><xsl:apply-templates/></span>
+    </xsl:template>
 
     <xsl:template match="tei:ab">
         <div class="zone zone-{lower-case(@type)}">
@@ -410,22 +425,21 @@
         <xsl:value-of select="."/>
     </xsl:template>
 
-    <!-- named entities: link to the register page if the @ref resolves, plain span otherwise -->
+    <!-- named entities: link to the register page if the @ref resolves, plain span otherwise;
+         type, register id and NER confidence as data-* for the popover (js/gs-reader.js), as in MaX -->
     <xsl:template match="tei:persName | tei:placeName | tei:orgName | tei:rs | tei:objectName | tei:material | tei:title | tei:date[@ref]">
         <xsl:variable name="ref" select="gs:ref(.)"/>
         <xsl:variable name="type" select="gs:entity-type(.)"/>
-        <xsl:variable name="cert" select="if (@cert = 'high') then 'haute' else if (@cert = 'mid') then 'moyenne' else if (@cert = 'low') then 'faible' else ()"/>
-        <xsl:variable name="title" select="string-join((gs:type-label($type), for $c in $cert return concat('confiance ', $c)), ' · ')"/>
         <xsl:if test="parent::tei:s or parent::tei:foreign"><xsl:call-template name="tok-space"/></xsl:if>
         <xsl:choose>
             <xsl:when test="gs:resolved($ref)">
-                <a class="ent ent-{$type}" href="{$ref}.html" data-ref="{$ref}" title="{$title}">
+                <a class="ent ent-{$type}" href="{$ref}.html" data-type="{$type}" data-ref="{$ref}">
                     <xsl:if test="@cert"><xsl:attribute name="data-cert" select="@cert"/></xsl:if>
                     <xsl:apply-templates/>
                 </a>
             </xsl:when>
             <xsl:otherwise>
-                <span class="ent ent-{$type} ent-unresolved" title="{$title} · sans fiche de registre">
+                <span class="ent ent-{$type} ent-unresolved" data-type="{$type}">
                     <xsl:if test="$ref != ''"><xsl:attribute name="data-ref" select="$ref"/></xsl:if>
                     <xsl:if test="@cert"><xsl:attribute name="data-cert" select="@cert"/></xsl:if>
                     <xsl:apply-templates/>

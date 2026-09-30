@@ -21,32 +21,30 @@
         <xsl:param name="id"/>
         <xsl:param name="label"/>
         <section class="gs-facet" aria-labelledby="{$id}-title">
-            <h3 class="gs-facet-title" id="{$id}-title"><xsl:value-of select="$label"/></h3>
+            <h2 class="gs-facet-title" id="{$id}-title"><xsl:value-of select="$label"/></h2>
             <div id="{$id}"/>
         </section>
     </xsl:template>
 
     <xsl:template match="/">
         <xsl:variable name="doc_title" select="'Recherche'"/>
-        <html class="h-100" lang="{$default_lang}">
+        <html lang="{$default_lang}">
             <head>
                 <xsl:call-template name="html_head">
-                    <xsl:with-param name="html_title" select="$doc_title"/>
+                    <xsl:with-param name="html_title" select="concat($doc_title, ' — ', $project_short_title)"/>
+                    <xsl:with-param name="bootstrap_icons" select="false()"/>
                 </xsl:call-template>
             </head>
-            <body class="d-flex flex-column h-100 gs-search-page">
+            <body class="d-flex flex-column min-vh-100 gs-search-page">
                 <xsl:call-template name="nav_bar"/>
-                <main id="main" tabindex="-1" class="flex-shrink-0 flex-grow-1">
-                    <nav style="--bs-breadcrumb-divider: '>';" aria-label="fil d'Ariane" class="ps-5 p-3">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html"><xsl:value-of select="$project_short_title"/></a></li>
-                            <li class="breadcrumb-item active" aria-current="page"><xsl:value-of select="$doc_title"/></li>
-                        </ol>
-                    </nav>
-                    <div class="container-xxl">
-                        <h1>Recherche dans les textes</h1>
-                        <p class="gs-search-help">Recherche dans le texte modernisé, le texte original et les lemmes des 888 pages.
-                            Les accents et les petites fautes de frappe sont tolérés ; chaque résultat mène à la page de lecture.</p>
+                <main id="main" tabindex="-1" class="container gs-main flex-grow-1">
+                    <div class="gs-search">
+                        <!-- heading block as on the MaX search page -->
+                        <p class="gs-section-kicker">Recherche</p>
+                        <h1 class="gs-section-title">Rechercher dans l’édition</h1>
+                        <p class="gs-section-intro">Recherche plein texte (Typesense) dans le texte modernisé, le texte
+                            original et les lemmes des 888 pages. Les accents et les petites fautes de frappe sont
+                            tolérés ; chaque résultat mène à la page de lecture.</p>
                         <div id="search-error" class="alert alert-warning" role="alert" hidden="hidden"/>
                         <div class="gs-searchbar">
                             <label for="gs-search-input" class="visually-hidden">Rechercher dans les textes</label>
@@ -79,7 +77,9 @@
                         </div>
                     </div>
                 </main>
-                <xsl:call-template name="html_footer"/>
+                <xsl:call-template name="html_footer">
+                    <xsl:with-param name="bootstrap_js" select="false()"/>
+                </xsl:call-template>
                 <script src="vendor/instantsearch/instantsearch.production.min.js"/>
                 <script src="vendor/typesense-instantsearch-adapter/typesense-instantsearch-adapter.min.js"/>
                 <!-- gs-search.js loads js/search-config.js (generated with the search-only key,

@@ -1,0 +1,508 @@
+/* ==========================================================================
+   registres.css — Grand Siècle, démonstration DSE (J4)
+   Hub des entités, index A–Z, fiches d'entité, en-têtes de section de la carte
+   et de la chronologie. Porté de l'édition MaX (ui/css/registres.css et les
+   sections 13 et 17 de ui/css/grand-siecle.css). Chargée après css/style.css,
+   seulement par les pages des registres (xslt/partials/registres.xsl) : les
+   jetons --gs-* viennent de style.css, seuls les jetons propres aux registres
+   sont ajoutés ici. Petits textes : tons --gs-gold-text / --gs-sepia-text (AA).
+   ========================================================================== */
+
+:root {
+    --gs-green: #3A6B4A;
+    /* badge de confiance (glyphe + libellé, jamais la couleur seule) */
+    --gs-conf-high: var(--gs-green);
+    --gs-conf-medium: var(--gs-gold-text);
+    --gs-conf-low: #8E4A29; /* --gs-type-work assombri : AA 4.5:1 sur crème */
+    --gs-conf-none: var(--gs-sepia-text);
+}
+
+/* --------------------------------------------------------------------------
+   1. En-têtes de section (index, carte, chronologie)
+   -------------------------------------------------------------------------- */
+.gs-main h1, .gs-main h2 { font-family: var(--gs-font-display); color: var(--gs-blue); }
+.gs-main a { color: var(--gs-blue); text-decoration: none; transition: color 0.2s var(--gs-ease); }
+.gs-main a:hover { color: var(--gs-gold-text); }
+
+.gs-section-kicker {
+    font-family: var(--gs-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--gs-gold-text);
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+.gs-section-title {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+.gs-section-title::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 2px;
+    background: var(--gs-gold);
+    margin-top: 0.6rem;
+}
+.gs-section-intro { color: var(--gs-sepia-medium); max-width: 46rem; margin-bottom: 2rem; }
+
+/* --------------------------------------------------------------------------
+   2. Hub « Entités » (entites.html)
+   -------------------------------------------------------------------------- */
+.gs-hub { padding: 0 0 3rem; }
+.gs-section-marker {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: var(--gs-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 0.78rem;
+    color: var(--gs-gold-text);
+    margin: 0.8rem 0 0.4rem;
+}
+.gs-section-marker::before, .gs-section-marker::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--gs-gold-light);
+}
+.gs-hub-title { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 600; text-align: center; margin: 0.25rem 0 0.75rem; }
+.gs-hub-intro { max-width: 44rem; margin: 0 auto 2rem; text-align: center; color: var(--gs-sepia-medium); }
+
+.gs-hub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; list-style: none; padding: 0; margin: 1.6rem 0 0; }
+@media (max-width: 820px) { .gs-hub-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .gs-hub-grid { grid-template-columns: 1fr; } }
+.gs-hub-grid > li { display: flex; }
+
+.gs-hub-card { --gs-type: var(--gs-sepia-light); }
+.gs-main a.gs-hub-card {
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1.1rem 1.25rem;
+    background: var(--gs-cream-light);
+    border: 1px solid var(--gs-cream-warm);
+    border-left: 4px solid var(--gs-type);
+    border-radius: 3px;
+    color: var(--gs-sepia);
+    box-shadow: 0 6px 18px rgba(44, 36, 24, 0.08);
+    transition: transform 0.3s var(--gs-ease), box-shadow 0.3s;
+    overflow: hidden;
+}
+.gs-main a.gs-hub-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(44, 36, 24, 0.10); color: var(--gs-sepia); }
+.gs-hub-card::after {
+    content: "";
+    position: absolute; top: 8px; right: 8px;
+    width: 10px; height: 10px;
+    border-top: 2px solid var(--gs-gold-light);
+    border-right: 2px solid var(--gs-gold-light);
+}
+.gs-hub-card-person { --gs-type: var(--gs-type-person); }
+.gs-hub-card-place { --gs-type: var(--gs-type-place); }
+.gs-hub-card-organization { --gs-type: var(--gs-type-organization); }
+.gs-hub-card-work { --gs-type: var(--gs-type-work); }
+.gs-hub-card-event { --gs-type: var(--gs-type-event); }
+.gs-hub-card-artwork { --gs-type: var(--gs-type-artwork); }
+.gs-hub-card-material { --gs-type: var(--gs-type-material); }
+.gs-hub-card-technique { --gs-type: var(--gs-type-technique); }
+.gs-hub-card-date { --gs-type: var(--gs-type-date); }
+.gs-hub-type {
+    font-family: var(--gs-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gs-type);
+    margin: 0;
+}
+.gs-hub-total { font-family: var(--gs-font-display); font-size: 2.9rem; font-weight: 300; line-height: 1; color: var(--gs-type); }
+.gs-hub-stats { display: flex; flex-direction: column; font-size: 0.8rem; color: var(--gs-sepia-medium); }
+.gs-hub-recon::before { content: "✓ "; color: var(--gs-conf-high); }
+.gs-hub-corpus, .gs-hub-top { color: var(--gs-sepia-text); }
+.gs-hub-desc { font-size: 0.88rem; color: var(--gs-sepia-text); margin-top: 0.35rem; }
+
+/* badge « registre expérimental » */
+.gs-exp-badge {
+    font-family: var(--gs-font-mono);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--gs-gold-text);
+    color: var(--gs-cream-light);
+    border-radius: 2px;
+    padding: 0.05rem 0.35rem;
+    margin-left: 0.35rem;
+    vertical-align: middle;
+}
+
+/* --------------------------------------------------------------------------
+   3. Index A–Z (list*.html) + filtre (js/gs-registres.js)
+   -------------------------------------------------------------------------- */
+.gs-index-page { padding: 1.5rem 0 2.5rem; }
+.gs-index-count { color: var(--gs-sepia-medium); margin-bottom: 1.2rem; }
+.gs-az {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem;
+    margin-bottom: 1.6rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--gs-gold-light);
+}
+.gs-main .gs-az a {
+    display: inline-block;
+    min-width: 1.7rem;
+    text-align: center;
+    padding: 0.2rem 0.3rem;
+    border-radius: 2px;
+    color: var(--gs-blue);
+    font-family: var(--gs-font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.gs-main .gs-az a:hover, .gs-main .gs-az a:focus-visible { background: var(--gs-gold-text); color: var(--gs-cream-light); }
+.gs-main .gs-az a.gs-az-off { opacity: 0.35; pointer-events: none; }
+.gs-index-legend {
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--gs-sepia-text);
+    margin: -0.8rem 0 1.2rem;
+}
+.gs-main h2.gs-az-letter {
+    font-family: var(--gs-font-display);
+    color: var(--gs-gold-text);
+    font-size: 1.6rem;
+    font-weight: 500;
+    border-bottom: 1px dotted var(--gs-gold-light);
+    margin: 1.4rem 0 0.6rem;
+    scroll-margin-top: 1rem;
+}
+.gs-index-ul { list-style: none; padding: 0; margin: 0; }
+.gs-index-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    padding: 0.3rem 0.2rem;
+    border-bottom: 1px solid rgba(201, 178, 138, 0.25);
+}
+.gs-main a.gs-index-link { font-weight: 500; color: var(--gs-sepia); }
+.gs-index-extra { color: var(--gs-sepia-text); font-size: 0.85rem; font-style: italic; }
+.gs-index-mentions {
+    margin-left: auto;
+    font-size: 0.75rem;
+    color: var(--gs-cream-light);
+    background: var(--gs-gold-text);
+    border-radius: 8px;
+    padding: 0.05rem 0.5rem;
+}
+.gs-index-docs { display: inline-flex; gap: 0.25rem; }
+.gs-main a.gs-doc-chip {
+    font-family: var(--gs-font-mono);
+    font-size: 0.68rem;
+    color: var(--gs-blue);
+    background: rgba(30, 58, 109, 0.07);
+    border-radius: 2px;
+    padding: 0.08rem 0.35rem;
+}
+.gs-browse-hidden { display: none !important; }
+@media (max-width: 640px) {
+    .gs-index-mentions { margin-left: 0; }
+}
+
+.gs-browse-toolbar {
+    background: var(--gs-cream-light);
+    border: 1px solid var(--gs-gold-light);
+    border-radius: 2px;
+    padding: 0.9rem 1rem;
+    margin: 1rem 0 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: end;
+    font-family: var(--gs-font-text);
+}
+.gs-browse-field { display: flex; flex-direction: column; gap: 0.2rem; }
+.gs-browse-field label {
+    font-family: var(--gs-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.72rem;
+    color: var(--gs-gold-text);
+}
+.gs-browse-toolbar input[type="search"],
+.gs-browse-toolbar select {
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--gs-sepia);
+    background: var(--gs-cream);
+    border: 1px solid var(--gs-gold);
+    border-radius: 2px;
+    padding: 0.3rem 0.5rem;
+    min-width: 11rem;
+    max-width: 100%;
+    accent-color: var(--gs-blue);
+}
+.gs-browse-count {
+    font-family: var(--gs-font-mono);
+    font-size: 0.78rem;
+    color: var(--gs-sepia-medium);
+    margin-left: auto;
+    align-self: center;
+}
+.gs-browse-reset {
+    font-family: var(--gs-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.78rem;
+    color: var(--gs-blue);
+    background: none;
+    border: 1px solid var(--gs-gold);
+    border-radius: 2px;
+    padding: 0.35rem 0.7rem;
+    cursor: pointer;
+}
+.gs-browse-reset:hover { background: var(--gs-gold-text); color: var(--gs-cream-light); border-color: var(--gs-gold-text); }
+.gs-browse-empty { font-style: italic; color: var(--gs-sepia-text); padding: 1rem 0; }
+.gs-browse-empty::before { content: "❦ "; color: var(--gs-gold); font-style: normal; }
+
+/* --------------------------------------------------------------------------
+   4. Fiche d'entité ({id}.html)
+   -------------------------------------------------------------------------- */
+.gs-entity-main {
+    width: 100%;
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+}
+
+.gs-entity-detail { --gs-type: var(--gs-sepia-light); }
+.gs-entity-detail-person { --gs-type: var(--gs-type-person); }
+.gs-entity-detail-place { --gs-type: var(--gs-type-place); }
+.gs-entity-detail-organization { --gs-type: var(--gs-type-organization); }
+.gs-entity-detail-work { --gs-type: var(--gs-type-work); }
+.gs-entity-detail-event { --gs-type: var(--gs-type-event); }
+.gs-entity-detail-artwork { --gs-type: var(--gs-type-artwork); }
+.gs-entity-detail-material { --gs-type: var(--gs-type-material); }
+.gs-entity-detail-technique { --gs-type: var(--gs-type-technique); }
+.gs-entity-detail-date { --gs-type: var(--gs-type-date); }
+
+.gs-entity-kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+    color: var(--gs-gold-text);
+    font-family: var(--gs-font-display);
+}
+.gs-main .gs-entity-kicker a { color: var(--gs-gold-text); }
+.gs-main .gs-entity-kicker a:hover { color: var(--gs-blue); }
+
+.gs-authority-head { border-left: 4px solid var(--gs-type); padding-left: 1rem; margin: 1rem 0 1.5rem; }
+.gs-main h1.gs-authority-title {
+    font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+    font-weight: 600;
+    margin: 0 0 0.25rem;
+    line-height: 1.15;
+}
+.gs-authority-sub { color: var(--gs-sepia-medium); font-style: italic; margin: 0.1rem 0; }
+.gs-authority-sub::before { content: "✶ "; color: var(--gs-gold); font-style: normal; }
+.gs-authority-meta {
+    font-family: var(--gs-font-mono);
+    font-size: 0.75rem;
+    color: var(--gs-sepia-text);
+    margin: 0.3rem 0 0;
+}
+.gs-entity-id { color: var(--gs-type); }
+.gs-entity-mentions {
+    background: var(--gs-cream-warm);
+    border-radius: 9px;
+    padding: 0.05rem 0.5rem;
+    color: var(--gs-sepia-medium);
+}
+.gs-authority-desc {
+    font-size: 1.15rem;
+    color: var(--gs-sepia-medium);
+    border-left: 2px solid var(--gs-gold-light);
+    padding-left: 1rem;
+}
+
+.gs-conf { font-size: 0.8rem; vertical-align: middle; }
+.gs-conf-glyph { white-space: nowrap; letter-spacing: 0.1em; }
+.gs-conf-text {
+    font-family: var(--gs-font-display);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-left: 0.35rem;
+}
+.gs-conf-high { color: var(--gs-conf-high); }
+.gs-conf-medium { color: var(--gs-conf-medium); }
+.gs-conf-low { color: var(--gs-conf-low); }
+.gs-conf-none { color: var(--gs-conf-none); }
+
+.gs-entity-detail section, .gs-entity-detail aside { margin: 1.75rem 0; }
+.gs-main .gs-entity-detail h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border-bottom: 1px solid var(--gs-gold-light);
+    padding-bottom: 0.3rem;
+}
+
+/* formes attestées */
+.gs-variants { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.3rem 0.3rem; }
+.gs-variant {
+    font-family: var(--gs-font-mono);
+    font-size: 0.78rem;
+    background: var(--gs-cream-warm);
+    border: 1px solid var(--gs-gold-light);
+    border-radius: 2px;
+    padding: 0.1rem 0.45rem;
+}
+
+/* informations */
+.gs-meta-rows { margin: 0; }
+.gs-meta-row { display: grid; grid-template-columns: 9rem 1fr; gap: 0.75rem; padding: 0.3rem 0; border-bottom: 1px dotted var(--gs-gold-light); }
+.gs-meta-row dt {
+    font-family: var(--gs-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--gs-gold-text);
+}
+.gs-meta-row dd { margin: 0; }
+@media (max-width: 520px) { .gs-meta-row { grid-template-columns: 1fr; gap: 0; } }
+
+/* référentiels */
+.gs-authority-ids { background: var(--gs-cream-light); border-top: 3px solid var(--gs-gold); padding: 1rem 1.25rem; border-radius: 2px; }
+.gs-authority-ids ul { list-style: none; margin: 0; padding: 0; }
+.gs-authority-ids li { padding: 0.2rem 0; }
+.gs-auth-link::after { content: " ↗"; color: var(--gs-gold-text); font-size: 0.8em; }
+.gs-auth-link:hover .gs-auth-val { text-decoration: underline; }
+.gs-auth-chip {
+    display: inline-block;
+    font-family: var(--gs-font-mono);
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gs-sepia-medium);
+    background: var(--gs-cream-warm);
+    border-radius: 2px;
+    padding: 0.1rem 0.4rem;
+    margin-right: 0.35rem;
+}
+.gs-auth-val { font-family: var(--gs-font-mono); font-size: 0.8rem; }
+.gs-idno-cert { color: var(--gs-sepia-text); font-size: 0.75rem; }
+
+/* provenance */
+.gs-entity-detail .gs-provenance {
+    border-left: 3px solid var(--gs-gold);
+    background: var(--gs-cream-light);
+    font-style: italic;
+    color: var(--gs-sepia-medium);
+    padding: 0.75rem 1.25rem;
+    border-radius: 2px;
+}
+.gs-candidates { font-size: 0.9rem; }
+.gs-export-actions { margin-bottom: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.gs-main a.gs-export-link {
+    font-family: var(--gs-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.8rem;
+    font-style: normal;
+    color: var(--gs-gold-text);
+    border: 1px solid var(--gs-gold);
+    border-radius: 2px;
+    padding: 0.25rem 0.6rem;
+}
+.gs-main a.gs-export-link:hover { background: var(--gs-gold-text); color: var(--gs-cream-light); }
+
+/* co-occurrences */
+.gs-cooccur-title::before, .gs-backlinks-title::before { content: "❦ "; color: var(--gs-gold); }
+.gs-cooccur-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.gs-main a.gs-cooccur-item {
+    display: inline-block;
+    border-left: 3px solid var(--gs-sepia-light);
+    background: var(--gs-cream-light);
+    border-radius: 2px;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.9rem;
+}
+.gs-main a.gs-cooccur-item:hover { background: var(--gs-cream-warm); }
+.gs-cooccur-meta { color: var(--gs-sepia-text); font-size: 0.72rem; }
+.gs-main a.gs-cooccur-person { border-left-color: var(--gs-type-person); }
+.gs-main a.gs-cooccur-place { border-left-color: var(--gs-type-place); }
+.gs-main a.gs-cooccur-organization { border-left-color: var(--gs-type-organization); }
+.gs-main a.gs-cooccur-work { border-left-color: var(--gs-type-work); }
+.gs-main a.gs-cooccur-event { border-left-color: var(--gs-type-event); }
+.gs-main a.gs-cooccur-artwork { border-left-color: var(--gs-type-artwork); }
+.gs-main a.gs-cooccur-material { border-left-color: var(--gs-type-material); }
+.gs-main a.gs-cooccur-technique { border-left-color: var(--gs-type-technique); }
+.gs-main a.gs-cooccur-date { border-left-color: var(--gs-type-date); }
+
+/* documents qui citent + passages en contexte (KWIC) */
+.gs-backlinks-count, .gs-backlinks-mentions { color: var(--gs-gold-text); }
+.gs-backlinks-list { list-style: none; margin: 0; padding: 0; }
+.gs-backlinks-item { padding: 0.6rem 0; border-bottom: 1px solid var(--gs-gold-light); }
+.gs-main a.gs-backlinks-doc { font-weight: 600; }
+.gs-main a.gs-backlinks-id {
+    font-family: var(--gs-font-mono);
+    font-size: 0.7rem;
+    color: var(--gs-sepia-text);
+    background: var(--gs-cream-warm);
+    border-radius: 2px;
+    padding: 0.05rem 0.35rem;
+}
+.gs-backlinks-n { font-size: 0.85rem; color: var(--gs-sepia-medium); }
+
+.gs-kwic-details { margin-top: 0.4rem; }
+.gs-kwic-details summary {
+    cursor: pointer;
+    font-family: var(--gs-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.78rem;
+    color: var(--gs-gold-text);
+}
+.gs-kwic-details summary::marker { color: var(--gs-gold); }
+.gs-kwic-panel { list-style: none; margin: 0; padding: 0; }
+.gs-kwic-line {
+    border-left: 2px solid var(--gs-gold-light);
+    background: var(--gs-cream-light);
+    padding: 0.4rem 0.75rem;
+    margin: 0.35rem 0;
+    font-size: 0.95rem;
+}
+.gs-main .gs-kwic-line a { color: var(--gs-sepia); display: block; }
+.gs-kwic-line a:hover mark { text-decoration: underline; }
+.gs-kwic-line mark {
+    background: var(--gs-gold-light);
+    color: var(--gs-blue);
+    font-weight: 600;
+    padding: 0 0.15rem;
+    border-radius: 1px;
+}
+.gs-kwic-page {
+    font-family: var(--gs-font-mono);
+    font-size: 0.7rem;
+    color: var(--gs-sepia-text);
+    white-space: nowrap;
+}
+
+/* focus visible sur tous les contrôles des registres */
+.gs-main a:focus-visible, .gs-main summary:focus-visible,
+.gs-browse-toolbar :focus-visible {
+    outline: 2px solid var(--gs-blue);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gs-main a.gs-hub-card, .gs-main a { transition: none; }
+    .gs-main a.gs-hub-card:hover { transform: none; }
+}

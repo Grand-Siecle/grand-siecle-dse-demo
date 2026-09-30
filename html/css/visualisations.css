@@ -1,0 +1,224 @@
+/* ==========================================================================
+   visualisations.css — Grand Siècle, démonstration DSE (J4)
+   Carte Leaflet (carte.html) et frise chronologique (chronologie.html), portées
+   de l'édition MaX (ui/css/visualisations.css et la section « Carte /
+   chronologie » de ui/css/grand-siecle.css), plus la liste textuelle qui sert
+   d'alternative à la carte et à la frise. Jetons --gs-* : css/style.css.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Carte
+   -------------------------------------------------------------------------- */
+.gs-map-wrap { position: relative; }
+#gs-map {
+    height: 70vh;
+    min-height: 420px;
+    border: 1px solid var(--gs-border);
+    border-radius: 3px;
+    background: var(--gs-cream-light);
+}
+/* harmonisation chromatique du fond OSM (l'attribution n'est pas filtrée) */
+#gs-map .leaflet-tile-pane { filter: sepia(0.3) saturate(0.55) brightness(1.03); }
+#gs-map .leaflet-control-attribution {
+    background: rgba(254, 252, 247, 0.85);
+    color: var(--gs-sepia-text);
+    font-family: var(--gs-font-text);
+}
+#gs-map.leaflet-container a { color: var(--gs-blue); }
+#gs-map.leaflet-container a:hover { color: var(--gs-gold-text); }
+#gs-map .leaflet-popup-content-wrapper,
+#gs-map .leaflet-popup-tip {
+    background: var(--gs-cream-light);
+    border: 1px solid var(--gs-border);
+    border-radius: 3px;
+    color: var(--gs-sepia);
+    font-family: var(--gs-font-text);
+    box-shadow: 0 6px 18px rgba(44, 36, 24, 0.18);
+}
+#gs-map .leaflet-popup-content { margin: 0.7rem 0.95rem; font-size: 0.92rem; line-height: 1.5; }
+#gs-map .leaflet-popup-close-button { color: var(--gs-sepia-text); }
+#gs-map .leaflet-tooltip { font-family: var(--gs-font-text); color: var(--gs-sepia); }
+.gs-map-popup-type {
+    display: inline-block;
+    background: var(--gs-type-place);
+    color: var(--gs-cream-light);
+    text-transform: uppercase;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    padding: 0.1rem 0.5rem;
+    border-radius: var(--gs-radius, 2px);
+}
+.gs-map-popup-name {
+    display: block;
+    font-family: var(--gs-font-display);
+    font-size: 1.2rem;
+    line-height: 1.25;
+    margin: 0.3rem 0 0.15rem;
+}
+.gs-map-popup-mentions { display: block; color: var(--gs-sepia-medium); }
+.gs-map-popup-country { display: block; font-style: italic; color: var(--gs-sepia-text); }
+#gs-map:focus-visible, #gs-map .leaflet-interactive:focus-visible { outline: 2px solid var(--gs-blue); outline-offset: 2px; }
+
+.gs-map-coverage {
+    font-size: 0.85rem;
+    color: var(--gs-sepia-text);
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+.gs-map-credit { font-size: 0.8rem; color: var(--gs-sepia-text); margin-top: 0.8rem; }
+
+/* --------------------------------------------------------------------------
+   2. Liste textuelle (alternative à la carte et à la frise)
+   -------------------------------------------------------------------------- */
+.gs-alt-list { margin: 1.2rem 0 0; border-top: 1px solid var(--gs-gold-light); padding-top: 0.6rem; }
+.gs-alt-list > summary {
+    cursor: pointer;
+    font-family: var(--gs-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    color: var(--gs-gold-text);
+}
+.gs-alt-list > summary:focus-visible { outline: 2px solid var(--gs-blue); outline-offset: 2px; }
+.gs-alt-scroll { overflow-x: auto; margin-top: 0.6rem; }
+.gs-alt-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; background: var(--gs-cream-light); }
+.gs-alt-table th, .gs-alt-table td { padding: 0.3rem 0.6rem; border-bottom: 1px solid var(--gs-gold-light); text-align: left; vertical-align: baseline; }
+.gs-alt-table thead th {
+    font-family: var(--gs-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--gs-gold-text);
+    background: var(--gs-cream-warm);
+}
+.gs-alt-table tbody th { font-weight: 500; }
+.gs-alt-table .gs-num { font-family: var(--gs-font-mono); font-size: 0.8rem; text-align: right; }
+.gs-alt-table tr:target { background: var(--gs-gold-light); }
+
+/* --------------------------------------------------------------------------
+   3. Frise chronologique
+   -------------------------------------------------------------------------- */
+#gs-timeline { margin-top: 1rem; }
+.gs-tl-filters { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; margin-bottom: 1rem; }
+.gs-toolbar-label {
+    font-family: var(--gs-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.75rem;
+    color: var(--gs-sepia-medium);
+    margin-right: 0.2rem;
+}
+.gs-toolbar-select {
+    font-family: var(--gs-font-text);
+    font-size: 0.85rem;
+    background: var(--gs-cream-light);
+    color: var(--gs-sepia);
+    border: 1px solid var(--gs-gold);
+    border-radius: var(--gs-radius, 2px);
+    padding: 0.3rem 0.5rem;
+}
+.gs-toolbar-select:focus-visible { outline: 2px solid var(--gs-blue); outline-offset: 2px; }
+
+#gs-timeline .gs-tl-list { position: relative; list-style: none; margin: 0; padding: 0; }
+#gs-timeline .gs-tl-list.gs-tl-has-epochs { padding-top: 1.6rem; }
+.gs-tl-item {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 14rem 1fr;
+    gap: 0.8rem;
+    align-items: center;
+    margin-bottom: 0.3rem;
+}
+#gs-timeline .gs-tl-label {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: 0.45rem;
+    min-width: 0;
+    font-size: 0.85rem;
+    text-align: right;
+    color: var(--gs-sepia-medium);
+}
+.gs-main #gs-timeline a.gs-tl-name {
+    color: var(--gs-sepia-medium);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+}
+.gs-main #gs-timeline a.gs-tl-name:hover, .gs-main #gs-timeline a.gs-tl-name:focus-visible { color: var(--gs-blue); text-decoration: underline; }
+.gs-tl-year { font-family: var(--gs-font-mono); font-size: 0.72rem; color: var(--gs-sepia-text); flex-shrink: 0; }
+.gs-tl-track { position: relative; height: 0.85rem; background: transparent; border-radius: 1px; }
+.gs-tl-bar {
+    position: absolute;
+    top: 0; bottom: 0;
+    background: var(--gs-type, var(--gs-blue-light));
+    opacity: 0.75;
+    border-radius: 1px;
+    min-width: 4px;
+}
+.gs-tl-bar.gs-tl-person { --gs-type: var(--gs-type-person); }
+.gs-tl-bar.gs-tl-event { --gs-type: var(--gs-type-event); }
+.gs-tl-bar.gs-tl-work { --gs-type: var(--gs-type-work); }
+.gs-tl-bar.gs-tl-organization { --gs-type: var(--gs-type-organization); }
+
+.gs-tl-axis {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--gs-font-mono);
+    font-size: 0.72rem;
+    color: var(--gs-sepia-text);
+    border-top: 1px solid var(--gs-gold-light);
+    margin: 0.6rem 0 1rem 14.8rem;
+    padding-top: 0.2rem;
+}
+.gs-tl-axis.gs-tl-scale { display: block; position: relative; height: 1.35rem; }
+.gs-tl-axis.gs-tl-scale span { position: absolute; top: 0.25rem; transform: translateX(-50%); white-space: nowrap; }
+.gs-tl-axis-sticky {
+    position: sticky;
+    top: var(--header-height, 64px); /* fixed header on desktop (css/style.css) */
+    z-index: 10;
+    background: var(--gs-cream);
+    border-bottom: 1px solid var(--gs-gold-light);
+}
+.gs-tl-axis-sticky .gs-tl-axis { border-top: none; margin: 0 0 0 14.8rem; padding: 0.3rem 0 0.25rem; }
+
+/* décor : bandes d'époques + grille séculaire derrière les barres */
+.gs-tl-deco {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 14.8rem; /* colonne des libellés (14rem) + gouttière (0.8rem) */
+    right: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+.gs-tl-epoch { position: absolute; top: 0; bottom: 0; overflow: hidden; }
+.gs-tl-epoch.gs-tl-epoch-alt { background: var(--gs-cream-warm); }
+.gs-tl-epoch-label {
+    position: absolute;
+    top: 0.15rem;
+    left: 0.45rem;
+    font-family: var(--gs-font-display);
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.09em;
+    color: var(--gs-gold-text);
+    white-space: nowrap;
+}
+.gs-tl-gridline { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--gs-gold-light); }
+
+@media (max-width: 900px) {
+    .gs-tl-axis-sticky { top: 0; } /* the header is static under 900px */
+}
+@media (max-width: 700px) {
+    .gs-tl-item { grid-template-columns: 8rem 1fr; }
+    /* narrow screens: name above its dates (MaX cuts the name down to one letter) */
+    #gs-timeline .gs-tl-label { flex-direction: column; align-items: flex-end; gap: 0; line-height: 1.2; }
+    .gs-main #gs-timeline a.gs-tl-name { max-width: 100%; }
+    .gs-tl-year { font-size: 0.6rem; white-space: nowrap; }
+    .gs-tl-axis, .gs-tl-axis-sticky .gs-tl-axis { margin-left: 8.8rem; }
+    .gs-tl-deco { left: 8.8rem; }
+}

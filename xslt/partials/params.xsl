@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet 
+<xsl:stylesheet
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
     <xsl:param name="directory_name">grand-siecle-dse</xsl:param>
     <xsl:param name="project_title">Grand Siècle — cinq imprimés du XVIIe siècle (démonstration DSE)</xsl:param>
+    <!-- meta description, same wording as the MaX edition -->
+    <xsl:param name="project_description">Cinq discours français sur la peinture au XVIIe siècle : transcriptions, entités, carte et chronologie.</xsl:param>
     <xsl:param name="redmine_id">18716</xsl:param>
     <xsl:param name="project_short_title">Grand Siècle</xsl:param>
     <xsl:param name="default_lang">fr</xsl:param>
